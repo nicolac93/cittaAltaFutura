@@ -1,5 +1,7 @@
 <?php
-//include("config.php");
+if ($db->connect_error) {
+  include('config.php');
+}
 //include("session.php");
 
 // create a database connection
