@@ -1,3 +1,26 @@
+<?php
+//if ($db->connect_error) {
+//  include('config.php');
+//}
+//include("session.php");
+
+// create a database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cittaalta";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$id_segnalazione = $_GET["id"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,17 +115,53 @@
         <li class="breadcrumb-item active">Full Width</li>
       </ol>
 
+      <?php
+        $sql = "SELECT * FROM segnalazioni JOIN utenti ON segnalazioni.id_utente = utenti.id WHERE segnalazioni.id = ".$id_segnalazione;
+          
+        if (mysqli_query($conn, $sql)) {
+          echo "";
+        } else {
+          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+          $count=1;
+          $result = mysqli_query($conn, $sql);
+        
+        if(mysqli_num_rows($result)>0){
+          while($row = mysqli_fetch_assoc($result)){
+      ?>
+      
+      <h1><?php echo $row['titolo'] ?></h1>
+
       <div class="row">
-        <div class=".col-6 .col-md-4">
-          ciao
+        <div class="col-lg-4">
+          <img src=".\img\piazzaVecchia.jpg" class="img-fluid" alt="img"> 
         </div>
 
-        <div class=".col-12 .col-md-8">
-          ciao
+        <div class="col-lg-8">
+          <h5>Tipologia:</h5>
+          <p><?php echo $row['tipologia']?></p>
+          <h5>Intervento / iniziativa proposta:</h5>
+          <p><?php echo $row['proposta']?></p>
+          <h5>Motivazione:</h5>
+          <p><?php echo $row['motivazione']?></p>
+          <h5>Destinatari:</h5>
+          <p><?php echo $row['destinatari']?></p>
+          <h5>Periodo:</h5>
+          <p><?php echo $row['periodo']?></p>
+          <h5>Stato di conservazione:</h5>
+          <p><?php echo $row['conservazione']?></p>
+          <h5>Autore:</h5>
+          <p><?php echo $row['username']?></p>
         </div>
       </div>
-      <p>Most of Start Bootstrap's unstyled templates can be directly integrated into the Modern Business template. You can view all of our unstyled templates on our website at
-        <a href="http://startbootstrap.com/template-categories/unstyled">http://startbootstrap.com/template-categories/unstyled</a>.</p>
+
+      <?php
+          $count++;
+        }
+      } else {
+        echo "0 results";
+      }
+      ?>
 
     </div>
     <!-- /.container -->
@@ -110,7 +169,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2018</p>
       </div>
       <!-- /.container -->
     </footer>
