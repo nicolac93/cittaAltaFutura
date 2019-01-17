@@ -2,7 +2,7 @@
 // create a database connection
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "Co2Calculator";
 $dbname = "cittaalta";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
