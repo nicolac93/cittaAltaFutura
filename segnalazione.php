@@ -1,16 +1,7 @@
 <?php
-//if ($db->connect_error) {
-//  include('config.php');
-//}
-//include("session.php");
+include('config.php');
+include("session.php");
 
-// create a database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cittaalta";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
 
