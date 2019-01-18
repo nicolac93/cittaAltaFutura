@@ -1,3 +1,7 @@
 #portfoglio-riepilogo{
     display:none;
 }
+
+#table-riepilogo{
+    display: inline;
+}

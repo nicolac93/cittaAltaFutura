@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-include("session.php");
+//include("session.php");
 
 ?>
 
@@ -101,21 +101,21 @@ include("session.php");
         <li class="breadcrumb-item active">Full Width</li>
       </ol>
 
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radio-riepilogo-toggle">
         <label class="btn btn-secondary active">
-          <input type="radio" name="options" id="option1" autocomplete="off" checked> <i class='fa fa-map'></i>
+          <input type="radio" name="options" value="map" id="optionMap" autocomplete="off" checked> <i class='fa fa-map'></i>
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="options" id="option2" autocomplete="off"> <i class='fa fa-th'></i>
+          <input type="radio" name="options" value="list" id="optionList" autocomplete="off"> <i class='fa fa-th'></i>
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="options" id="option2" autocomplete="off"> <i class='fa fa-list'></i>
+          <input type="radio" name="options" value="table" id="optionTable" autocomplete="off"> <i class='fa fa-list'></i>
         </label>
       </div>  
       
       <!-- Table riepilogo -->
 
-      <div class="table-responsive">
+      <div class="table-responsive" id="table-riepilogo">
       <table class="table">
         <thead class="thead-light">
           <tr>
@@ -172,7 +172,7 @@ include("session.php");
             ?>
         </tbody>
       </table>
-
+      </div>
       <!-- end table riepilogo -->
 
 
@@ -249,7 +249,7 @@ include("session.php");
 
       <!-- End Portfoglio -->
 
-      </div>
+      
 
 
       
@@ -268,6 +268,9 @@ include("session.php");
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <!-- Me Js -->
+    <script src="js/riepilogo.js"></script>
   </body>
 
 </html>
