@@ -1,6 +1,7 @@
 <?php
 include('config.php');
-//include("session.php");
+include("session.php");
+
 
 $id_segnalazione = $_GET["id"];
 

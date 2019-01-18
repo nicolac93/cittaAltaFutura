@@ -1,5 +1,5 @@
 <?php
-   if ($db->connect_error) {
+   if ($conn->connect_error) {
         include('config.php');
    }
    if (session_status() == PHP_SESSION_NONE) {
