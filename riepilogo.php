@@ -1,21 +1,6 @@
 <?php
-if ($db->connect_error) {
-  include('config.php');
-}
+include('config.php');
 //include("session.php");
-
-// create a database connection
-$servername = "localhost";
-$username = "root";
-$password = "Co2Calculator";
-$dbname = "cittaalta";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-
-  die("Connection failed: " . mysqli_connect_error());
-}
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +17,12 @@ if (!$conn) {
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/cittaAltaFutura.css" rel="stylesheet">
 
   </head>
 
@@ -112,6 +100,20 @@ if (!$conn) {
         <li class="breadcrumb-item active">Full Width</li>
       </ol>
 
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> <i class='fa fa-map'></i>
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="option2" autocomplete="off"> <i class='fa fa-th'></i>
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="option2" autocomplete="off"> <i class='fa fa-list'></i>
+        </label>
+      </div>  
+      
+      <!-- Table riepilogo -->
+
       <div class="table-responsive">
       <table class="table">
         <thead class="thead-light">
@@ -169,19 +171,94 @@ if (!$conn) {
             ?>
         </tbody>
       </table>
+
+      <!-- end table riepilogo -->
+
+
+      <!-- Porfoglio -->
+
+      <div class="row" id="portfoglio-riepilogo">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project One</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Two</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Three</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Four</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Five</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Six</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Portfoglio -->
+
       </div>
 
 
-      <p>Most of Start Bootstrap's unstyled templates can be directly integrated into the Modern Business template. You can view all of our unstyled templates on our website at
-        <a href="http://startbootstrap.com/template-categories/unstyled">http://startbootstrap.com/template-categories/unstyled</a>.</p>
-
+      
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2018</p>
       </div>
       <!-- /.container -->
     </footer>
@@ -189,7 +266,7 @@ if (!$conn) {
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   </body>
 
 </html>
