@@ -7,6 +7,6 @@
     }
    
    if(isset($_SESSION['login_user'])){
-      header("location:index");
+        header("location:index.html");
    }
 ?>
