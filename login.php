@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
    if($count == 1) {
       $_SESSION['login_user'] = $myusername;
-      header("location: index");
+      header("location: index.php");
    }else {
       $error = "Your Login Name or Password is invalid";
    }
@@ -112,7 +112,7 @@ input[type=text]:focus, input[type=password]:focus {
   <div class="bg-img">
   
   <div class="w3-display-topright w3-padding-large w3-xlarge">
-    <a href="index">
+    <a href="index.php">
         <img src="/Immagini/logoUnibg.png" style="width:216px;height:72px">
     </a>
   </div>
@@ -130,7 +130,7 @@ input[type=text]:focus, input[type=password]:focus {
                 <h4 class="form-login-error"><?php echo $error; ?></h4>
                 <button type="submit" class="btn" name="login">Login</button>
           </div>
-          <p>Don't have an account? <a href="signup_1">Sign up here</a>.</p>
+          <p>Don't have an account? <a href="signup_1.php">Sign up here</a>.</p>
         </div>
     </form>
   </div>

@@ -6,16 +6,15 @@
     }
    
    if(!isset($_SESSION['login_user'])){
-      header("location:login");
+        $_SESSION['login_user_id'] =  0;
+        $_SESSION['login_user_name'] =  "";
+   }else{
+        $user_check = $_SESSION['login_user'];
+        $ses_sql = mysqli_query($conn,"select username, id from utenti where username = '$user_check' ");
+        $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+
+        $login_session = $row['username'];
+        $_SESSION['login_user_id'] =  $row['id'];
+        $_SESSION['login_user_name'] =  $row['username'];
    }
-   
-   $user_check = $_SESSION['login_user'];
-   
-   $ses_sql = mysqli_query($db,"select username, id, name from users where username = '$user_check' ");
-   
-   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-   
-   $login_session = $row['username'];
-   $_SESSION['login_user_id'] =  $row['id'];
-   $_SESSION['login_user_name'] =  $row['name'];
 ?>

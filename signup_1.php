@@ -102,7 +102,7 @@ session_start();
                     $_SESSION['name'] = $name;
                     $_SESSION['surname'] = $surname;
                     $_SESSION['invite'] = $invite;
-                    header("location: signup_2");
+                    header("location: signup_2.php");
                 }
                 else{
                     $mail_error = "Mail couldn't be send";
@@ -114,7 +114,7 @@ session_start();
             if($mail_result == ""){
                 $mail_result = sendMail($username, $name, $surname);
                 if($mail_result == "OK"){
-                    header("location: signup_2");
+                    header("location: signup_2.php");
                 }
                 else{
                     $mail_error = "Mail couldn't be send";
@@ -198,7 +198,7 @@ session_start();
         <div class="bg-img">
   
             <div class="w3-display-topright w3-padding-large w3-xlarge">
-              <a href="login">
+              <a href="login.php">
                   <img src="/Immagini/logoUnibg.png" style="width:216px;height:72px">
               </a>
             </div>
@@ -233,7 +233,7 @@ session_start();
                             <input type="submit" class="btn" value="Continue">
                         </div>
                         <span class="help-block"><?php echo $mail_err; ?></span>
-                        <p>Already have an account? <a href="login">Login here</a>.</p>
+                        <p>Already have an account? <a href="login.php">Login here</a>.</p>
                     </div>
                 </form>
             </div>

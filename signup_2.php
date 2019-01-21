@@ -62,7 +62,7 @@ session_start();
                 if(mysqli_stmt_execute($stmt)){
                     // Redirect to login page
                     $_SESSION['login_user'] = $username;
-                    header("location: index.html");
+                    header("location: index.php");
                 } else{
                     echo "Something went wrong. Please try again later.";
                 }
@@ -147,7 +147,7 @@ session_start();
         <div class="bg-img">
   
             <div class="w3-display-topright w3-padding-large w3-xlarge">
-              <a href="login">
+              <a href="login.php">
                   <img src="/Immagini/logoUnibg.png" style="width:216px;height:72px">
               </a>
             </div>
@@ -175,7 +175,7 @@ session_start();
                         <div class="form-group">
                             <input type="submit" class="btn" value="Submit">
                         </div>
-                        <p>Already have an account? <a href="login">Login here</a>.</p>
+                        <p>Already have an account? <a href="login.php">Login here</a>.</p>
                     </div>
                 </form>
             </div>

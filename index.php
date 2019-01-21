@@ -1,5 +1,11 @@
-<!DOCTYPE html>
+<?php
+//ini_set('display_errors', 'Off');
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
 
+include('session.php');
+?>
+<!DOCTYPE html>
 <html lang="it">
     
     <head>
@@ -19,7 +25,7 @@
     <!-- Navigation -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="index.html">Città Alta Futura</a>
+            <a class="navbar-brand" href="index.php">Città Alta Futura</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,10 +43,18 @@
                 <li class="nav-item">
                   <a class="nav-link" href="faq.html">FAQ</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login">Login</a>
+                <li class="nav-item" id="login">
+                  <a class="nav-link" href="login.php"> Login</a>
+                </li>
+                <li class="nav-item" id="logout">
+                  <a class="nav-link" href="logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+                </li>
+                <li class="nav-item" id="user">
+                  <span class="nav-link"><strong><?php echo $_SESSION['login_user_name'];?></strong></span>
                 </li>
               </ul>
+              
+              
             </div>
           </div>
         </nav>
@@ -124,6 +138,21 @@
                 </div>
             </div>
         </section>
+        
+        <script>
+            var login = document.getElementById("login");
+            var logout = document.getElementById("logout");
+            var user = document.getElementById("user");
+            if("<?php echo $_SESSION['login_user_name'];?>" == ""){
+                login.style.display = "inline-block";
+                logout.style.display = "none";
+                user.style.display = "none";
+            }else{
+                login.style.display = "none";
+                logout.style.display = "inline-block";
+                user.style.display = "inline-block";
+            }
+        </script>
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
