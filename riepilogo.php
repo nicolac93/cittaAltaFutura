@@ -116,7 +116,7 @@ include('config.php');
       <!-- Table riepilogo -->
 
       <div class="table-responsive" id="table-riepilogo">
-      <table class="table">
+      <table class="table table-striped">
         <thead class="thead-light">
           <tr>
             <th scope="col">Immagine</th>
@@ -149,7 +149,7 @@ include('config.php');
               while($row = mysqli_fetch_assoc($result)){ ?>
 
                 <tr>
-                  <td><?php echo "jpg"?></td>
+                  <td ><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></td>
                   <td><?php echo $row['titolo']?></td>
                   <td><?php echo $row['tipologia']?></td>
                   <td><?php echo $row['proposta']?></td>
@@ -157,7 +157,7 @@ include('config.php');
                   <td><?php echo $row['destinatari']?></td>
                   <td><?php echo $row['periodo']?></td>
                   <td><?php echo $row['conservazione']?></td>
-                  <td><?php echo $row['mail']?></td>
+                  <td><?php echo $row['username']?></td>
                   <td>??</td>
                   <td>Vota</td>
                 </tr>                
@@ -177,76 +177,38 @@ include('config.php');
 
 
       <!-- Porfoglio -->
-
       <div class="row" id="portfoglio-riepilogo">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project One</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Two</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Three</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Four</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Five</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Six</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+        $count=1;
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result)>0){
+          while($row = mysqli_fetch_assoc($result)){
+      ?>
 
+
+      
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><?php echo $row['titolo']?></a>
+              </h4>
+              <p class="card-text"><strong>Destinatari: </strong><?php echo $row['destinatari']?></p>
+              <p class="card-text"><strong>Proposta: </strong><?php echo $row['proposta']?></p>
+            </div>
+          </div>
+        </div>
+      
+
+      <?php
+          $count++;
+        }
+      } else {
+        echo "0 results";
+      }
+      ?>
+      </div>
       <!-- End Portfoglio -->
 
       
