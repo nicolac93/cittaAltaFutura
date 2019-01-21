@@ -1,7 +1,8 @@
 <?php
-include('config.php');
-//include("session.php");
-
+//ini_set('display_errors', 'Off');
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+include("session.php");
 
 $id_segnalazione = $_GET["id"];
 
@@ -31,59 +32,37 @@ $id_segnalazione = $_GET["id"];
 
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.php">Start Bootstrap</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portfolio
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Blog
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-              </div>
-            </li>
-            <li class="nav-item active dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Other Pages
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item active" href="full-width.html">Full Width Page</a>
-                <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                <a class="dropdown-item" href="faq.html">FAQ</a>
-                <a class="dropdown-item" href="404.html">404</a>
-                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-              </div>
-            </li>
-          </ul>
+        <div class="container">
+          <a class="navbar-brand" href="index.php">Città Alta Futura</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Progetto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Partecipa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contatti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+              </li>
+              <li class="nav-item" id="login">
+                <a class="nav-link" href="login.php"> Login</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a class="nav-link" href="logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+              </li>
+              <li class="nav-item" id="user">
+                <span class="nav-link"><strong><?php echo $_SESSION['login_user_name'];?></strong></span>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
     </nav>
 
     <!-- Page Content -->
@@ -159,11 +138,26 @@ $id_segnalazione = $_GET["id"];
       </div>
       <!-- /.container -->
     </footer>
-
+    
+    <script>
+        var login = document.getElementById("login");
+        var logout = document.getElementById("logout");
+        var user = document.getElementById("user");
+        if("<?php echo $_SESSION['login_user_name'];?>" == ""){
+            login.style.display = "inline-block";
+            logout.style.display = "none";
+            user.style.display = "none";
+        }else{
+            login.style.display = "none";
+            logout.style.display = "inline-block";
+            user.style.display = "inline-block";
+        }
+    </script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
+  
 
 </html>

@@ -53,8 +53,6 @@ include('session.php');
                   <span class="nav-link"><strong><?php echo $_SESSION['login_user_name'];?></strong></span>
                 </li>
               </ul>
-              
-              
             </div>
           </div>
         </nav>
