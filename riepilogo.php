@@ -80,7 +80,7 @@ include("session.php");
         <li class="breadcrumb-item active">Full Width</li>
       </ol>
 
-      <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radio-riepilogo-toggle">
+      <!--div class="btn-group btn-group-toggle" data-toggle="buttons" id="radio-riepilogo-toggle">
         <label class="btn btn-secondary active">
           <input type="radio" name="options" value="map" id="optionMap" autocomplete="off" checked> <i class='fa fa-map'></i>
         </label>
@@ -90,7 +90,12 @@ include("session.php");
         <label class="btn btn-secondary">
           <input type="radio" name="options" value="table" id="optionTable" autocomplete="off"> <i class='fa fa-list'></i>
         </label>
-      </div>  
+      </div> -->
+      <div id="selector" class="btn-group">
+        <button type="button" class="btn btn-secondary" value="map"><i class='fa fa-map'></i></button>
+        <button type="button" class="btn btn-secondary" value="list"><i class='fa fa-th'></i></button>
+        <button type="button" class="btn btn-secondary active" value="table"><i class='fa fa-list'></i></button>
+      </div>
       
       <!-- Table riepilogo -->
 
