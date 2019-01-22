@@ -23,7 +23,7 @@ $id_segnalazione = $_GET["id"];
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -57,7 +57,7 @@ $id_segnalazione = $_GET["id"];
                 <a class="nav-link" href="login.php"> Login</a>
               </li>
               <li class="nav-item" id="logout">
-                <a class="nav-link" href="logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
               </li>
               <li class="nav-item" id="user">
                 <span class="nav-link"><strong><?php echo $_SESSION['login_user_name'];?></strong></span>

@@ -3,7 +3,7 @@ var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/basic-v9', // stylesheet location
     center: [9.660495, 45.704422], // starting position [lng, lat]
-    zoom: 13 // starting zoom
+    zoom: 14 // starting zoom
 });
 
 
