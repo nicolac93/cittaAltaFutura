@@ -21,6 +21,7 @@ include("session.php");
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -96,7 +97,6 @@ include("session.php");
         <button type="button" class="btn btn-secondary" value="list"><i class='fa fa-th'></i></button>
         <button type="button" class="btn btn-secondary active" value="table"><i class='fa fa-list'></i></button>
       </div>
-      
       <!-- Table riepilogo -->
 
       <div class="table-responsive" id="table-riepilogo">
@@ -111,7 +111,7 @@ include("session.php");
             <th scope="col">Destinatari</th>
             <th scope="col">Periodo</th>
             <th scope="col">Stato di conservazione</th>
-            <th scope="col">Autore</th>
+            <!--<th scope="col">Autore</th>-->
             <th scope="col">Numero voti</th>
             <th scope="col">Vota!</th>
           </tr>
@@ -141,9 +141,9 @@ include("session.php");
                   <td><?php echo $row['destinatari']?></td>
                   <td><?php echo $row['periodo']?></td>
                   <td><?php echo $row['conservazione']?></td>
-                  <td><?php echo $row['username']?></td>
+                  <!--<td><?php //echo $row['username']?></td>-->
                   <td>??</td>
-                  <td>Vota</td>
+                  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Vota!</button></td>
                 </tr>                
 
                 
@@ -210,6 +210,27 @@ include("session.php");
       <!-- /.container -->
     </footer>
 
+
+    <!-- dialog -->
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Vota</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <button type="button" class="btn btn-success"><i class='far fa-thumbs-up' style='font-size:24px'></i> Mi piace</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class='far fa-thumbs-down' style='font-size:24px'></i> Non mi piace</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
     <script>
         var login = document.getElementById("login");
         var logout = document.getElementById("logout");
@@ -222,7 +243,7 @@ include("session.php");
             login.style.display = "none";
             logout.style.display = "inline-block";
             user.style.display = "inline-block";
-        }
+        }        
     </script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
