@@ -1,9 +1,11 @@
 #portfoglio-riepilogo{
     display:none;
 }
-
 #table-riepilogo{
-    display: inline;
+    display: none;
+}
+#map-riepilogo{
+    display:block;
 }
 
 .section-heading {
@@ -77,3 +79,66 @@ hr.light {
 #logout, #user {
     display: none;
 }
+
+/*MAPPA su riepilogo.php*/
+/*#map {  height: 600px; width: 96%; margin: 2%}*/
+#map { width:100%; height:600px; margin-bottom: 2%;}
+/*.map-overlay .map-overlay-inner {
+    background-color: #fff;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.10);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+}*/
+
+/*.map-overlay-inner fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+.map-overlay-inner fieldset:last-child {
+    margin: 0;
+}
+
+.map-overlay-inner select {
+    width: 100%;
+}
+
+.map-overlay-inner label {
+    display: block;
+    font-weight: bold;
+    margin: 0 0 5px;
+}*/
+#menu {
+    position: absolute;
+    background: #fff;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 2;
+
+    background-color: #e9ecef;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.10);
+    border-radius: 3px;
+}
+/*#menu label,input{
+    text-align: center;
+    vertical-align: middle;
+    alignment-adjust: middle;
+}*/
+
+#marker {
+    background-image: url('../img/No_image_available.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+    z-index: 2;
+}
+

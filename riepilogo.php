@@ -27,6 +27,8 @@ include("session.php");
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/cittaAltaFutura.css" rel="stylesheet">
 
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
   </head>
 
   <body>
@@ -70,15 +72,15 @@ include("session.php");
     <div class="container">
 
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Full Width
-        <small>Subheading</small>
+      <h1 class="mt-4 mb-3">Città Alta Futura
+        <small>inchiesta partecipativa</small>
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="index.php">Home</a>
         </li>
-        <li class="breadcrumb-item active">Full Width</li>
+        <li class="breadcrumb-item active">Città Alta Futura</li>
       </ol>
 
       <!--div class="btn-group btn-group-toggle" data-toggle="buttons" id="radio-riepilogo-toggle">
@@ -93,12 +95,59 @@ include("session.php");
         </label>
       </div> -->
       <div id="selector" class="btn-group">
-        <button type="button" class="btn btn-secondary" value="map"><i class='fa fa-map'></i></button>
+        <button type="button" class="btn btn-secondary active" value="map"><i class='fa fa-map'></i></button>
         <button type="button" class="btn btn-secondary" value="list"><i class='fa fa-th'></i></button>
-        <button type="button" class="btn btn-secondary active" value="table"><i class='fa fa-list'></i></button>
+        <button type="button" class="btn btn-secondary" value="table"><i class='fa fa-list'></i></button>
       </div>
+      
+      <!-- Map segnalazioni -->   
+      <div id="map-riepilogo">
+<!--        <div class='map-overlay top'>
+          <div class='map-overlay-inner'>
+              <fieldset>
+                  <label>Select layer</label>
+                  <select id='layer' name='layer'>
+                      <option value='water'>Water</option>
+                      <option value='building'>Buildings</option>
+                  </select>
+              </fieldset>
+              <fieldset>
+                  <label>Choose a color</label>
+                  <div id='swatches'></div>
+              </fieldset>
+          </div>
+        </div>-->
+        <div id='menu'>
+            <div>
+                <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
+                <label for='basic'>base</label>
+            </div>
+            <div>
+                <input id='streets' type='radio' name='rtoggle' value='streets'>
+                <label for='streets'>strade</label>
+            </div>
+            <div>
+                <input id='bright' type='radio' name='rtoggle' value='bright'>
+                <label for='bright'>vivace</label>
+            </div>
+            <div>
+                <input id='light' type='radio' name='rtoggle' value='light'>
+                <label for='light'>chiara</label>
+            </div>
+            <div>
+                <input id='dark' type='radio' name='rtoggle' value='dark'>
+                <label for='dark'>scuro</label>
+            </div>
+            <div>
+                <input id='satellite' type='radio' name='rtoggle' value='satellite'>
+                <label for='satellite'>satellite</label>
+            </div>
+        </div>
+        <div id='map'></div>
+      </div>
+      <!-- End of Map segnalazioni -->  
+      
       <!-- Table riepilogo -->
-
       <div class="table-responsive" id="table-riepilogo">
       <table class="table table-striped">
         <thead class="thead-light">
@@ -252,6 +301,7 @@ include("session.php");
 
     <!-- Me Js -->
     <script src="js/riepilogo.js"></script>
+    <script src="map.js"></script>
   </body>
 
 </html>
