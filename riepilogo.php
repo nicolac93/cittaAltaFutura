@@ -167,7 +167,7 @@ include("session.php");
         <tbody>
 
           <?php
-            $sql = "SELECT * FROM segnalazioni JOIN utenti ON segnalazioni.id_utente = utenti.id";
+            $sql = "SELECT *, segnalazioni.id as idSegnalazione FROM segnalazioni JOIN utenti ON segnalazioni.id_utente = utenti.id";
           
             if (mysqli_query($conn, $sql)) {
               echo "";
@@ -179,10 +179,9 @@ include("session.php");
             
             if(mysqli_num_rows($result)>0){
               while($row = mysqli_fetch_assoc($result)){ ?>
-
                 <tr>
                   <td ><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></td>
-                  <td><?php echo $row['titolo']?></td>
+                  <td><a href=<?php echo 'segnalazione.php?id='.$row['idSegnalazione']?>><?php echo $row['titolo']?></a></td>
                   <td><?php echo $row['tipologia']?></td>
                   <td><?php echo $row['proposta']?></td>
                   <td><?php echo $row['motivazione']?></td>
