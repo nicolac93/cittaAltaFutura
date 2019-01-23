@@ -71,7 +71,7 @@ $id_segnalazione = $_GET["id"];
     <div class="container">
 
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Full Width
+      <!--<h1 class="mt-4 mb-3">Full Width
         <small>Subheading</small>
       </h1>
 
@@ -80,7 +80,7 @@ $id_segnalazione = $_GET["id"];
           <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item active">Full Width</li>
-      </ol>
+      </ol>-->
 
       <?php
         $sql = "SELECT * FROM segnalazioni JOIN utenti ON segnalazioni.id_utente = utenti.id WHERE segnalazioni.id = ".$id_segnalazione;
@@ -97,7 +97,7 @@ $id_segnalazione = $_GET["id"];
           while($row = mysqli_fetch_assoc($result)){
       ?>
       
-      <h1><?php echo $row['titolo'] ?></h1>
+      <h1 class="mt-4 mb-3"><?php echo $row['titolo'] ?></h1>
 
       <div class="row">
         <div class="col-lg-4">

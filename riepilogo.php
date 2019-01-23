@@ -74,14 +74,14 @@ include("session.php");
       <h1 class="mt-4 mb-3">Città Alta Futura
         <small>inchiesta partecipativa</small>
       </h1>
-
+      <!--
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item active">Città Alta Futura</li>
       </ol>
-
+      -->
       <!--div class="btn-group btn-group-toggle" data-toggle="buttons" id="radio-riepilogo-toggle">
         <label class="btn btn-secondary active">
           <input type="radio" name="options" value="map" id="optionMap" autocomplete="off" checked> <i class='fa fa-map'></i>
@@ -94,9 +94,9 @@ include("session.php");
         </label>
       </div> -->
       <div id="selector" class="btn-group">
-        <button type="button" class="btn btn-secondary active" value="map"><i class='fa fa-map'></i></button>
-        <button type="button" class="btn btn-secondary" value="list"><i class='fa fa-th'></i></button>
-        <button type="button" class="btn btn-secondary" value="table"><i class='fa fa-list'></i></button>
+        <button type="button" class="btn btn-secondary active" value="map"><i class='fa fa-map'></i> Mappa</button>
+        <button type="button" class="btn btn-secondary" value="list"><i class='fa fa-th'></i> Riepilogo Lista</button>
+        <button type="button" class="btn btn-secondary" value="table"><i class='fa fa-list'></i> Riepilogo tabella</button>
       </div>
       
       <!-- Map segnalazioni -->   
@@ -223,7 +223,7 @@ include("session.php");
             <a href="#"><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#"><?php echo $row['titolo']?></a>
+              <a href=<?php echo 'segnalazione.php?id='.$row['idSegnalazione']?>><?php echo $row['titolo']?></a>
               </h4>
               <p class="card-text"><strong>Destinatari: </strong><?php echo $row['destinatari']?></p>
               <p class="card-text"><strong>Proposta: </strong><?php echo $row['proposta']?></p>
