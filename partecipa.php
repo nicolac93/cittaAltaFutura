@@ -15,10 +15,10 @@ include("session.php");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Riepilogo</title>
+    <title>Partecipa</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
 
@@ -35,23 +35,23 @@ include("session.php");
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="index.php">Città Alta Futura</a>
+          <a class="navbar-brand" href="index.php">Città Alta Plurale</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="about.html">Progetto</a>
+                <a class="nav-link" href="partecipa.php">Partecipa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html">Partecipa</a>
+                <a class="nav-link" href="services.html">Il Progetto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contatti</a>
+                <a class="nav-link" href="contact.html">Statistiche</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="faq.html">FAQ</a>
+                <a class="nav-link" href="faq.html">Calendario</a>
               </li>
               <li class="nav-item" id="login">
                 <a class="nav-link" href="login.php"> Login</a>
@@ -71,7 +71,7 @@ include("session.php");
     <div class="container">
 
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Città Alta Futura
+      <h1 class="mt-4 mb-3">Città Alta Plurale
         <small>inchiesta partecipativa</small>
       </h1>
       <!--
@@ -93,56 +93,54 @@ include("session.php");
           <input type="radio" name="options" value="table" id="optionTable" autocomplete="off"> <i class='fa fa-list'></i>
         </label>
       </div> -->
-      <div id="selector" class="btn-group">
-        <button type="button" class="btn btn-secondary active" value="map"><i class='fa fa-map'></i> Mappa</button>
-        <button type="button" class="btn btn-secondary" value="list"><i class='fa fa-th'></i> Riepilogo Lista</button>
-        <button type="button" class="btn btn-secondary" value="table"><i class='fa fa-list'></i> Riepilogo tabella</button>
+      <br>
+      <br>
+      <div class="row" id="tematica">
+          <div class="col-sm">
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="accessibilita" id="buttonAccessibilita"><i class='fas fa-bicycle'></i> Accessibilità</button>
+          </div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fas fa-building'></i> Funzioni del costruito</button>
+          </div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='far fa-building'></i> Spazi inutilizzati</button>
+          </div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-list'></i> Città Alta plurale</button>
+          </div>
       </div>
-      
+
+      <br>
+
+      <!--
+      <div class="row">
+        <div id="selector" class="btn-group">
+          <button type="button" class="btn btn-secondary active" value="map"><i class='fa fa-map'></i> Mappa</button>
+          <button type="button" class="btn btn-secondary" value="list"><i class='fa fa-th'></i> Riepilogo Lista</button>
+          <button type="button" class="btn btn-secondary" value="table"><i class='fa fa-list'></i> Riepilogo tabella</button>
+        </div>
+      </div>
+      -->
       <!-- Map segnalazioni -->   
       <div id="map-riepilogo">
-<!--        <div class='map-overlay top'>
-          <div class='map-overlay-inner'>
-              <fieldset>
-                  <label>Select layer</label>
-                  <select id='layer' name='layer'>
-                      <option value='water'>Water</option>
-                      <option value='building'>Buildings</option>
-                  </select>
-              </fieldset>
-              <fieldset>
-                  <label>Choose a color</label>
-                  <div id='swatches'></div>
-              </fieldset>
+        <div id="menuLayer" class="dropdown" >
+          <button class="btn btn-circle dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='fas fa-layer-group'></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" id='basic-v9' onclick="switchLayer('basic')">base</a>
+              <a class="dropdown-item" id='streets-v9' onclick="switchLayer('streets')">streets</a>
+              <a class="dropdown-item" id='light-v9' onclick="switchLayer('light')">light</a>
+              <a class="dropdown-item" id='dark-v9'onclick="switchLayer('dark')">dark</a>
+              <a class="dropdown-item" id='outdoors-v9' onclick="switchLayer('outdoors')"> outdoors</a>
+              <a class="dropdown-item" id='satellite-v9' onclick="switchLayer('satellite')">satellite</a>
           </div>
-        </div>-->
-        <div id='menu'>
-            <div>
-                <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
-                <label for='basic'>base</label>
-            </div>
-            <div>
-                <input id='streets' type='radio' name='rtoggle' value='streets'>
-                <label for='streets'>strade</label>
-            </div>
-            <div>
-                <input id='bright' type='radio' name='rtoggle' value='bright'>
-                <label for='bright'>vivace</label>
-            </div>
-            <div>
-                <input id='light' type='radio' name='rtoggle' value='light'>
-                <label for='light'>chiara</label>
-            </div>
-            <div>
-                <input id='dark' type='radio' name='rtoggle' value='dark'>
-                <label for='dark'>scuro</label>
-            </div>
-            <div>
-                <input id='satellite' type='radio' name='rtoggle' value='satellite'>
-                <label for='satellite'>satellite</label>
-            </div>
         </div>
+
+        <div class=map-overlay id="leggend"></div>
+
         <div id='map'></div>
+        <pre id='coordinates' class='coordinates'></pre>
       </div>
       <!-- End of Map segnalazioni -->  
       
@@ -241,7 +239,12 @@ include("session.php");
       ?>
       </div>
       <!-- End Portfoglio -->
-
+      
+      <!-- Questionario -->
+      <div class="jumbotron" >
+        <div id="questionario"></div>
+      </div>
+      <!-- Fine questionario -->
       
 
 
@@ -252,29 +255,39 @@ include("session.php");
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2018</p>
+
+        <div class="row">
+          <div class="col-lg-12 text-center">
+              <img src="img/LogoDiathesis.jpg" height="112">
+              <br>
+              <br>
+              <p class="m-0 text-center text-white"><strong>CST - DiathesisLab</strong>
+                  <br>Via Salvecchio 19,  24129 Bergamo</p>
+              <ul class="list-unstyled">
+                  <li><i class="fa fa-envelope-o fa-fw"></i> <a href="https://www.unibg.it/ricerca/strutture-ricerca/centri-ateneo/cst/diathesis-lab">http://www.unibg.it/diathesis</a>
+                  </li>
+                  <li>
+                      <i class="fa fa-envelope-o fa-fw"></i><a href="">diathesis@unibg.it</a>
+                  </li>
+              </ul>
+              <hr class="small">
+              <ul class="list-inline">
+                  <li>
+                      <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                  </li>
+              </ul>
+              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2019</p>
+          </div>
+        </div>
       </div>
-      <!-- /.container -->
     </footer>
 
 
     <!-- dialog -->
-    <div class="modal" tabindex="-1" role="dialog" id="myModal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Vota</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          <button type="button" class="btn btn-success"><i class='far fa-thumbs-up' style='font-size:24px'></i> Mi piace</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class='far fa-thumbs-down' style='font-size:24px'></i> Non mi piace</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+</div>
 
 
 
@@ -290,7 +303,7 @@ include("session.php");
             login.style.display = "none";
             logout.style.display = "inline-block";
             user.style.display = "inline-block";
-        }        
+        }
     </script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

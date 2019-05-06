@@ -2325,7 +2325,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem;
+  border-radius: 0.0rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -2396,19 +2396,20 @@ fieldset:disabled a.btn {
 }
 
 .btn-secondary {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  color: #47547e;
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
 }
 
 .btn-secondary:hover {
-  color: #fff;
-  background-color: #5a6268;
-  border-color: #545b62;
+  box-shadow: 0 0 0 0.2rem rgb(71, 84, 126);
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  color: #fff;
+  background-color: #47547e;
+  border-color: #47547e;
+  
 }
 
 .btn-secondary.disabled, .btn-secondary:disabled {
@@ -2933,14 +2934,14 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 0.0rem;
 }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  border-radius: 0.0rem;
 }
 
 .btn-block {
@@ -6174,7 +6175,7 @@ button.bg-dark:focus {
 .border-danger {
   border-color: #dc3545 !important;
 }
-
+s
 .border-light {
   border-color: #f8f9fa !important;
 }

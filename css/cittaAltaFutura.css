@@ -73,6 +73,16 @@ hr.light {
   vertical-align: middle;
 }
 
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+  }
+
 #login{
     display: inline-block;
 }
@@ -110,16 +120,16 @@ hr.light {
     font-weight: bold;
     margin: 0 0 5px;
 }*/
-#menu {
-    position: absolute;
+#changeLayer {
     background: #fff;
-    padding: 10px;
-    font-family: 'Open Sans', sans-serif;
+    position: absolute;
     z-index: 2;
-
-    background-color: #e9ecef;
-    box-shadow:0 1px 2px rgba(0, 0, 0, 0.10);
+    top: 10px;
+    right: 10px;
     border-radius: 3px;
+    width: 120px;
+    border: 1px solid rgba(0,0,0,0.4);
+    font-family: 'Open Sans', sans-serif;
 }
 /*#menu label,input{
     text-align: center;
@@ -140,5 +150,56 @@ hr.light {
 .mapboxgl-popup {
     max-width: 200px;
     z-index: 2;
+}
+
+.coordinates {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding:5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
+
+.domanda{
+    color: blue;
+}
+
+#menuLayer{
+    position: absolute;
+    z-index: 2;
+    margin: 10px;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+    margin-right: 20px;
+    font-family: Arial, sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+    z-index: 3;
+}
+#legend {
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+    line-height: 18px;
+    height: 150px;
+    margin-bottom: 40px;
+    width: 100px;
+}
+.legend-key {
+    display:inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
 }
 
