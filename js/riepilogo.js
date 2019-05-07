@@ -135,3 +135,176 @@ function submitAccessibilita(){
     });
 
 }
+
+function submitFunzioniCostruito(){
+    var userID;
+    var domanda1 = null;
+    var domanda1_dettagli = null;
+
+    var domanda2 = null;
+    var domanda2_dettagli = null;
+
+    var domanda3 = null;
+    var domanda3_dettagli = null;
+
+    var domanda4 = null;
+    var domanda41 = null;
+    var domanda42 = null;
+
+    var domanda5 = null;
+    var domanda51 = null;
+    var domanda51_dettagli = null;
+
+    var domanda6 = null;
+    var domanda61 = null;
+    var domanda61_dettagli =  null;
+
+    var domanda7 = null;
+    var domanda7_dettagli = null;
+
+}
+
+function submitSpaziInutilizzati(){
+    var userID;
+    var domanda1 = null;
+    var domanda1_dettagli = null;
+
+    if(document.getElementById("domanda11").checked)
+        domanda1 = 1;
+    else if(document.getElementById("domanda12").checked)
+        domanda1 = 2;
+    else if(document.getElementById("domanda13").checked)
+        domanda1 = 3;
+    else if(document.getElementById("domanda14").checked){
+        domanda1 = 4;
+        domanda1_dettagli = document.getElementById("domanda14_dettagli").value;
+    }
+
+
+    var domanda2 = null;
+    var domanda2_dettagli = null;
+
+    if(document.getElementById("domanda21").checked)
+        domanda2 = 1;
+    else if(document.getElementById("domanda22").checked)
+        domanda2 = 2;
+    else if(document.getElementById("domanda23").checked)
+        domanda2 = 3;
+    else if(document.getElementById("domanda24").checked)
+        domanda2 = 4;
+    else if(document.getElementById("domanda25").checked){
+        domanda2 = 5;
+        domanda2_dettagli = document.getElementById("domanda25_dettagli").value;
+    }
+
+    var domanda3 = document.getElementById("domanda3").value;
+
+    var userID = 2;
+    $.ajax({
+        type: "POST",
+        url: "./addSurvey/addSpaziInutilizzati.php",
+        data: "USER_ID=" + userID +  
+            "&DOMANDA_1=" + domanda1 +
+            "&DOMANDA_1_DETTAGLI=" + domanda1_dettagli +
+            "&DOMANDA_2=" + domanda2 + 
+            "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
+            "&DOMANDA_3=" + domanda3,
+        dataType: "html",
+        success: function(msg){
+            alert(msg);
+        },  
+    });
+    
+}
+
+
+function subimtCittaAltaFutura(){
+    var userID;
+    var domanda1 = null;
+    var domanda1_dettagli = null;
+
+    if(document.getElementById("domanda11").checked)
+        domanda1 = 1;
+    else if(document.getElementById("domanda12").checked)
+        domanda1 = 2;
+    else if(document.getElementById("domanda13").checked)
+        domanda1 = 3;
+    else if(document.getElementById("domanda14").checked){
+        domanda1 = 4;
+        domanda1_dettagli = document.getElementById("domanda14_dettagli").value;
+    }
+
+    var domanda2 = null;
+    var domanda2_dettagli = null;
+
+    if(document.getElementById("domanda21").checked){
+        domanda2 = 4;
+        domanda2_dettagli = document.getElementById("domanda21_dettagli").value;
+    }
+    else if(document.getElementById("domanda22").checked){
+        domanda2 = 4;
+        domanda2_dettagli = document.getElementById("domanda22_dettagli").value;
+    }
+    else if(document.getElementById("domanda23").checked){
+        domanda2 = 4;
+        domanda2_dettagli = document.getElementById("domanda23_dettagli").value;
+    }
+    else if(document.getElementById("domanda24").checked){
+        domanda2 = 4;
+        domanda2_dettagli = document.getElementById("domanda24_dettagli").value;
+    }
+    else if(document.getElementById("domanda25").checked){
+        domanda2 = 4;
+        domanda2_dettagli = document.getElementById("domanda25_dettagli").value;
+    }
+    else if(document.getElementById("domanda26").checked){
+        domanda2 = 4;
+        domanda2_dettagli = document.getElementById("domanda26_dettagli").value;
+    }
+
+    var domanda3 = null;
+    var domanda3_dettagli = null;
+
+    if(document.getElementById("domanda31").checked){
+        domanda3 = 4;
+        domanda3_dettagli = document.getElementById("domanda31_dettagli").value;
+    }
+    else if(document.getElementById("domanda32").checked){
+        domanda3 = 4;
+        domanda3_dettagli = document.getElementById("domanda32_dettagli").value;
+    }
+    else if(document.getElementById("domanda33").checked){
+        domanda3 = 4;
+        domanda3_dettagli = document.getElementById("domanda33_dettagli").value;
+    }
+    else if(document.getElementById("domanda34").checked){
+        domanda3 = 4;
+        domanda3_dettagli = document.getElementById("domanda34_dettagli").value;
+    }
+    else if(document.getElementById("domanda35").checked){
+        domanda3 = 4;
+        domanda3_dettagli = document.getElementById("domanda35_dettagli").value;
+    }
+    else if(document.getElementById("domanda36").checked){
+        domanda3 = 4;
+        domanda3_dettagli = document.getElementById("domanda36_dettagli").value;
+    }
+
+    var userID = 2;
+    $.ajax({
+        type: "POST",
+        url: "./addSurvey/addCittaAltaFutura.php",
+        data: "USER_ID=" + userID +  
+            "&DOMANDA_1=" + domanda1 +
+            "&DOMANDA_1_DETTAGLI=" + domanda1_dettagli +
+            "&DOMANDA_2=" + domanda2 + 
+            "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
+            "&&DOMANDA_3=" + domanda3 + 
+            "&DOMANDA_3_DETTAGLI=" + domanda3_dettagli,
+        dataType: "html",
+        success: function(msg){
+            alert(msg);
+        },  
+    });
+
+}
