@@ -52,7 +52,7 @@ body, html {
 
     /* Background image */
 .bg-img {
-    background-image: url("/Immagini/path_bike_1920x1080.jpg");
+    background-image: url("img/bergamo.jpg");
     min-height: 100%;
     background-position: center;
     background-size: cover;
@@ -113,7 +113,7 @@ input[type=text]:focus, input[type=password]:focus {
   
   <div class="w3-display-topright w3-padding-large w3-xlarge">
     <a href="index.php">
-        <img src="/Immagini/logoUnibg.png" style="width:216px;height:72px">
+        <img src="img/logoUnibg.png" style="width:216px;height:72px">
     </a>
   </div>
   
