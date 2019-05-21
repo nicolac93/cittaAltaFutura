@@ -45,13 +45,16 @@ include("session.php");
                 <a class="nav-link" href="partecipa.php">Partecipa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html">Il Progetto</a>
+                <a class="nav-link" href="progetto.php">Il Progetto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Statistiche</a>
+                <a class="nav-link" href="stats.php">Statistiche</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="faq.html">Calendario</a>
+                <a class="nav-link" href="calendario.php">Calendario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.php">Contatti</a>
               </li>
               <li class="nav-item" id="login">
                 <a class="nav-link" href="login.php"> Login</a>
