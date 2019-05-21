@@ -111,7 +111,7 @@ input[type=text]:focus, input[type=password]:focus {
 
   <div class="bg-img">
   
-  <div class="w3-display-topright w3-padding-large w3-xlarge">
+  <div class="w3-display-bottomright w3-padding-large w3-xlarge">
     <a href="index.php">
         <img src="img/logoUnibg.png" style="width:216px;height:72px">
     </a>

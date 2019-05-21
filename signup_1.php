@@ -151,7 +151,7 @@ session_start();
 
                 /* Background image */
             .bg-img {
-                background-image: url("/Immagini/path_bike_1920x1080.jpg");
+                background-image: url("img/bergamo.jpg");
                 min-height: 100%;
                 background-position: center;
                 background-size: cover;
@@ -197,14 +197,14 @@ session_start();
     <body>
         <div class="bg-img">
   
-            <div class="w3-display-topright w3-padding-large w3-xlarge">
+            <div class="w3-display-bottomright w3-padding-large w3-xlarge">
               <a href="login.php">
-                  <img src="/Immagini/logoUnibg.png" style="width:216px;height:72px">
+                  <img src="img/logoUnibg.png" style="width:216px;height:72px">
               </a>
             </div>
         
             <div class="w3-display-middle">
-                <form action="<?php echo str_replace(".php","",htmlspecialchars($_SERVER["PHP_SELF"])); ?>" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="wrapper" id="phase1">
                         <h2>Sign Up</h2>
                         <p>Please fill this form to create an account.</p>
