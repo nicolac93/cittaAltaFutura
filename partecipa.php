@@ -103,7 +103,7 @@ include("session.php");
             <button type="button" class="btn btn-secondary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fas fa-building'></i> Funzioni del costruito</button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='far fa-building'></i> Spazi inutilizzati</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='far fa-building'></i> Spazi da riqualificare</button>
           </div>
           <div class="col-sm">
             <button type="button" class="btn btn-secondary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-list'></i> Città Alta plurale</button>
@@ -240,16 +240,37 @@ include("session.php");
       </div>
       <!-- End Portfoglio -->
       
-      <!-- Questionario -->
-      <div class="jumbotron" >
-        <div id="questionario"></div>
-      </div>
+      <!-- Questionario <div id="questionario"></div> -->
+      <!-- <div class="jumbotron" > -->
+        
+      
       <!-- Fine questionario -->
+
+      <!-- tabs -->
+      <h3>Esprimi la tua opinione</h3>
+      <button type="button" class="btn btn-primary float-right" id="buttonAddSegnalazione" onclick="addSegnalazione()"><i class='fas fa-bicycle'></i> Completa la mappa</button>
+
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-accessiblita-tab" data-toggle="tab" href="#nav-accessiblita" role="tab" aria-controls="nav-accessiblita" aria-selected="true"><i class='fas fa-bicycle'></i> Accessibilità</a>
+            <a class="nav-item nav-link" id="nav-funzioniCostruito-tab" data-toggle="tab" href="#nav-funzioniCostruito" role="tab" aria-controls="nav-funzioniCostruito" aria-selected="false"><i class='fas fa-building'></i> Funzioni del costruito</a>
+            <a class="nav-item nav-link" id="nav-spaziInutilizzati-tab" data-toggle="tab" href="#nav-spaziInutilizzati" role="tab" aria-controls="nav-spaziInutilizzati" aria-selected="false"><i class='far fa-building'></i> Spazi da riqualificare</a>
+            <a class="nav-item nav-link" id="nav-cittaAltaFutura-tab" data-toggle="tab" href="#nav-cittaAltaFutura" role="tab" aria-controls="nav-cittaAltaFutura" aria-selected="false"><i class='fa fa-list'></i> Città Alta plurale</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-accessiblita" role="tabpanel" aria-labelledby="nav-accessiblita-tab"><div class="jumbotron" ><div id="navSurveyAccessibilita"></div></div></div>
+          <div class="tab-pane fade" id="nav-funzioniCostruito" role="tabpanel" aria-labelledby="nav-funzioniCostruito-tab"><div class="jumbotron" ><div id="navSurveyFunzioniCostruito"></div></div></div>
+          <div class="tab-pane fade" id="nav-spaziInutilizzati" role="tabpanel" aria-labelledby="nav-spaziInutilizzati-tab"><div class="jumbotron" ><div id="navSurveySpaziInutilizzati"></div></div></div>
+          <div class="tab-pane fade" id="nav-cittaAltaFutura" role="tabpanel" aria-labelledby="nav-cittaAltaFutura-tab"><div class="jumbotron" ><div id="navSurveyCittaAltaFutura"></div></div></div>
+        </div>
+      </div>
+      <!-- fine tabs -->
       
 
 
       
-    </div>
+    <!-- </div> -->
     <!-- /.container -->
 
     <!-- Footer -->
@@ -286,7 +307,50 @@ include("session.php");
     <!-- dialog -->
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  
+
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Aggiungi una proposta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+          
+          <div class="form-group">
+          <label for="exampleFormControlInput1">Nome del luogo</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+          </div>
+          
+          <div class="form-group">
+          <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>Collegamento con le altre aree della città</option>
+              <option>Trasporto pubblico</option>
+              <option>Mobilità verde e condivisa</option>
+              <option>Mobilità privata</option>
+              <option>Altimetria</option>
+          </select>
+          </div>
+          <div class="form-group">
+          <label for="exampleFormControlTextarea1">Motivazione</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+          <label for="exampleFormControlFile1">Carica la tua fotografia</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+
+
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+          <button type="button" class="btn btn-primary" id="buttonProposta">Invia proposta</button>
+          </div>
+      </div>
+  </div>     
+
 </div>
 
 

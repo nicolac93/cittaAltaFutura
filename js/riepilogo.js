@@ -23,20 +23,34 @@ $('#tematica button').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
 
     if($(this).val() == 'accessibilita') { 
-        $("#questionario").load("survey/accessibilita.html");
+        $('#nav-accessiblita-tab').tab('show');
     }
     else if($(this).val() == 'costruito') { 
-        $("#questionario").load("survey/funzioniCostruito.html");
-        alert("ciao");
-        $("#leggend").load("leggenda/costruitoLeggend.html");
+        //$("#leggend").load("leggenda/costruitoLeggend.html");
+        $('#nav-funzioniCostruito-tab').tab('show');
     }
     else if($(this).val() == 'spaziInutilizzati') { 
-        $("#questionario").load("survey/spaziInutilizzati.html");
+        $('#nav-spaziInutilizzati-tab').tab('show');
     }
     else if($(this).val() == 'cittaAltaPlurale') { 
-        $("#questionario").load("survey/cittaAltaFutura.html");
+        $('#nav-cittaAltaFutura-tab').tab('show');
     }
 });
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    if($('.tab-content .active')[0].id == "nav-accessiblita"){
+        $("#buttonAddSegnalazione").html("<i class='fas fa-bicycle'></i> Completa la mappa");
+    }
+    else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
+        $("#buttonAddSegnalazione").html("<i class='fas fa-building'></i> Completa la mappa");
+    }
+    else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
+        $("#buttonAddSegnalazione").html("<i class='far fa-building'></i> Completa la mappa");
+    }
+    else if($('.tab-content .active')[0].id == "nav-cittaAltaFutura"){
+        $("#buttonAddSegnalazione").html("<i class='fa fa-list'></i> Completa la mappa");
+    }
+});   
 
 
 $('#myModal').on('shown.bs.modal', function () {
@@ -45,8 +59,11 @@ $('#myModal').on('shown.bs.modal', function () {
 
 $('.dropdown-toggle').dropdown();
 
-$(function(){
-    $("#questionario").load("survey/accessibilita.html"); 
+$(function(){    
+    $("#navSurveyAccessibilita").load("survey/accessibilita.html");
+    $("#navSurveyFunzioniCostruito").load("survey/funzioniCostruito.html");
+    $("#navSurveySpaziInutilizzati").load("survey/spaziInutilizzati.html");
+    $("#navSurveyCittaAltaFutura").load("survey/cittaAltaFutura.html");
 });
 
 $("#buttonProposta").on("click", function(){
@@ -264,7 +281,7 @@ function submitFunzioniCostruito(){
             "&DOMANDA_6=" + domanda6 +
             "&DOMANDA_61=" + domanda61 + 
             "&DOMANDA_61_DETTAGLI=" + domanda61_dettagli +
-            "&DOMANDA_7" + domanda7 + 
+            "&DOMANDA_7=" + domanda7 + 
             "&DOMANDA_7_DETTAGLI=" + domanda7_dettagli,
         dataType: "html",
         success: function(msg){
