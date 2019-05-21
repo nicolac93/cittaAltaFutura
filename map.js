@@ -63,17 +63,7 @@ new mapboxgl.Marker(el3)
     .addTo(map);
 
 // create the popup
-var popup4 = new mapboxgl.Popup({ offset: 25 })
-    .setText('Fermare i lavori di realizzazione del parcheggio.');
-// create DOM element for the marker
-var el4 = document.createElement('div');
-el4.id = 'marker';
-el4.style.backgroundImage = "url('img/parcheggioFara.jpg')";
-// create the marker
-new mapboxgl.Marker(el4)
-    .setLngLat([9.666543, 45.706045])
-    .setPopup(popup4) // sets a popup on this marker
-    .addTo(map);
+
 
 /*	
 map.on('load', function() {
@@ -256,3 +246,57 @@ function loadLayer(nameLayer, colorLayer){
 }
 
 
+
+function addSegnalazione(){
+    alert("Clicca sul luogo che vuoi fare una segnalazione");
+
+    if($('.tab-content .active')[0].id == "nav-accessiblita"){
+
+    }
+    else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
+
+    }
+    else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
+
+    }
+    else if($('.tab-content .active')[0].id == "nav-cittaAltaFutura"){
+
+    }
+
+    map.on('click', addMarker);
+    
+    var popup4 = new mapboxgl.Popup({ offset: 25 })
+    .setText('Fermare i lavori di realizzazione del parcheggio.');
+// create DOM element for the marker
+var el4 = document.createElement('div');
+el4.id = 'marker';
+el4.style.backgroundImage = "url('img/parcheggioFara.jpg')";
+// create the marker
+new mapboxgl.Marker(el4)
+    .setLngLat([9.666543, 45.706045])
+    .setPopup(popup4) // sets a popup on this marker
+    .addTo(map);
+
+    
+
+}
+
+function addMarker(e){
+
+    alert("add");
+
+    //$("#exampleModal").load("modalNewProposta/modalAccessibilita.html");
+    $('#exampleModal').modal();
+
+ /*   if (typeof circleMarker !== "undefined" ){ 
+      map.removeLayer(circleMarker);         
+    }
+    //add marker
+    circleMarker = new  L.circle(e.latlng, 200, {
+                  color: 'red',
+                  fillColor: '#f03',
+                  fillOpacity: 0.5
+              }).addTo(map);
+*/
+    map.off('click', addMarker);            
+}
