@@ -42,7 +42,7 @@ function sendMail($SMusername,$SMname,$SMsurname){
     $mail->Subject = 'Registrazione Città Alta Plurale';
     $code = hash("crc32b", $SMusername); // Creates a code from the mail
     $mail->Body    = "Benvenuto " . $SMname . ",<BR><BR>"
-            ."Per procedere alla registrazione sul sistema partecipativo di Città Alta Futura, <BR>"
+            ."Per procedere alla registrazione sul sistema partecipativo di Città Alta plurale, <BR>"
             . "ti servirà il seguente codice: <BR> <b>".$code."</b>"
             ."<BR> Grazie per la collaborazione!";
     $mail->AltBody = "Benvenuto " . $SMname . ",\n\n"
