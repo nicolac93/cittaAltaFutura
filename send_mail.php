@@ -27,10 +27,10 @@ function sendMail($SMusername,$SMname,$SMsurname){
     $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
 
     $mail->From = 'calcolatore.co2@gmail.com';
-    $mail->FromName = 'Co2 Calculator';
+    $mail->FromName = 'Città Alta Plurale';
     $mail->addAddress($SMusername, $SMname . " " . $SMsurname);     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('calcolatore.co2@gmail.com', 'Information');
+    $mail->addReplyTo('calcolatore.co2@gmail.com', 'Informazioni');
 //                    $mail->addCC('mail@studenti.unibg.it');
     //$mail->addBCC('bcc@example.com');
 
@@ -39,26 +39,16 @@ function sendMail($SMusername,$SMname,$SMsurname){
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
     $mail->isHTML(true);                                  // Set email format to HTML
 
-    $mail->Subject = 'Co2 Calculator Account Registration';
+    $mail->Subject = 'Registrazione Città Alta Plurale';
     $code = hash("crc32b", $SMusername); // Creates a code from the mail
-    $mail->Body    = "Welcome " . $SMname . ",<BR><BR> if you want to <b>partecipate to the contest and have a chance to win beautiful prizes</b>,<BR>"
-            . "you will need to activate the google timeline feature, in order to certificate, in case of winning, the correctness of the data inserted manually. <BR>"
-            . "You can find instructions on how activite the feature at the folllowing links:<BR>"
-            . "<a href='https://support.google.com/maps/answer/6258979?co=GENIE.Platform%3DDesktop&hl=en&oco=0'>PC</a>, <a href='https://support.google.com/maps/answer/6258979?co=GENIE.Platform%3DAndroid&hl=en&oco=0'>Android</a>, <a href='https://support.google.com/maps/answer/6258979?co=GENIE.Platform%3DiOS&hl=en&oco=0'>iPhone</a>.<BR>"
-            ."Alternatively, you may decide not to enter the competition and use the site only for your personal interest <BR>"
-            . "in order to improve your impact on the environment which is ultimately our main purpose.<BR><BR>"
-            ."To proceed with the registration you will need the following code: <BR>".$code
-            ."<BR> Thank you for your efforts in this project!";
-    $mail->AltBody = "Welcome " . $SMname . ",\n\n if you want to partecipate to the contest and have a chance to win beautiful prizes,\n"
-            . "you will need to activate the google timeline feature, in order to certificate, in case of winning, the correctness of the data inserted manually. \n"
-            . "You can find instructions on how activite the feature at the folllowing links:\n"
-            . "https://support.google.com/maps/answer/6258979?co=GENIE.Platform%3DDesktop&hl=en&oco=0 PC\n "
-            . "https://support.google.com/maps/answer/6258979?co=GENIE.Platform%3DAndroid&hl=en&oco=0 Android,\n "
-            . "https://support.google.com/maps/answer/6258979?co=GENIE.Platform%3DiOS&hl=en&oco=0 iPhone.\n"
-            ."Alternatively, you may decide not to enter the competition and use the site only for your personal interest \n"
-            . "in order to improve your impact on the environment which is ultimately our main purpose.\n\n"
-            ."To proceed with the registration you will need the following code: \n".$code
-            ."\n Thank you for your efforts in this project!";
+    $mail->Body    = "Benvenuto " . $SMname . ",<BR><BR>"
+            ."Per procedere alla registrazione sul sistema partecipativo di Città Alta Futura, <BR>"
+            . "ti servirà il seguente codice: <BR> <b>".$code."</b>"
+            ."<BR> Grazie per la collaborazione!";
+    $mail->AltBody = "Benvenuto " . $SMname . ",\n\n"
+            ."Per procedere alla registrazione sul sistema partecipativo di Città Alta Futura, \n"
+            . "ti servirà il seguente codice: \n".$code
+            ."\n Grazie per la collaborazione!";
 
     if(!$mail->send()) {
 //        echo 'Message could not be sent.';

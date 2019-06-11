@@ -123,14 +123,14 @@ input[type=text]:focus, input[type=password]:focus {
           <h1>Login</h1>
           <div class="form-group">
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" placeholder="Inserisci un'Email" name="email" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Inserisci una Password" name="psw" required>
                 <h4 class="form-login-error"><?php echo $error; ?></h4>
                 <button type="submit" class="btn" name="login">Login</button>
           </div>
-          <p>Don't have an account? <a href="signup_1.php">Sign up here</a>.</p>
+          <p>Non hai ancora un profilo? <a href="signup_1.php">Registrati qui</a>.</p>
         </div>
     </form>
   </div>

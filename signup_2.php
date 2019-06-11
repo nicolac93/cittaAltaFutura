@@ -8,8 +8,7 @@ session_start();
     
     $username = $_SESSION['username'];
     $name = $_SESSION['name'];
-    $surname = $_SESSION['surname'];
-    $invite = $_SESSION['invite'];
+    $tipo = $_SESSION['tipo'];
     // Define variables and initialize with empty values
     $code = $password = $confirm_password = "";
     $code_err = $password_err = $confirm_password_err = "";
@@ -18,53 +17,51 @@ session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         //Validate the code
         if(empty(trim($_POST['code']))){
-            $code_err = "Please enter the recieved code.";     
+            $code_err = "Perfavore inserisci il codice ricevuto via mail.";     
         } elseif($_POST['code'] != hash("crc32b", $username)){
-            $code_err = "Incorrect code.";
+            $code_err = "Codice errato.";
         } else{
             $code = trim($_POST['code']);
         }
 
         // Validate password
         if(empty(trim($_POST['password']))){
-            $password_err = "Please enter a password.";     
+            $password_err = "Per favore inserisci una password.";     
         } elseif(strlen(trim($_POST['password'])) < 8){
-            $password_err = "Password must have atleast 8 characters.";
+            $password_err = "La password deve avere almeno 8 caratteri.";
         } else{
             $password = trim($_POST['password']);
         }
         
         // Validate confirm password
         if(empty(trim($_POST["confirm_password"]))){
-            $confirm_password_err = 'Please confirm password.';     
+            $confirm_password_err = 'Per favore conferma la password.';     
         } else{
             $confirm_password = trim($_POST['confirm_password']);
             if($password != $confirm_password){
-                $confirm_password_err = 'Password did not match.';
+                $confirm_password_err = 'Le passwords non coincidono!';
             }
         }
         
         // Check input errors before inserting in database
         if(empty($code_err) && empty($password_err) && empty($confirm_password_err)){
             // Prepare an insert statement
-            $sql = "INSERT INTO users (username, password, name, surname, invited_by) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO utenti (mail, password, username, tipo) VALUES (?, ?, ?, ?)";
             if($stmt = mysqli_prepare($conn, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sssss", $param_username, $param_password, $param_name, $param_surname, $param_invite);
+                mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_password, $param_name, $param_tipo);
                 // Set parameters
                 $param_username = mysqli_real_escape_string($conn,$username);
                 $param_name = mysqli_real_escape_string($conn,$name);
-                $param_surname = mysqli_real_escape_string($conn,$surname);
-                $param_invite = mysqli_real_escape_string($conn,$invite);
+                $param_tipo = mysqli_real_escape_string($conn,$tipo);
 //                $param_password = $password; // Creates a password hash
                 $param_password = hash("sha256", mysqli_real_escape_string($conn,$password)); // Creates a password hash
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Redirect to login page
-                    $_SESSION['login_user'] = $username;
-                    header("location: index.php");
+                    header("location: login.php");
                 } else{
-                    echo "Something went wrong. Please try again later.";
+                    echo "Qualcosa è andato storto. Per favore prova ancora fra un pò.";
                 }
             }
             // Close statement
@@ -156,9 +153,9 @@ session_start();
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="wrapper" id="phase2"> 
                         <h2>Sign Up</h2>
-                        <p>Please fill this form to create an account.</p>
+                        <p>Per favore compila i campi per creare un account.</p>
                         <div class="form-group <?php echo (!empty($code_err)) ? 'has-error' : ''; ?>">
-                            <label>Code receveid via mail</label>
+                            <label>Codice ricevuto via mail</label>
                             <input type="text" name="code" value="<?php echo $code; ?>">
                             <span class="help-block"><?php echo $code_err; ?></span>
                         </div>
@@ -168,14 +165,14 @@ session_start();
                             <span class="help-block"><?php echo $password_err; ?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                            <label>Confirm Password</label>
+                            <label>Conferma la Password</label>
                             <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>">
                             <span class="help-block"><?php echo $confirm_password_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn" value="Submit">
+                            <input type="submit" class="btn" value="Registrati">
                         </div>
-                        <p>Already have an account? <a href="login.php">Login here</a>.</p>
+                        <p>Hai già un profilo? <a href="login.php">Accedi qui</a>.</p>
                     </div>
                 </form>
             </div>

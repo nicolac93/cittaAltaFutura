@@ -8,20 +8,20 @@ session_start();
     require_once 'config.php';
     require_once 'send_mail.php';
     // Define variables and initialize with empty values
-    $invite = $username = $name = $surname = "";
-    $invite_err = $username_err = $name_err = $surname_err = "";
+    $username = $name = $tipo = "";
+    $username_err = $name_err = $tipo_err = "";
     $mail_result = $mail_err = "";
     
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Validate username
         if(empty(trim($_POST["username"]))){
-            $username_err = "Please enter an email.";
-        } elseif(!(strpos(trim($_POST["username"]), '@studenti.unibg.it') !== false) or (strpos(trim($_POST["username"]), '@unibg.it') !== false)) {
-            $username_err = "Please enter an unibg valid email.";
+            $username_err = "Per favore inserisci la mail.";
+        } elseif(!(strpos(trim($_POST["username"]), '@') !== false)) {
+            $username_err = "Per favore inserisci una mail valida";
         } else{
             // Prepare a select statement
-            $sql = "SELECT id FROM users WHERE username = ?";
+            $sql = "SELECT id FROM utenti WHERE username = ?";
 
             if($stmt = mysqli_prepare($conn, $sql)){
                 // Bind variables to the prepared statement as parameters
@@ -33,94 +33,51 @@ session_start();
                     /* store result */
                     mysqli_stmt_store_result($stmt);
                     if(mysqli_stmt_num_rows($stmt) == 1){
-                        $username_err = "This email is already taken.";
+                        $username_err = "La mail inserita è già in uso!";
                     } else{
                         $username = trim($_POST["username"]);
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo "Qualcosa è andato storto. Per favore prova ancora fra un pò.";
                 }
             }
             // Close statement
             mysqli_stmt_close($stmt);
         }
         
-        // Validate Invite
-        if(!empty(trim($_POST["invite"]))){
-            if(!(strpos(trim($_POST["invite"]), '@studenti.unibg.it') !== false) or (strpos(trim($_POST["invite"]), '@unibg.it') !== false)) {
-                $invite_err = "Please enter an unibg valid email for the inviting user.";
-            } else{
-            // Prepare a select statement
-                $sql = "SELECT id FROM users WHERE username = ?";
-
-                if($stmt = mysqli_prepare($conn, $sql)){
-                    // Bind variables to the prepared statement as parameters
-                    mysqli_stmt_bind_param($stmt, "s", $param_invite);
-                    // Set parameters
-                    $param_invite = trim($_POST["invite"]);
-                    // Attempt to execute the prepared statement
-                    if(mysqli_stmt_execute($stmt)){
-                        /* store result */
-                        mysqli_stmt_store_result($stmt);
-                        if(mysqli_stmt_num_rows($stmt) == 1){
-                            $invite = trim($_POST["invite"]);
-                        } else{
-                            $invite_err = "The inviter user does not exist!";
-                        }
-                    } else{
-                        echo "Oops! Something went wrong. Please try again later.";
-                    }
-                }
-                // Close statement
-                mysqli_stmt_close($stmt);
-            }
-        }
-        
         
         // Validate name
         if(empty(trim($_POST['name']))){
-            $name_err = "Please enter a name.";     
+            $name_err = "Per favore inserisci uno username.";     
         } else{
             $name = trim($_POST['name']);
         }
         
         // Validate name
-        if(empty(trim($_POST['surname']))){
-            $surname_err = "Please enter a surname.";     
+        if(empty(trim($_POST['tipo']))){
+            $tipo_err = "Per favore seleziona un tipo.";     
         } else{
-            $surname = trim($_POST['surname']);
+            $tipo = trim($_POST['tipo']);
         }
 
         
         
         // Check input errors before inserting in database
-        if(empty($username_err) && empty($name_err) && empty($surname_err) && empty($invite_err)){
+        if(empty($username_err) && empty($name_err) && empty($tipo_err)){
             if(empty($mail_result)){
-                $mail_result = sendMail($username, $name, $surname);
+                $mail_result = sendMail($username, $name, $tipo);
                 if($mail_result == "OK"){
                     $_SESSION['username'] = $username;
                     $_SESSION['name'] = $name;
-                    $_SESSION['surname'] = $surname;
-                    $_SESSION['invite'] = $invite;
+                    $_SESSION['tipo'] = $tipo;
                     header("location: signup_2.php");
                 }
                 else{
-                    $mail_error = "Mail couldn't be send";
+                    $mail_err = "Errore nell'invio, controllare la mail e/o la connessione";
                 }
             }
         }
         
-        if(empty($username_err) && empty($name_err) && empty($surname_err) && empty($mail_err) && empty($invite_err)){
-            if($mail_result == ""){
-                $mail_result = sendMail($username, $name, $surname);
-                if($mail_result == "OK"){
-                    header("location: signup_2.php");
-                }
-                else{
-                    $mail_error = "Mail couldn't be send";
-                }
-            }
-        }
         // Close connection
         mysqli_close($conn);
     }
@@ -206,34 +163,28 @@ session_start();
             <div class="w3-display-middle">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="wrapper" id="phase1">
-                        <h2>Sign Up</h2>
-                        <p>Please fill this form to create an account.</p>
-                        <p>The Username field accepts only university emails.</p>
+                        <h2>Registrazione</h2>
+                        <p>Per favore compila i campi per creare un account.</p>
                         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                            <label>Username</label>
+                            <label>Mail</label>
                             <input type="text" name="username" value="<?php echo $username; ?>">
                             <span class="help-block"><?php echo $username_err; ?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
+                            <label>Username</label>
                             <input type="text" name="name" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err; ?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($surname_err)) ? 'has-error' : ''; ?>">
-                            <label>Surname</label>
-                            <input type="text" name="surname" value="<?php echo $surname; ?>">
-                            <span class="help-block"><?php echo $surname_err; ?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($invite_err)) ? 'has-error' : ''; ?>">
-                            <label>Invited By (email)</label>
-                            <input type="text" name="invite" value="<?php echo $invite; ?>">
-                            <span class="help-block"><?php echo $invite_err; ?></span>
+                        <div class="form-group <?php echo (!empty($tipo_err)) ? 'has-error' : ''; ?>">
+                            <label>Tipo</label>
+                            <input type="text" name="tipo" value="<?php echo $tipo; ?>">
+                            <span class="help-block"><?php echo $tipo_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn" value="Continue">
+                            <input type="submit" class="btn" value="Continua">
                         </div>
                         <span class="help-block"><?php echo $mail_err; ?></span>
-                        <p>Already have an account? <a href="login.php">Login here</a>.</p>
+                        <p>Hai già un profilo? <a href="login.php">Accedi qui</a>.</p>
                     </div>
                 </form>
             </div>
