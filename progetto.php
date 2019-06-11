@@ -13,7 +13,7 @@ include('session.php');
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Città Alta Plurale</title>
+        <title>Home</title>
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ include('session.php');
     <!-- Navigation -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="index.php">Città Alta Plurale</a>
+            <a class="navbar-brand" href="index.php">Home</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,7 +46,7 @@ include('session.php');
                   <a class="nav-link" href="calendario.php">Calendario</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Contatti</a>
+                  <a class="nav-link" href="team.php">Team</a>
                 </li>
                 <li class="nav-item" id="login">
                   <a class="nav-link" href="login.php"> Login</a>
@@ -64,6 +64,29 @@ include('session.php');
     
     
     <!--     *********   TODO   **********     -->
+
+    <div class="container">
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-lg-12" style="text-align: center;">
+            <h1 class="section-heading">Città Alta Plurale</h1>
+            <h3>Processo partecipativo Tripla elica per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
+            <hr class="primary">
+            <p> Un processo molto importante per Città Alta che mira ad ottenere un ampio coinvolgimento degli abitanti per creare le basi per la revisione del Piano Particolareggiato per Città Alta e Borgo Canale (PPRCA): un percorso che il Comune e l’Università di Bergamo intraprendono insieme, con il coordinamento scientifico del Centro Studi sul Territorio diretto dalla Prof. Emanuela Casti. 
+Il Comune ha incaricato il team di ricerca del CST nella creazione di un processo partecipativo con lo scopo di sottoporre agli abitanti intesi come residenti e city-users (pendolari, commercianti, studenti, visitatori e turisti) una revisione del Piano Particolareggiato di Città Alta volto a dare una risposta ai loro bisogni e al contempo promuovere una valorizzazione delle potenzialità territoriali del centro storico visto come polo di una città reticolare e multicentrica.
+Il processo partecipativo richiama un modello di sviluppo denominato “Tripla Elica” – basato sull’interazione tra Università, Pubblica Amministrazione e Settore privato – che, sperimentato in molte città italiane, come Pisa, ed europee, come Oxford e Leuven, e incardinato sulla presenza dell’Università nel tessuto storico, ha dato ottimi risultati non solo per far fronte alla banalizzazione del turismo ma anche, e soprattutto, per determinare il dinamismo sociale e culturale in grado di tener vivo il senso di urbanità e di appartenenza ai luoghi richieste dai residenti.<br><br>
+Esprimi anche tu la tua opinione, per noi è importante!<br><br>
+</p>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    
+
     
     
     <!-- Footer -->
@@ -90,7 +113,7 @@ include('session.php');
                       <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                   </li>
               </ul>
-              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2019</p>
+              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2020</p>
           </div>
         </div>
       </div>

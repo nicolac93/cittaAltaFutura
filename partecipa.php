@@ -35,7 +35,7 @@ include("session.php");
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="index.php">Città Alta Plurale</a>
+          <a class="navbar-brand" href="index.php">Home</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -54,7 +54,7 @@ include("session.php");
                 <a class="nav-link" href="calendario.php">Calendario</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contatti</a>
+                <a class="nav-link" href="team.php">Team</a>
               </li>
               <li class="nav-item" id="login">
                 <a class="nav-link" href="login.php"> Login</a>
@@ -100,16 +100,19 @@ include("session.php");
       <br>
       <div class="row" id="tematica">
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="accessibilita" id="buttonAccessibilita"><i class='fas fa-bicycle'></i> Accessibilità</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="accessibilita" id="buttonAccessibilita"><i class='fas fa-bicycle'></i> <br><strong>ACCESSIBILITA'</strong><br></button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fas fa-building'></i> Funzioni del costruito</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fas fa-building'></i> <br><strong>FUNZIONI DEGLI EDIFICI</strong></button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='far fa-building'></i> Spazi da riqualificare</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='far fa-building'></i> <br><strong>EDIFICI DA RIQUALIFICARE</strong></button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-list'></i> Città Alta plurale</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="fattoriDinamizzanti" id="buttonFattoriDinamizzanti"><i class='fas fa-sync'></i> <br><strong>FATTORI DINAMIZZANTI</strong></button>
+          </div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-secondary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fas fa-users'></i> <br><strong>CITTA' ALTA PER TUTTI</strong></button>
           </div>
       </div>
 
@@ -147,6 +150,16 @@ include("session.php");
       </div>
       <!-- End of Map segnalazioni -->  
       
+      <!-- Video Fattori Dinamizzanti -->
+
+      <div class="row" id="videoFattoriDinamizzanti">
+          <video autoplay muted loop style="height:100%;width:100%;opacity:1;">
+              <source src="img/BergamoPublicSpace_corto.mp4" type="video/mp4">
+          </video>
+      </div>
+
+      <!-- Fine Video Fattori Dinamizzanti -->
+
       <!-- Table riepilogo -->
       <div class="table-responsive" id="table-riepilogo">
       <table class="table table-striped">
@@ -251,20 +264,19 @@ include("session.php");
 
       <!-- tabs -->
       <h3>Esprimi la tua opinione</h3>
-      <button type="button" class="btn btn-primary float-right" id="buttonAddSegnalazione" onclick="addSegnalazione()"><i class='fas fa-bicycle'></i> Completa la mappa</button>
-
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-accessiblita-tab" data-toggle="tab" href="#nav-accessiblita" role="tab" aria-controls="nav-accessiblita" aria-selected="true"><i class='fas fa-bicycle'></i> Accessibilità</a>
-            <a class="nav-item nav-link" id="nav-funzioniCostruito-tab" data-toggle="tab" href="#nav-funzioniCostruito" role="tab" aria-controls="nav-funzioniCostruito" aria-selected="false"><i class='fas fa-building'></i> Funzioni del costruito</a>
-            <a class="nav-item nav-link" id="nav-spaziInutilizzati-tab" data-toggle="tab" href="#nav-spaziInutilizzati" role="tab" aria-controls="nav-spaziInutilizzati" aria-selected="false"><i class='far fa-building'></i> Spazi da riqualificare</a>
-            <a class="nav-item nav-link" id="nav-cittaAltaFutura-tab" data-toggle="tab" href="#nav-cittaAltaFutura" role="tab" aria-controls="nav-cittaAltaFutura" aria-selected="false"><i class='fa fa-list'></i> Città Alta plurale</a>
+            <a class="nav-item nav-link" id="nav-funzioniCostruito-tab" data-toggle="tab" href="#nav-funzioniCostruito" role="tab" aria-controls="nav-funzioniCostruito" aria-selected="false"><i class='fas fa-building'></i> Funzioni degli edifici</a>
+            <a class="nav-item nav-link" id="nav-spaziInutilizzati-tab" data-toggle="tab" href="#nav-spaziInutilizzati" role="tab" aria-controls="nav-spaziInutilizzati" aria-selected="false"><i class='far fa-building'></i> Edifici da riqualificare</a>
+            <a class="nav-item nav-link" id="nav-fattoriDinamizzanti-tab" data-toggle="tab" href="#nav-fattoriDinamizzanti" role="tab" aria-controls="nav-fattoriDinamizzanti" aria-selected="false"><i class='fas fa-sync'></i> Fattori dinamizzandi</a>
+            <a class="nav-item nav-link" id="nav-cittaAltaFutura-tab" data-toggle="tab" href="#nav-cittaAltaFutura" role="tab" aria-controls="nav-cittaAltaFutura" aria-selected="false"><i class='fa fa-list'></i> Inchiesta partecipativa</a>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-accessiblita" role="tabpanel" aria-labelledby="nav-accessiblita-tab"><div class="jumbotron" ><div id="navSurveyAccessibilita"></div></div></div>
           <div class="tab-pane fade" id="nav-funzioniCostruito" role="tabpanel" aria-labelledby="nav-funzioniCostruito-tab"><div class="jumbotron" ><div id="navSurveyFunzioniCostruito"></div></div></div>
-          <div class="tab-pane fade" id="nav-spaziInutilizzati" role="tabpanel" aria-labelledby="nav-spaziInutilizzati-tab"><div class="jumbotron" ><div id="navSurveySpaziInutilizzati"></div></div></div>
+          <div class="tab-pane fade" id="nav-fattoriDinamizzanti" role="tabpanel" aria-labelledby="nav-fattoriDinamizzanti-tab"><div class="jumbotron" ><div id="navSurveyFattoriDinamizzanti"></div></div></div>
           <div class="tab-pane fade" id="nav-cittaAltaFutura" role="tabpanel" aria-labelledby="nav-cittaAltaFutura-tab"><div class="jumbotron" ><div id="navSurveyCittaAltaFutura"></div></div></div>
         </div>
       </div>
@@ -300,7 +312,7 @@ include("session.php");
                       <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                   </li>
               </ul>
-              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2019</p>
+              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2020</p>
           </div>
         </div>
       </div>
@@ -311,7 +323,7 @@ include("session.php");
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
           <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Aggiungi una proposta</h5>
@@ -320,31 +332,154 @@ include("session.php");
           </button>
           </div>
           <div class="modal-body">
-          
-          <div class="form-group">
-          <label for="exampleFormControlInput1">Nome del luogo</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
-          </div>
-          
-          <div class="form-group">
-          <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
-          <select multiple class="form-control" id="exampleFormControlSelect2">
-              <option>Collegamento con le altre aree della città</option>
-              <option>Trasporto pubblico</option>
-              <option>Mobilità verde e condivisa</option>
-              <option>Mobilità privata</option>
-              <option>Altimetria</option>
-          </select>
-          </div>
-          <div class="form-group">
-          <label for="exampleFormControlTextarea1">Motivazione</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-          <label for="exampleFormControlFile1">Carica la tua fotografia</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1">
-          </div>
 
+            <ul class="nav nav-tabs" id="nav-tab--modal" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Accessibilità</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Funzione del costruito</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edifici da riqualificare</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#cittaAltaFutura-tab" role="tab" aria-controls="cittaAltaFutura-tab" aria-selected="false">Città Alta per tutti</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              
+              <!-- Accessbilità -->
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="modalBack" >
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Nome del luogo</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                  </div>
+                  
+                  <div class="form-group">
+                  <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+                  <select multiple class="form-control" id="exampleFormControlSelect2">
+                      <option>Collegamento con le altre aree della città</option>
+                      <option>Trasporto pubblico</option>
+                      <option>Mobilità verde e condivisa</option>
+                      <option>Mobilità privata</option>
+                      <option>Altimetria</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Motivazione</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Carica la tua fotografia</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+
+
+              </div>
+              </div>
+              
+              <!-- Funzioni del costruito -->
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="modalBack" >  
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Nome del luogo</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                  </div>
+                  
+                  <div class="form-group">
+                  <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+                  <select multiple class="form-control" id="exampleFormControlSelect2">
+                      <option>Commerciale</option>
+                      <option>Turistica</option>
+                      <option>Universitaria</option>
+                      <option>Religiosa</option>
+                      <option>Culturale</option>
+                      <option>Sociale e servizi ai cittadini</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Motivazione</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Carica la tua fotografia</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+
+
+                </div>
+              </div>
+              
+              <!-- Spazi Inutilizzati -->
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <div class="modalBack" >  
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Nome del luogo</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+                  <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>Residenziale</option>
+                    <option>Commerciale</option>
+                    <option>Culturale</option>
+                    <option>Sociale e servizi ai cittadini</option>
+                    <option>Servizi rivolti a studenti e professori</option>
+                    <option>Servizi rivolti ai turisti</option>
+                    <option>Promozione del paesaggio di pietra</option>
+                    <option>Promozione del paesaggio vegetale</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Motivazione</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Carica la tua fotografia</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+
+
+                </div>
+              </div>
+
+              <!-- Citta alta per tutti -->
+              <div class="tab-pane fade" id="cittaAltaFutura-tab" role="tabpanel" aria-labelledby="cittaAltaFutura-tab">
+              <div class="jumbotron" >
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Nome del luogo</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                </div>
+                
+                <div class="form-group">
+                <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+                <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>Accessbilità</option>
+                    <option>Commercio</option>
+                    <option>Eventi e manifestazioni</option>
+                    <option>Uffici e servizi</option>
+                    <option>Socializzazione e sicurezza</option>
+                </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Motivazione</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Carica la tua fotografia</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+
+              </div>
+              </div>
+            </div>
 
           </div>
           <div class="modal-footer">

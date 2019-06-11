@@ -13,7 +13,7 @@ include('session.php');
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Città Alta Plurale</title>
+        <title>Home</title>
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ include('session.php');
     <!-- Navigation -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="index.php">Città Alta Plurale</a>
+            <a class="navbar-brand" href="index.php">Home</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,7 +46,7 @@ include('session.php');
                   <a class="nav-link" href="calendario.php">Calendario</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.php">Contatti</a>
+                  <a class="nav-link" href="team.php">Team</a>
                 </li>
                 <li class="nav-item" id="login">
                   <a class="nav-link" href="login.php"> Login</a>
@@ -65,6 +65,24 @@ include('session.php');
     
     <!--     *********   TODO   **********     -->
     
+    <div class="container">
+      <h1 class="mt-4 mb-3">Calendario eventi</h1>
+      <hr class="primary">
+      <br>
+      <br>
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <br>
+              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=studenti.unibg.it_q038g6v3p2pvo8j00gbhaab348%40group.calendar.google.com&amp;color=%23AB8B00" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+
+
     
     <!-- Footer -->
     <footer class="py-5 bg-dark">
@@ -90,7 +108,7 @@ include('session.php');
                       <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                   </li>
               </ul>
-              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2019</p>
+              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2020</p>
           </div>
         </div>
       </div>

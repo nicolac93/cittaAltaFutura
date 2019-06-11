@@ -25,7 +25,8 @@ for (var i = 0; i < inputs.length; i++) {
 
 // create the popup
 var popup = new mapboxgl.Popup({ offset: 25 })
-    .setText(' 	Rendere area di sosta la piazza, aumentando i parcheggi della citta.');
+    .setHTML("<div class=\"card h-100\"><a href=\"#\"><img class='card-img-top' src='img/piazzaVecchia.jpg'></a><div class=\"card-body\"><h5 class=\"card-title\">Piazza Vecchia</h5><p class=\"card-text\"><strong>Segnalazione: </strong><?php echo $row['destinatari']?></p><p class=\"card-text\"><strong>Motivazione: </strong>Creare delle isole pedonali per renderlo più sicuro ai pedoni.</p><p class=\"card-text\"><button style='font-size:12px'><i class='fas fa-thumbs-up'></i> Like</button>  <button style='font-size:12px'><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>");
+
 // create DOM element for the marker
 var el = document.createElement('div');
 el.id = 'marker';

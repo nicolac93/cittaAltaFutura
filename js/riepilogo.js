@@ -24,16 +24,29 @@ $('#tematica button').click(function() {
 
     if($(this).val() == 'accessibilita') { 
         $('#nav-accessiblita-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
     }
     else if($(this).val() == 'costruito') { 
         //$("#leggend").load("leggenda/costruitoLeggend.html");
         $('#nav-funzioniCostruito-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
     }
     else if($(this).val() == 'spaziInutilizzati') { 
         $('#nav-spaziInutilizzati-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+    }
+    else if($(this).val() == 'fattoriDinamizzanti') { 
+        $('#nav-fattoriDinamizzanti-tab').tab('show');
+        $('#map-riepilogo').css("display", 'none');
+        $('#videoFattoriDinamizzanti').css("display", 'block');
     }
     else if($(this).val() == 'cittaAltaPlurale') { 
         $('#nav-cittaAltaFutura-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
     }
 });
 
@@ -43,6 +56,9 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     }
     else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
         $("#buttonAddSegnalazione").html("<i class='fas fa-building'></i> Completa la mappa");
+    }
+    else if($('.tab-content .active')[0].id == "nav-fattoriDinamizzanti"){
+        $("#buttonAddSegnalazione").html("<i class='far fa-building'></i> Completa la mappa");
     }
     else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
         $("#buttonAddSegnalazione").html("<i class='far fa-building'></i> Completa la mappa");
@@ -62,6 +78,7 @@ $('.dropdown-toggle').dropdown();
 $(function(){    
     $("#navSurveyAccessibilita").load("survey/accessibilita.html");
     $("#navSurveyFunzioniCostruito").load("survey/funzioniCostruito.html");
+    $("#navSurveyFattoriDinamizzanti").load("survey/fattoriDinamizzanti.html");
     $("#navSurveySpaziInutilizzati").load("survey/spaziInutilizzati.html");
     $("#navSurveyCittaAltaFutura").load("survey/cittaAltaFutura.html");
 });
