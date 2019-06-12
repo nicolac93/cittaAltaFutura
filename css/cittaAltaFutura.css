@@ -145,7 +145,7 @@ hr.light {
     border-radius: 50%;
     cursor: pointer;
     z-index: 1;
-    border-width:5px;  
+    border-width:3px;  
     border-style:solid;
     border-color: #F05F40;
 }

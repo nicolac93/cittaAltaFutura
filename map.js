@@ -23,6 +23,59 @@ for (var i = 0; i < inputs.length; i++) {
 }
 
 
+$(document).ready(function() {
+    console.log( "ready!" );
+});
+
+$.ajax({
+    type: "POST",
+    url: "popup.php",
+
+    success: function(msg){
+        addPopup(msg);
+    },
+    error: function(){
+        alert("Chiamata fallita!!!");
+    },
+});
+
+
+function addPopup(msg){
+
+    msg = msg.substring(0, msg.length - 2);
+    msg = msg + "]";
+    var obj = JSON.parse(msg);
+
+    for(var i=0; i<obj.length; i++){
+        
+        // create the popup
+
+        var strpopup = "<div class=\"card h-100\">" +
+            "<a href=\"#\"><img class='card-img-top' src='img/"+ obj[i].immagine +"'></a>" + 
+            "<div class=\"card-body\"><h5 class=\"card-title\">" + obj[i].nome + "</h5>" +
+            "<p class=\"card-text\"><strong>Segnalazione: </strong>"+ obj[i].tipologia +"</p>" +
+            "<p class=\"card-text\"><strong>Motivazione: </strong>" + obj[i].motivazione + "</p>" + 
+            "<p class=\"card-text\"><button style='font-size:12px'><i class='fas fa-thumbs-up'></i> Like</button> " +
+            " <button style='font-size:12px'><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+
+        var popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(strpopup);
+
+        // create DOM element for the marker
+        var el = document.createElement('div');
+        el.id = 'marker';
+        el.style.backgroundImage = "url('img/"+ obj[i].immagine +"')";
+        // create the marker
+        new mapboxgl.Marker(el)
+        .setLngLat([obj[i].longitudine, obj[i].latitudine])
+        .setPopup(popup) // sets a popup on this marker
+        .addTo(map);
+    }
+
+}
+
+
+/*
 // create the popup
 var popup = new mapboxgl.Popup({ offset: 25 })
     .setHTML("<div class=\"card h-100\"><a href=\"#\"><img class='card-img-top' src='img/piazzaVecchia.jpg'></a><div class=\"card-body\"><h5 class=\"card-title\">Piazza Vecchia</h5><p class=\"card-text\"><strong>Segnalazione: </strong><?php echo $row['destinatari']?></p><p class=\"card-text\"><strong>Motivazione: </strong>Creare delle isole pedonali per renderlo più sicuro ai pedoni.</p><p class=\"card-text\"><button style='font-size:12px'><i class='fas fa-thumbs-up'></i> Like</button>  <button style='font-size:12px'><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>");
@@ -38,7 +91,7 @@ new mapboxgl.Marker(el)
     .addTo(map);
 
 // create the popup
-var popup2 = new mapboxgl.Popup({ offset: 25 })
+var popup = new mapboxgl.Popup({ offset: 25 })
     .setText('Rendere la piazza una porta d\'accesso alla corsarola.');
 // create DOM element for the marker
 var el2 = document.createElement('div');
@@ -47,7 +100,7 @@ el2.style.backgroundImage = "url('img/piazzaCittadella.jpg')";
 // create the marker
 new mapboxgl.Marker(el2)
     .setLngLat([9.659408, 45.705815])
-    .setPopup(popup2) // sets a popup on this marker
+    .setPopup(popup) // sets a popup on this marker
     .addTo(map);
 
 // create the popup
@@ -64,7 +117,7 @@ new mapboxgl.Marker(el3)
     .addTo(map);
 
 // create the popup
-
+*/
 
 /*	
 map.on('load', function() {
@@ -111,7 +164,7 @@ function loadEdifici(){
 }
 
 map.on('load', function() {
-	//loadEdifici();
+    //loadEdifici();
 });
 
 var marker = new mapboxgl.Marker({
@@ -286,7 +339,6 @@ function addMarker(e){
 
     alert("add");
 
-    //$("#exampleModal").load("modalNewProposta/modalAccessibilita.html");
     $('#exampleModal').modal();
 
  /*   if (typeof circleMarker !== "undefined" ){ 
@@ -301,3 +353,10 @@ function addMarker(e){
 */
     map.off('click', addMarker);            
 }
+
+$("#buttonProposta").on("click", function(){
+    alert("ciao");
+    
+    var id = $('.tab-contentModal .active').attr('id');
+    alert(id);
+});

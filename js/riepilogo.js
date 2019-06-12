@@ -83,9 +83,9 @@ $(function(){
     $("#navSurveyCittaAltaFutura").load("survey/cittaAltaFutura.html");
 });
 
-$("#buttonProposta").on("click", function(){
+/*$("#buttonProposta").on("click", function(){
     alert("subimt");
-});
+});*/
 
 function submitAccessibilita(){
     var domanda1 = null;
@@ -451,4 +451,9 @@ function subimtCittaAltaFutura(){
         },  
     });
 
+}
+
+
+function saveProposta(){
+    alert("ciao");
 }
