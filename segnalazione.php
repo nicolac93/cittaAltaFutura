@@ -20,52 +20,15 @@ $id_segnalazione = $_GET["id"];
 
     <title>Segnalazione</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
-
-    <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <!-- Links -->
+	<?php require_once('inc/links.inc'); ?>
 
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="index.php">Home</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">Progetto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html">Partecipa</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="faq.html">FAQ</a>
-              </li>
-              <li class="nav-item" id="login">
-                <a class="nav-link" href="login.php"> Login</a>
-              </li>
-              <li class="nav-item" id="logout">
-                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
-              </li>
-              <li class="nav-item" id="user">
-                <span class="nav-link"><strong><?php echo $_SESSION['login_user_name'];?></strong></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+	<?php require_once('inc/navigation.inc'); ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -84,7 +47,7 @@ $id_segnalazione = $_GET["id"];
 
       <?php
         $sql = "SELECT * FROM segnalazioni JOIN utenti ON segnalazioni.id_utente = utenti.id WHERE segnalazioni.id = ".$id_segnalazione;
-          
+           
         if (mysqli_query($conn, $sql)) {
           echo "";
         } else {
@@ -134,32 +97,18 @@ $id_segnalazione = $_GET["id"];
     <!-- /.container -->
 
     <!-- Footer -->
+	<?php require_once('inc/footer.inc'); ?>
+	<!--
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2018</p>
       </div>
-      <!-- /.container -->
     </footer>
-    
-    <script>
-        var login = document.getElementById("login");
-        var logout = document.getElementById("logout");
-        var user = document.getElementById("user");
-        if("<?php echo $_SESSION['login_user_name'];?>" == ""){
-            login.style.display = "inline-block";
-            logout.style.display = "none";
-            user.style.display = "none";
-        }else{
-            login.style.display = "none";
-            logout.style.display = "inline-block";
-            user.style.display = "inline-block";
-        }
-    </script>
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	-->
+	<!-- Scripts -->
+	<?php require_once('inc/footerscripts.inc'); ?>
 
-  </body>
+	</body>
   
 
 </html>
