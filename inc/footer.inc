@@ -9,7 +9,7 @@
 					<h3 class="footer-title" >CONTATTI</h3>
 					<p class="m-0 text-white"><strong>CST - DiathesisLab</strong><br>Via Salvecchio 19,  24129 Bergamo</p>
 					<p class="m-0 text-white"><i class="fas fa-home"></i> <a href="https://www.unibg.it/ricerca/strutture-ricerca/centri-ateneo/cst/diathesis-lab" target="_blank">http://www.unibg.it/diathesis</a><br>
-					<i class="far fa-envelope"></i> <a href="">diathesis@unibg.it</a>
+					<i class="far fa-envelope"></i> <a href="mailto:diathesis@unibg.it">diathesis@unibg.it</a>
 					</p>
 						
 					</ul>
@@ -29,7 +29,7 @@
 				</div>
 				<div class="col-lg-4">
 					<h3 class="footer-title" >UNIBG</h3>
-					<img src="img/LogoFooter.png" height="85">
+					<a href="https://www.unibg.it/" target="_blank"><img src="img/LogoFooter.png" height="85"></a>
  
 				</div>
 				  
