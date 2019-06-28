@@ -285,6 +285,15 @@ footer a:hover {
 
 
 /* SURVEYS */
+#tematica i {
+	margin-right:.8rem;
+}
+#tematica .btn {
+	height: 100px;
+    padding: 10px;
+    margin: 10px;
+}
+
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #4D94C9;
@@ -352,7 +361,8 @@ footer a:hover {
 .form-check-label {
     /*margin-bottom: 20px;*/
     max-width: 90%;
-    line-height: 1.1rem;
+    line-height: 1.2rem;
+    font-size: 1.2rem
 }
 
 .form-check-input .form-check-label {
@@ -360,7 +370,10 @@ footer a:hover {
 }
 
 .form-control-sm {
-margin: .3rem 1rem;
+margin-left: 1rem;
+padding-right: 1rem;
+height: 2.5rem;
+width: -webkit-fill-available;
 }
 
 /* STATS */
