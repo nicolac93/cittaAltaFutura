@@ -1,33 +1,21 @@
-<?php
-//ini_set('display_errors', 'Off');
-ini_set('display_errors', 'On');
-error_reporting(E_ALL);
 
-include('session.php');
-?>
-<!DOCTYPE html>
-<html lang="it">
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Home</title>
-    <!-- Links -->
-	<?php require_once('inc/links.inc'); ?>
-    </head>
 
-    <body>
+
+
+
     <!-- Navigation -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
           <div class="container">
+            <img src="img/logo.png" style="height:auto;width:2%;opacity:1;margin:2px">
             <a class="navbar-brand" href="index.php">Home</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.php">Home</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="partecipa.php">Partecipa</a>
                 </li>
@@ -56,16 +44,5 @@ include('session.php');
             </div>
           </div>
         </nav>
-    
-    
-    <!--     *********   TODO   **********     -->
-    
-    
-    <!-- Footer -->
-	<?php require_once('inc/footer.inc'); ?>
-	<!-- Scripts -->
-	<?php require_once('inc/footerscripts.inc'); ?>
 
-    </body>
 
-</html>

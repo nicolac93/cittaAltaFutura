@@ -225,18 +225,22 @@ function onDragEnd() {
 marker.on('dragend', onDragEnd);
 
 $('#buttonAccessibilita').on('click', function(event) {
+	$('#tematica .btn').not(this).removeClass('active');
     accessibilita();
 });
 
 $('#buttonCostruito').on('click', function(event) {
+	$('#tematica .btn').not(this).removeClass('active');
     funzioniCostruito();
 });
 
 $('#buttonSpaziInutilizzati').on('click', function(event) {
+	$('#tematica .btn').not(this).removeClass('active');
     spaziInutilizzati();
 });
 
 $('#buttonCittaAltaFutura').on('click', function(event) {
+	$('#tematica .btn').not(this).removeClass('active');
     cittaAltaFutura();
 });
 

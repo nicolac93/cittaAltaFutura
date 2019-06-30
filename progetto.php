@@ -11,133 +11,44 @@ include('session.php');
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Home</title>
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
-        <!-- Custom styles for this template -->
-        <link href="css/modern-business.css" rel="stylesheet">
-        <link href="css/cittaAltaPlurale.css" rel="stylesheet">
+        <meta name="description" content="Processo partecipativo Tripla elica per la revisione del Piano Particolareggiato di Citt&agrave; Alta e Borgo Canale (PPRCA)">
+        <meta name="author" content="CST - DiathesisLab">
+        <title>Città Alta Plurale | Il Progetto</title>
+    <!-- Links -->
+	<?php require_once('inc/links.inc'); ?>
     </head>
 
     <body>
-    <!-- Navigation -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-          <div class="container">
-            <a class="navbar-brand" href="index.php">Home</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="partecipa.php">Partecipa</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="progetto.php">Il Progetto</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="stats.php">Statistiche</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="calendario.php">Calendario</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.php">Team</a>
-                </li>
-                <li class="nav-item" id="login">
-                  <a class="nav-link" href="login.php"> Login</a>
-                </li>
-                <li class="nav-item" id="logout">
-                  <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </li>
-                <li class="nav-item" id="user">
-                  <span class="nav-link"><strong><?php echo $_SESSION['login_user_name'];?></strong></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    
-    
-    <!--     *********   TODO   **********     -->
-
-    <div class="container">
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-lg-12" style="text-align: center;">
-            <h1 class="section-heading">Città Alta Plurale</h1>
-            <h3>Processo partecipativo Tripla elica per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
-            <hr class="primary">
-            <p> Un processo molto importante per Città Alta che mira ad ottenere un ampio coinvolgimento degli abitanti per creare le basi per la revisione del Piano Particolareggiato per Città Alta e Borgo Canale (PPRCA): un percorso che il Comune e l’Università di Bergamo intraprendono insieme, con il coordinamento scientifico del Centro Studi sul Territorio diretto dalla Prof. Emanuela Casti. 
-Il Comune ha incaricato il team di ricerca del CST nella creazione di un processo partecipativo con lo scopo di sottoporre agli abitanti intesi come residenti e city-users (pendolari, commercianti, studenti, visitatori e turisti) una revisione del Piano Particolareggiato di Città Alta volto a dare una risposta ai loro bisogni e al contempo promuovere una valorizzazione delle potenzialità territoriali del centro storico visto come polo di una città reticolare e multicentrica.
-Il processo partecipativo richiama un modello di sviluppo denominato “Tripla Elica” – basato sull’interazione tra Università, Pubblica Amministrazione e Settore privato – che, sperimentato in molte città italiane, come Pisa, ed europee, come Oxford e Leuven, e incardinato sulla presenza dell’Università nel tessuto storico, ha dato ottimi risultati non solo per far fronte alla banalizzazione del turismo ma anche, e soprattutto, per determinare il dinamismo sociale e culturale in grado di tener vivo il senso di urbanità e di appartenenza ai luoghi richieste dai residenti.<br><br>
-Esprimi anche tu la tua opinione, per noi è importante!<br><br>
-</p>
-        </div>
-      </div>
+		<header>
+			<?php require_once('inc/header.inc'); ?>
+		</header>
+		<div class="bg-img bg-img-hauto p-sm-5">
+			<!--     *********   TODO   **********     -->
+			<main class="container">
+			  <div class="row">
+				<div class="col-12 text-center mt-5">
+					<h4>Città Alta Plurale</h4>
+					<h1 class="section-heading mt-0 mb-3">Il Progetto</h1>
+					<h3>Processo partecipativo Tripla elica per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
+				</div>
+				<div class="col-12 text-center mt-5">
+					<hr class="primary">
+					<p>Un processo molto importante per Città Alta che mira ad ottenere un ampio coinvolgimento degli abitanti per creare le basi per la revisione del Piano Particolareggiato per Città Alta e Borgo Canale (PPRCA): un percorso che il Comune e l’Università di Bergamo intraprendono insieme, con il coordinamento scientifico del Centro Studi sul Territorio diretto dalla Prof. Emanuela Casti.</p>
+					<p>Il Comune ha incaricato il team di ricerca del CST nella creazione di un <strong>processo partecipativo</strong> con lo scopo di sottoporre agli abitanti intesi come residenti e city-users (pendolari, commercianti, studenti, visitatori e turisti) una <strong>revisione del Piano Particolareggiato di Città Alta</strong> volto a dare una risposta ai loro bisogni e al contempo promuovere una valorizzazione delle potenzialità territoriali del centro storico visto come polo di una città reticolare e multicentrica.</p>
+					<p>Il processo partecipativo richiama un modello di sviluppo denominato <strong>“Tripla Elica”</strong> – basato sull’interazione tra Università, Pubblica Amministrazione e Settore privato – che, sperimentato in molte città italiane, come Pisa, ed europee, come Oxford e Leuven, e incardinato sulla presenza dell’Università nel tessuto storico, ha dato ottimi risultati non solo per far fronte alla banalizzazione del turismo ma anche, e soprattutto, per determinare il dinamismo sociale e culturale in grado di tener vivo il senso di urbanità e di appartenenza ai luoghi richieste dai residenti.</p>
+					<div class="titoloevidenziato my-5"><h3>Esprimi anche tu la tua opinione, per noi è importante!</h3>
+					<button type="button" class="btn btn-secondary btn-lg" ><a href="partecipa.php">Partecipa e aiutaci a migliorare la nostra Citt&agrave; Alta</a></button>
+					</div>
+				</div>
+			  </div>
 
 
 
-    </div>
-
-    
-
-    
-    
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-12 text-center">
-              <img src="img/LogoDiathesis.jpg" height="112">
-              <br>
-              <br>
-              <p class="m-0 text-center text-white"><strong>CST - DiathesisLab</strong>
-                  <br>Via Salvecchio 19,  24129 Bergamo</p>
-              <ul class="list-unstyled">
-                  <li><i class="fa fa-envelope-o fa-fw"></i> <a href="https://www.unibg.it/ricerca/strutture-ricerca/centri-ateneo/cst/diathesis-lab">http://www.unibg.it/diathesis</a>
-                  </li>
-                  <li>
-                      <i class="fa fa-envelope-o fa-fw"></i><a href="">diathesis@unibg.it</a>
-                  </li>
-              </ul>
-              <hr class="small">
-              <ul class="list-inline">
-                  <li>
-                      <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                  </li>
-              </ul>
-              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2020</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-        
-        <script>
-            var login = document.getElementById("login");
-            var logout = document.getElementById("logout");
-            var user = document.getElementById("user");
-            if("<?php echo $_SESSION['login_user_name'];?>" == ""){
-                login.style.display = "inline-block";
-                logout.style.display = "none";
-                user.style.display = "none";
-            }else{
-                login.style.display = "none";
-                logout.style.display = "inline-block";
-                user.style.display = "inline-block";
-            }
-        </script>
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+			</main>
+		</div>
+		<!-- Footer -->
+		<?php require_once('inc/footer.inc'); ?>
+		<!-- Scripts -->
+		<?php require_once('inc/footerscripts.inc'); ?>
     </body>
-
 </html>
