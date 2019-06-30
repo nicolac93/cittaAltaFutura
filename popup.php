@@ -9,7 +9,8 @@
         echo "[";
         while ($obj = $result->fetch_object()) {
             echo "{";
-            
+
+            echo "\"id\": " . $obj->id . ", ";
             echo "\"latitudine\": " . $obj->latitudine . ", ";
             echo "\"longitudine\": " . $obj->longitudine . ", ";
             echo "\"nome\": \"" . $obj->nome_luogo . "\", ";

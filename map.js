@@ -55,8 +55,8 @@ function addPopup(msg){
             "<div class=\"card-body\"><h5 class=\"card-title\">" + obj[i].nome + "</h5>" +
             "<p class=\"card-text\"><strong>Segnalazione: </strong>"+ obj[i].tipologia +"</p>" +
             "<p class=\"card-text\"><strong>Motivazione: </strong>" + obj[i].motivazione + "</p>" + 
-            "<p class=\"card-text\"><button style='font-size:12px'><i class='fas fa-thumbs-up'></i> Like</button> " +
-            " <button style='font-size:12px'><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+            "<p class=\"card-text\"><button style='font-size:12px' onclick=\"like('" + obj[i].id + "')\"><i class='fas fa-thumbs-up'></i> Like</button> " +
+            " <button style='font-size:12px' onclick=\"unlike('" + obj[i].id + "')\"><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
 
         var popup = new mapboxgl.Popup({ offset: 25 })
         .setHTML(strpopup);
@@ -64,7 +64,17 @@ function addPopup(msg){
         // create DOM element for the marker
         var el = document.createElement('div');
         el.id = 'marker';
-        el.style.backgroundImage = "url('img/"+ obj[i].immagine +"')";
+
+        if(obj[i].categoria == 1){
+            el.style.backgroundImage = "url('img/cycle.png')";
+        }else if(obj[i].categoria == 2){
+            el.style.backgroundImage = "url('img/buildingBlack.png')";
+        }else if(obj[i].categoria == 3){
+            el.style.backgroundImage = "url('img/buildingWhite.PNG')";
+        }else if(obj[i].categoria == 4){
+            el.style.backgroundImage = "url('img/sync-solid.svg')";
+        }
+
         // create the marker
         new mapboxgl.Marker(el)
         .setLngLat([obj[i].longitudine, obj[i].latitudine])
@@ -72,6 +82,36 @@ function addPopup(msg){
         .addTo(map);
     }
 
+}
+
+function like(id) {
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 1,
+        success: function(msg){
+            alert(msg);
+        },
+        error: function(){
+            alert("Votazione fallita");
+        }
+    });
+}
+
+function unlike(id){
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 0,
+        success: function(msg){
+            alert(msg);
+        },
+        error: function(){
+            alert("Votazione fallita");
+        }
+    });
 }
 
 
@@ -354,9 +394,9 @@ function addMarker(e){
     map.off('click', addMarker);            
 }
 
-$("#buttonProposta").on("click", function(){
+/*$("#buttonProposta").on("click", function(){
     alert("ciao");
     
     var id = $('.tab-contentModal .active').attr('id');
     alert(id);
-});
+});*/

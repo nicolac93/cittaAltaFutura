@@ -143,7 +143,7 @@ include("session.php");
           </div>
         </div>
 
-        <div class=map-overlay id="leggend"></div>
+        <div id="leggend"></div>
 
         <div id='map'></div>
         <pre id='coordinates' class='coordinates'></pre>
@@ -276,6 +276,7 @@ include("session.php");
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-accessiblita" role="tabpanel" aria-labelledby="nav-accessiblita-tab"><div class="jumbotron" ><div id="navSurveyAccessibilita"></div></div></div>
           <div class="tab-pane fade" id="nav-funzioniCostruito" role="tabpanel" aria-labelledby="nav-funzioniCostruito-tab"><div class="jumbotron" ><div id="navSurveyFunzioniCostruito"></div></div></div>
+          <div class="tab-pane fade" id="nav-spaziInutilizzati" role="tabpanel" aria-labelledby="nav-spaziInutilizzati-tab"><div class="jumbotron" ><div id="navSurveySpaziInutilizzati"></div></div></div>
           <div class="tab-pane fade" id="nav-fattoriDinamizzanti" role="tabpanel" aria-labelledby="nav-fattoriDinamizzanti-tab"><div class="jumbotron" ><div id="navSurveyFattoriDinamizzanti"></div></div></div>
           <div class="tab-pane fade" id="nav-cittaAltaFutura" role="tabpanel" aria-labelledby="nav-cittaAltaFutura-tab"><div class="jumbotron" ><div id="navSurveyCittaAltaFutura"></div></div></div>
         </div>
@@ -326,39 +327,42 @@ include("session.php");
   <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
           <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Aggiungi una proposta</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
           </button>
           </div>
           <div class="modal-body">
 
-            <ul class="nav nav-tabs" id="nav-tab--modal" role="tablist">
+            <ul class="nav nav-tabs" id="nav-tab-modal" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Accessibilità</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Funzione del costruito</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Funzione degli Edifici</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edifici da riqualificare</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#fattoriDinamizzanti-tab" role="tab" aria-controls="fattoriDinamizzanti-tab" aria-selected="false">Fattori Dinamizzanti</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="#cittaAltaFutura-tab" role="tab" aria-controls="cittaAltaFutura-tab" aria-selected="false">Città Alta per tutti</a>
               </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-contentModal" id="myTabContent">
               
               <!-- Accessbilità -->
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="modalBack" >
                 <div class="form-group">
-                  <label for="exampleFormControlInput1">Nome del luogo</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                  <label for="exampleFormControlInput1">Nome del luogo e/o indirizzo:</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo e/o indirizzo:">
                   </div>
                   
                   <div class="form-group">
-                  <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+                  <label for="exampleFormControlSelect2">-	Inserisci la tua proposta di miglioramento della mobilità scegliendo una di queste categorie:</label>
                   <select multiple class="form-control" id="exampleFormControlSelect2">
                       <option>Collegamento con le altre aree della città</option>
                       <option>Trasporto pubblico</option>
@@ -385,12 +389,12 @@ include("session.php");
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <div class="modalBack" >  
                 <div class="form-group">
-                  <label for="exampleFormControlInput1">Nome del luogo</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                  <label for="exampleFormControlInput1">Nome del luogo e/o indirizzo:</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo e/o indirizzo:">
                   </div>
                   
                   <div class="form-group">
-                  <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+                  <label for="exampleFormControlSelect2">Inserisci la tua proposta sulla funzione degli edifici scegliendone una tra le seguenti:</label>
                   <select multiple class="form-control" id="exampleFormControlSelect2">
                       <option>Commerciale</option>
                       <option>Turistica</option>
@@ -418,12 +422,12 @@ include("session.php");
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
               <div class="modalBack" >  
                 <div class="form-group">
-                  <label for="exampleFormControlInput1">Nome del luogo</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                  <label for="exampleFormControlInput1">Nome del luogo e/o indirizzo:</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo e/o indirizzo:">
                 </div>
                 
                 <div class="form-group">
-                  <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
+                  <label for="exampleFormControlSelect2">Inserisci la tua proposta di riqualificazione di un edificio scegliendo una di queste modalità:</label>
                   <select multiple class="form-control" id="exampleFormControlSelect2">
                     <option>Residenziale</option>
                     <option>Commerciale</option>
@@ -449,27 +453,51 @@ include("session.php");
                 </div>
               </div>
 
-              <!-- Citta alta per tutti -->
-              <div class="tab-pane fade" id="cittaAltaFutura-tab" role="tabpanel" aria-labelledby="cittaAltaFutura-tab">
-              <div class="jumbotron" >
+
+              <!-- Fattori Dinamizzanti -->
+              <div class="tab-pane fade" id="fattoriDinamizzanti-tab" role="tabpanel" aria-labelledby="fattoriDinamizzanti-tab">
+              <div class="modalBack" >  
                 <div class="form-group">
-                  <label for="exampleFormControlInput1">Nome del luogo</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo">
+                  <label for="exampleFormControlInput1">Nome del luogo e/o indirizzo:</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo e/o indirizzo:">
                 </div>
                 
                 <div class="form-group">
-                <label for="exampleFormControlSelect2">Cosa ci vuoi segnalare?</label>
-                <select multiple class="form-control" id="exampleFormControlSelect2">
-                    <option>Accessbilità</option>
-                    <option>Commercio</option>
-                    <option>Eventi e manifestazioni</option>
-                    <option>Uffici e servizi</option>
-                    <option>Socializzazione e sicurezza</option>
-                </select>
+                  <label for="exampleFormControlSelect2">Inserisci la tua proposta per valorizzare la presenza dell’università e/o del turismo per il bene di Città Alta e dei suoi abitanti. Scegli una categoria:</label>
+                  <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>Università</option>
+                    <option>Turismo</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Motivazione</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Carica la tua fotografia</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+
+                </div>
+              </div>
+
+
+              <!-- Citta alta per tutti -->
+              <div class="tab-pane fade" id="cittaAltaFutura-tab" role="tabpanel" aria-labelledby="cittaAltaFutura-tab">
+              <div class="jumbotron" >
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Nome del luogo e/o indirizzo:</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo e/o indirizzo:">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Inserisci una tua proposta per il futuro di Città Alta e dei suoi abitanti</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome del luogo e/o indirizzo:">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Descrizione</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="form-group">
