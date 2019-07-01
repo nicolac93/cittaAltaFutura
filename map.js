@@ -1,4 +1,4 @@
-var layer = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto", "pisteCiclabili", "atbBus", "spaziInutilizzati"];
+var layer = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto", "pisteCiclabili", "atbBus", "spaziInutilizzati", "ferrovieBg", "autostradeBg", "parcheggiBg", "aereoportoBGY", "stazioniBiGi", "fermateATB", "eVai"];
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xhOTMiLCJhIjoiY2l2Y2ozYnZ5MDBocTJ5bzZiM284NGkyMiJ9.4VUvTxBv0zqgjY7t3JTFOQ';
 var map = new mapboxgl.Map({
@@ -207,6 +207,7 @@ map.on('load', function() {
     //loadEdifici();
 });
 
+/*
 var marker = new mapboxgl.Marker({
     draggable: true
 })
@@ -223,6 +224,7 @@ function onDragEnd() {
 }
      
 marker.on('dragend', onDragEnd);
+*/
 
 $('#buttonAccessibilita').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
@@ -247,12 +249,24 @@ $('#buttonCittaAltaFutura').on('click', function(event) {
 function accessibilita(){
     removeLayer();
 
-    var color = ["#00cb00", "#ffb915"];
-    var layerName = ["pisteCiclabili", "atbBus"];
+    var color = ["#00cb00", "#ffb915", "#000000", "#ffffff"];
+    var layerName = ["pisteCiclabili", "atbBus", "ferrovieBg", "autostradeBg"];
 
     for(i=0; i< layerName.length; i++){
         loadLayer(layerName[i], color[i]);
     }
+
+    var color = ["#4272db", "#5a5a5a"];
+    var layerName = ["parcheggiBg", "aereoportoBGY"];
+    
+    for(i=0; i< layerName.length; i++){
+        loadLayerSuperfici(layerName[i], color[i]);
+    }
+
+    loadLayerPoint("fermateATB", "bus");
+    loadLayerPoint("stazioniBiGi", "bicycle");
+    loadLayerPoint("eVai", "car");
+
 }
 
 function funzioniCostruito(){
@@ -343,26 +357,45 @@ function loadLayer(nameLayer, colorLayer){
 	});
 }
 
+function loadLayerSuperfici(nameLayer, colorLayer){
+    map.addLayer({
+		'id': nameLayer,
+		'type': 'fill',
+		'source': {
+			// GeoJSON Data source used in vector tiles, documented at
+			// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+			'type': 'geojson',
+			'data': 'geojson/' + nameLayer +'.geojson'
+		},
+		'paint': {
+			"fill-color": colorLayer,
+		}
+	});
+}
+
+function loadLayerPoint(nameLayer, icon){
+    map.addLayer({
+		'id': nameLayer,
+		'type': 'symbol',
+		'source': {
+			// GeoJSON Data source used in vector tiles, documented at
+			// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+			'type': 'geojson',
+			'data': 'geojson/' + nameLayer +'.geojson'
+		},
+		'layout': {
+			'icon-image': icon+'-15'
+		}
+	});
+}
+
 
 
 function addSegnalazione(){
     alert("Clicca sul luogo che vuoi fare una segnalazione");
 
-    if($('.tab-content .active')[0].id == "nav-accessiblita"){
-
-    }
-    else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
-
-    }
-    else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
-
-    }
-    else if($('.tab-content .active')[0].id == "nav-cittaAltaFutura"){
-
-    }
-
     map.on('click', addMarker);
-    
+   /* 
     var popup4 = new mapboxgl.Popup({ offset: 25 })
     .setText('Fermare i lavori di realizzazione del parcheggio.');
 // create DOM element for the marker
@@ -374,7 +407,7 @@ new mapboxgl.Marker(el4)
     .setLngLat([9.666543, 45.706045])
     .setPopup(popup4) // sets a popup on this marker
     .addTo(map);
-
+*/
     
 
 }
@@ -384,6 +417,7 @@ function addMarker(e){
     alert("add");
 
     $('#exampleModal').modal();
+    $("#panelTipologiaSegnalazione").load("modalNewProposta/modalAccessibilita.html");
 
  /*   if (typeof circleMarker !== "undefined" ){ 
       map.removeLayer(circleMarker);         

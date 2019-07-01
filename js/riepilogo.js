@@ -569,3 +569,22 @@ function subimtCittaAltaFutura(){
 function saveProposta(){
     alert("ciao");
 }
+
+$('#selectTipologiaSegnalazione').on('change',function() {
+
+    if($(this).val() == 1){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalAccessibilita.html");
+    }
+    if($(this).val() == 2){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalFunzioneDegliEdifici.html");
+    }
+    if($(this).val() == 3){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalEdificiDaRiqualificare.html");
+    }
+    if($(this).val() == 4){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalFattoriDinamizzanti.html");
+    }
+    if($(this).val() == 5){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
+    }
+  });

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>E-Vai.kml</name>
+	<Style id="geocode300">
+		<IconStyle>
+			<color>ff00ff00</color>
+			<scale>0.8</scale>
+			<Icon>
+				<href>C:/Users/utente/Desktop/cittaAltaPlurale/files/carsharing.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="geocode2110">
+		<IconStyle>
+			<color>ff00ff00</color>
+			<scale>0.8</scale>
+			<Icon>
+				<href>C:/Users/utente/Desktop/cittaAltaPlurale/files/carsharing.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<LineStyle>
+			<color>00ffffff</color>
+		</LineStyle>
+	</Style>
+	<StyleMap id="geocode710">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#geocode2110</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#geocode300</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>E-Vai</name>
+		<Placemark>
+			<name>E-Vai Point Piazzale Marconi</name>
+			<Camera>
+				<longitude>9.675517485701164</longitude>
+				<latitude>45.68993205747174</latitude>
+				<altitude>305.4551041738497</altitude>
+				<heading>2.748274079184956</heading>
+				<tilt>27.23532832480439</tilt>
+				<roll>1.489371789132739</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#geocode710</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>9.675533810926535,45.69115592005971,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>E-Vai Point Via Sentierone</name>
+			<Camera>
+				<longitude>9.671046081486454</longitude>
+				<latitude>45.69482251802754</latitude>
+				<altitude>134.6939502749671</altitude>
+				<heading>2.671748615251225</heading>
+				<tilt>28.5838453721586</tilt>
+				<roll>1.423784791981156</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#geocode710</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>9.670804295258016,45.69544762944117,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>E-Vai Point Via Beltrami</name>
+			<Camera>
+				<longitude>9.659106323810324</longitude>
+				<latitude>45.70546004023287</latitude>
+				<altitude>213.4891819198786</altitude>
+				<heading>1.805494827425143</heading>
+				<tilt>60.00143111117987</tilt>
+				<roll>0.7873041387622938</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#geocode710</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>9.658805562797749,45.70764092151062,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>E-Vai Point Orio Center</name>
+			<LookAt>
+				<longitude>9.669931553823156</longitude>
+				<latitude>45.69116507677772</latitude>
+				<altitude>0</altitude>
+				<heading>-1.923211606292696</heading>
+				<tilt>64.80348566596108</tilt>
+				<range>7905.606718322639</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#geocode710</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>9.690476927560276,45.66692016890709,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

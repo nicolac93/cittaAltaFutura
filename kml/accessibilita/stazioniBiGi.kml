@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>stazioniBiGi.kml</name>
+	<StyleMap id="msn_BiGi0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_BiGi0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_BiGi0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_BiGi0">
+		<IconStyle>
+			<scale>0.7</scale>
+			<Icon>
+				<href>C:/Users/utente/Desktop/cittaAltaPlurale/files/BiGi_new.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff000000</color>
+		</LineStyle>
+	</Style>
+	<Style id="sh_BiGi0">
+		<IconStyle>
+			<scale>0.816667</scale>
+			<Icon>
+				<href>C:/Users/utente/Desktop/cittaAltaPlurale/files/BiGi_new.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff000000</color>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>Stazioni BiGi</name>
+		<open>1</open>
+		<Placemark>
+			<name>Stazione BiGi Alpini</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.674412769025581,45.69081646124639,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Peleocapa</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.671391043993626,45.69019187099391,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Cavour</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.672206518344618,45.69499263300623,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Matteotti</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.66825718913509,45.69318128690596,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Viale Emanuele</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.66770608966864,45.69651113530473,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Sant&apos;Orsola</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.666177253770346,45.69311573856955,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Rezzara</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.664470370446125,45.69274702392304,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Coghetti</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.655815879300601,45.69163225153574,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi San Bernardino</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.663318473137496,45.68645029893894,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Don Bosco</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.67285312216705,45.6864564596606,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Maj</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.678326957498888,45.69385013767582,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Sant&apos;Anna</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.6832705707593,45.69573062287842,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Santo Spirito</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.675936073896205,45.6980557080239,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Oberdan</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.678140346021397,45.70313220456396,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Battisti</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.677876748144788,45.7020621055248,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Pirovano</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.689164287042372,45.69421667153907,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Borgo Palazzo</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.685665789351095,45.69491644339139,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Palma il Vecchio</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.659143419389126,45.69210408289974,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Codussi</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.68584117526367,45.70168776291787,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Bianzana</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.687848612577295,45.70602188387594,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Stazione BiGi Auchan-Carducci</name>
+			<styleUrl>#msn_BiGi0</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>9.649165476202223,45.68790801322558,50.00000000000001</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

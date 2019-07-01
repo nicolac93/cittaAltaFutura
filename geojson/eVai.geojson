@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "eVai",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 9.675533810926535, 45.691155920059707, 0.0 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 9.670804295258016, 45.695447629441169, 0.0 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 9.658805562797749, 45.707640921510617, 0.0 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [ 9.690476927560276, 45.66692016890709, 0.0 ] } }
+]
+}
