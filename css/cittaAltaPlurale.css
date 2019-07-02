@@ -280,9 +280,46 @@ footer a:hover {
 	font-weight: 300;
 }
 
+/* MAPS & LEGEND */
+#leggend {
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.8);
+    margin-right: 0px;
+    margin-bottom: 22px;
+    position: absolute;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+    line-height: 18px;
+    right: 0px;
+    bottom: 0px;
+}
 
+#leggenda{
+    margin: 5px;
+}
 
+#leggenda th{
+    font-weight: 300;
+}
 
+.leggend-key {
+    display:inline-block;
+    border-radius: 20%;
+    width: 20px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.leggend-key i {
+	font-size:16px;
+	color:#fff;
+	line-height: 20px;
+	padding: 0px 1px;
+}
+
+.leggend-key .fa-bus{
+	border: 1px solid #fff;
+}
 
 /* SURVEYS */
 #tematica i {

@@ -126,7 +126,7 @@ include("session.php");
       <!-- Video Fattori Dinamizzanti -->
 
       <div class="row" id="videoFattoriDinamizzanti">
-          <video autoplay muted loop style="height:100%;width:100%;opacity:1;">
+          <video autoplay muted loop style="width:100%;opacity:1;">
               <source src="img/BergamoPublicSpace_corto.mp4" type="video/mp4">
           </video>
       </div>
