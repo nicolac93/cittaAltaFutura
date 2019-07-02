@@ -269,19 +269,18 @@ include("session.php");
 
     <!-- dialog -->
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-          <div class="modal-header">
+        <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
           </button>
-          </div>
-          <div class="modal-body">
-
-            <div class="form-group">
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
               <label>Tipologia Proposta</label>
               <select class="form-control" title="Scegli una tipologia" id="selectTipologiaSegnalazione">
                 <option value="1">Accessibilità</option>
@@ -290,14 +289,14 @@ include("session.php");
                 <option value="4">Fattori dinamizzanti</option>
                 <option value="5">Città alta per tutti</option>
               </select>
-            </div>
-
-            <div id="panelTipologiaSegnalazione"></div>
-          
           </div>
+
+          <div id="panelTipologiaSegnalazione"></div>
+          
+        </div>
           <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-          <button type="button" class="btn btn-primary" id="buttonProposta">Invia proposta</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+            <button type="button" class="btn btn-primary" id="buttonProposta">Invia proposta</button>
           </div>
       </div>
   </div>     
