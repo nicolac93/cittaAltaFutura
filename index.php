@@ -22,7 +22,7 @@ include('session.php');
 		<header>
 			<?php require_once('inc/header.inc'); ?>
 		</header>
-		<div class="bg-img bg-img-hauto p-sm-5">
+		<div class=" bg-img-hauto p-sm-5">
 			<main class="container">
 				
 				<div class="row">
