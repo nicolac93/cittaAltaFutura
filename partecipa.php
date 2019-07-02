@@ -6,25 +6,18 @@ include("session.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Partecipa</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
+<html lang="it">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="description" content="Processo partecipativo Tripla elica per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)">
+        <meta name="author" content="CST - DiathesisLab">
+        <title>Citt&agrave; Alta Plurale | Partecipa</title>
 
     <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/cittaAltaFutura.css" rel="stylesheet">
+	<?php require_once('inc/links.inc'); ?>
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
@@ -33,50 +26,27 @@ include("session.php");
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="index.php">Home</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="partecipa.php">Partecipa</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="progetto.php">Il Progetto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="stats.php">Statistiche</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="calendario.php">Calendario</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="team.php">Team</a>
-              </li>
-              <li class="nav-item" id="login">
-                <a class="nav-link" href="login.php"> Login</a>
-              </li>
-              <li class="nav-item" id="logout">
-                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
-              </li>
-              <li class="nav-item" id="user">
-                <span class="nav-link"><strong><?php echo $_SESSION['login_user_name'];?></strong></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+		<header>
+			<?php require_once('inc/header.inc'); ?>
+		</header>
 
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Città Alta Plurale
-        <small>inchiesta partecipativa</small>
-      </h1>
+
+
+		<div class="text-center mt-5">
+			<h4>Città Alta Plurale</h4>
+			<h1 class="section-heading mt-0 mb-5">inchiesta partecipativa</h1>
+		</div>
+		
+		<div class="row text-center">
+			<p>
+			Qua ci metterei una breve introduzione tipo:
+			Osserva la mappa sottostante sullla situazione attuale di Città Alta e rispondi al questionario inserendo i tuoi consigli
+			</p>
+		
+		</div>
       <!--
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -96,27 +66,30 @@ include("session.php");
           <input type="radio" name="options" value="table" id="optionTable" autocomplete="off"> <i class='fa fa-list'></i>
         </label>
       </div> -->
-      <br>
-      <br>
       <div class="row" id="tematica">
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="accessibilita" id="buttonAccessibilita"><i class='fas fa-bicycle'></i> <br><strong>ACCESSIBILITA'</strong><br></button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" value="accessibilita" id="buttonAccessibilita"><i class='fa fa-bicycle fa-2x'></i>ACCESSIBILITA'</button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fas fa-building'></i> <br><strong>FUNZIONI DEGLI EDIFICI</strong></button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fa fa-building fa-2x'></i>FUNZIONI DEGLI EDIFICI</button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='far fa-building'></i> <br><strong>EDIFICI DA RIQUALIFICARE</strong></button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='fa fa-house-damage fa-2x'></i>EDIFICI DA RIQUALIFICARE</button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="fattoriDinamizzanti" id="buttonFattoriDinamizzanti"><i class='fas fa-sync'></i> <br><strong>FATTORI DINAMIZZANTI</strong></button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" value="fattoriDinamizzanti" id="buttonFattoriDinamizzanti"><i class='fas fa-sync fa-2x'></i>FATTORI DINAMIZZANTI</button>
           </div>
-          <div class="col-sm">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fas fa-users'></i> <br><strong>CITTA' ALTA PER TUTTI</strong></button>
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-users fa-2x'></i>COMPLETA LA MAPPA</button>
           </div>
       </div>
 
-      <br>
+		<div class="row text-center">
+			<h3 class="m-auto map-intro"></h3>
+			<p class="map-intro-text">Qua ci va invece il testo relativo alla tematica selezionata:
+			Il testo di questo div va modificato tramite javascript, al click del bottone qua sopra.</p>
+		
+		</div>
 
       <!--
       <div class="row">
@@ -263,7 +236,8 @@ include("session.php");
       <!-- Fine questionario -->
 
       <!-- tabs -->
-      <h3>Esprimi la tua opinione</h3>
+      <div class="col-12 text-center"><h3 class="section-heading">Esprimi la tua opinione</h3></div>
+      
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-accessiblita-tab" data-toggle="tab" href="#nav-accessiblita" role="tab" aria-controls="nav-accessiblita" aria-selected="true"><i class='fas fa-bicycle'></i> Accessibilità</a>
@@ -290,34 +264,7 @@ include("session.php");
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-12 text-center">
-              <img src="img/LogoDiathesis.jpg" height="112">
-              <br>
-              <br>
-              <p class="m-0 text-center text-white"><strong>CST - DiathesisLab</strong>
-                  <br>Via Salvecchio 19,  24129 Bergamo</p>
-              <ul class="list-unstyled">
-                  <li><i class="fa fa-envelope-o fa-fw"></i> <a href="https://www.unibg.it/ricerca/strutture-ricerca/centri-ateneo/cst/diathesis-lab">http://www.unibg.it/diathesis</a>
-                  </li>
-                  <li>
-                      <i class="fa fa-envelope-o fa-fw"></i><a href="">diathesis@unibg.it</a>
-                  </li>
-              </ul>
-              <hr class="small">
-              <ul class="list-inline">
-                  <li>
-                      <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                  </li>
-              </ul>
-              <p class="m-0 text-center text-white">Copyright &copy; Università degli Studi di Bergamo 2020</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+	<?php require_once('inc/footer.inc'); ?>
 
 
     <!-- dialog -->
@@ -357,25 +304,10 @@ include("session.php");
 
 </div>
 
+	<!-- Scripts -->
+	<?php require_once('inc/footerscripts.inc'); ?>
 
 
-    <script>
-        var login = document.getElementById("login");
-        var logout = document.getElementById("logout");
-        var user = document.getElementById("user");
-        if("<?php echo $_SESSION['login_user_name'];?>" == ""){
-            login.style.display = "inline-block";
-            logout.style.display = "none";
-            user.style.display = "none";
-        }else{
-            login.style.display = "none";
-            logout.style.display = "inline-block";
-            user.style.display = "inline-block";
-        }
-    </script>
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <!-- Me Js -->

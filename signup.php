@@ -65,7 +65,10 @@ session_start();
         if(empty($username_err) && empty($name_err) && empty($tipo_err)){
             if(empty($mail_result)){
                 $mail_result = sendMail($username, $name, $tipo);
+                error_log(print_r($mail_result,true));
+                error_log("1 QUA CI ARRIVO");
                 if($mail_result == "OK"){
+					error_log("2 QUA CI ARRIVO");
                     $_SESSION['username'] = $username;
                     $_SESSION['name'] = $name;
                     $_SESSION['tipo'] = $tipo;

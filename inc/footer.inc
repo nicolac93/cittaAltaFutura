@@ -41,10 +41,10 @@
 			<div class="col-12">
 					<ul class="list-inline footer-social">
 						<li>
-							<a href="#"><i class="fab fa-facebook-f fa-fw fa-2x"></i></a>
-							<a href="#"><i class="fab fa-instagram fa-fw fa-2x"></i></a>
-							<a href="#"><i class="fab fa-twitter fa-fw fa-2x"></i></a>
-							<a href="#"><i class="fab fa-youtube fa-fw fa-2x"></i></a>
+							<a href="https://www.facebook.com/Citt%C3%A0-Alta-Plurale-426485558174998/?modal=admin_todo_tour" target="_blank"><i class="fab fa-facebook-f fa-fw fa-2x"></i></a>
+							<a href="https://www.instagram.com/cst_diathesislab/" target="_blank"><i class="fab fa-instagram fa-fw fa-2x"></i></a>
+							<a href="https://twitter.com/DiathesisLab" target="_blank"><i class="fab fa-twitter fa-fw fa-2x"></i></a>
+							<a href="https://www.youtube.com/channel/UCPTRH-eRdapQYjrnYTwrAtw" target="_blank"><i class="fab fa-youtube fa-fw fa-2x"></i></a>
 						</li>
 					</ul>
 			</div>
