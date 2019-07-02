@@ -1,4 +1,4 @@
-var layer = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto", "pisteCiclabili", "atbBus", "spaziInutilizzati", "ferrovieBg", "autostradeBg", "parcheggiBg", "aereoportoBGY", "stazioniBiGi", "fermateATB", "eVai"];
+var layer = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto", "pisteCiclabili", "atbBus", "spaziInutilizzati"];
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xhOTMiLCJhIjoiY2l2Y2ozYnZ5MDBocTJ5bzZiM284NGkyMiJ9.4VUvTxBv0zqgjY7t3JTFOQ';
 var map = new mapboxgl.Map({
@@ -55,8 +55,8 @@ function addPopup(msg){
             "<div class=\"card-body\"><h5 class=\"card-title\">" + obj[i].nome + "</h5>" +
             "<p class=\"card-text\"><strong>Segnalazione: </strong>"+ obj[i].tipologia +"</p>" +
             "<p class=\"card-text\"><strong>Motivazione: </strong>" + obj[i].motivazione + "</p>" + 
-            "<p class=\"card-text\"><button style='font-size:12px' onclick=\"like('" + obj[i].id + "')\"><i class='fas fa-thumbs-up'></i> Like</button> " +
-            " <button style='font-size:12px' onclick=\"unlike('" + obj[i].id + "')\"><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+            "<p class=\"card-text\"><button style='font-size:12px'><i class='fas fa-thumbs-up'></i> Like</button> " +
+            " <button style='font-size:12px'><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
 
         var popup = new mapboxgl.Popup({ offset: 25 })
         .setHTML(strpopup);
@@ -64,17 +64,7 @@ function addPopup(msg){
         // create DOM element for the marker
         var el = document.createElement('div');
         el.id = 'marker';
-
-        if(obj[i].categoria == 1){
-            el.style.backgroundImage = "url('img/cycle.png')";
-        }else if(obj[i].categoria == 2){
-            el.style.backgroundImage = "url('img/buildingBlack.png')";
-        }else if(obj[i].categoria == 3){
-            el.style.backgroundImage = "url('img/buildingWhite.PNG')";
-        }else if(obj[i].categoria == 4){
-            el.style.backgroundImage = "url('img/sync-solid.svg')";
-        }
-
+        el.style.backgroundImage = "url('img/"+ obj[i].immagine +"')";
         // create the marker
         new mapboxgl.Marker(el)
         .setLngLat([obj[i].longitudine, obj[i].latitudine])
@@ -82,36 +72,6 @@ function addPopup(msg){
         .addTo(map);
     }
 
-}
-
-function like(id) {
-    $.ajax({
-        type: "POST",
-        url: "like.php",
-        data: "id=" + id +
-            "&opinione=" + 1,
-        success: function(msg){
-            alert(msg);
-        },
-        error: function(){
-            alert("Votazione fallita");
-        }
-    });
-}
-
-function unlike(id){
-    $.ajax({
-        type: "POST",
-        url: "like.php",
-        data: "id=" + id +
-            "&opinione=" + 0,
-        success: function(msg){
-            alert(msg);
-        },
-        error: function(){
-            alert("Votazione fallita");
-        }
-    });
 }
 
 
@@ -207,7 +167,6 @@ map.on('load', function() {
     //loadEdifici();
 });
 
-/*
 var marker = new mapboxgl.Marker({
     draggable: true
 })
@@ -224,53 +183,54 @@ function onDragEnd() {
 }
      
 marker.on('dragend', onDragEnd);
-*/
 
 $('#buttonAccessibilita').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     accessibilita();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 $('#buttonCostruito').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     funzioniCostruito();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 $('#buttonSpaziInutilizzati').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     spaziInutilizzati();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
+});
+
+$('#buttonFattoriDinamizzanti').on('click', function(event) {
+	$('#tematica .btn').not(this).removeClass('active');
+	fattoriDinamizzanti()
+	$('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 $('#buttonCittaAltaFutura').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     cittaAltaFutura();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 function accessibilita(){
     removeLayer();
+	$('.map-intro').html('ACCESSIBILIT&Agrave;');
+	$('.map-intro-text').html('Città Alta può essere raggiunta mediante autobus e funicolari, mezzi privati e percorsi pedonali o combinando tali modalità per affrontare l’altimetria. Essa infatti prevede più accessi che andrebbero potenziati per incentivare una migliore distribuzione dei flussi.');
 
-    var color = ["#00cb00", "#ffb915", "#000000", "#ffffff"];
-    var layerName = ["pisteCiclabili", "atbBus", "ferrovieBg", "autostradeBg"];
+    var color = ["#00cb00", "#ffb915"];
+    var layerName = ["pisteCiclabili", "atbBus"];
 
     for(i=0; i< layerName.length; i++){
         loadLayer(layerName[i], color[i]);
     }
-
-    var color = ["#4272db", "#5a5a5a"];
-    var layerName = ["parcheggiBg", "aereoportoBGY"];
-    
-    for(i=0; i< layerName.length; i++){
-        loadLayerSuperfici(layerName[i], color[i]);
-    }
-
-    loadLayerPoint("fermateATB", "bus");
-    loadLayerPoint("stazioniBiGi", "bicycle");
-    loadLayerPoint("eVai", "car");
-
 }
 
 function funzioniCostruito(){
     removeLayer();
+	$('.map-intro').html('FUNZIONI DEGLI EDIFICI');
+	$('.map-intro-text').html('Gli edifici di Città Alta rispondono a molteplici funzioni: residenziale, commerciale, turistica, formativa e culturale. Per evitare la concentrazione solo in alcune aree, bisognerebbe promuovere interventi che rispondano ai bisogni dei diversi abitanti. ');
 
     var color = ["#6f6f6f", "#ffffff", "#ffff00", "#ff007f", "#0000ff", "#00ffff", "#aa0000"];
     var layerName = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto"];
@@ -285,6 +245,8 @@ function funzioniCostruito(){
 
 function spaziInutilizzati(){
     removeLayer();
+	$('.map-intro').html('EDIFICI DA RIQUALIFICARE');
+	$('.map-intro-text').html('Città Alta è un borgo compatto che non consente un’ulteriore espansione del costruito. Essa, tuttavia, mostra la presenza di diversi edifici dismessi o poco utilizzati che potrebbero essere adibiti a nuova funzione per soddisfare i bisogni degli abitanti.');
 
     var color = ["#00007f"];
     var layerName = ["spaziInutilizzati"];
@@ -295,8 +257,19 @@ function spaziInutilizzati(){
 
 }
 
+function fattoriDinamizzanti(){
+    removeLayer();
+	$('.map-intro').html('FATTORI DINAMIZZANTI');
+	$('.map-intro-text').html('Città Alta è il cuore pulsante di Bergamo: vi accedono diverse categorie di abitanti che hanno in comune il movimento e a seconda del periodo disegnano tanti volti mutevoli che attestano quanto la Città sia abitata da cittadini mobili.');
+
+}
+
+
 function cittaAltaFutura(){
     removeLayer();
+	$('.map-intro').html('COMPLETA LA MAPPA');
+	$('.map-intro-text').html('Punta il marker azzurro sul punto esatto del luogo per il quale vuoi fare una segnalazione');
+
 }
 
 function removeLayer(){
@@ -357,45 +330,26 @@ function loadLayer(nameLayer, colorLayer){
 	});
 }
 
-function loadLayerSuperfici(nameLayer, colorLayer){
-    map.addLayer({
-		'id': nameLayer,
-		'type': 'fill',
-		'source': {
-			// GeoJSON Data source used in vector tiles, documented at
-			// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
-			'type': 'geojson',
-			'data': 'geojson/' + nameLayer +'.geojson'
-		},
-		'paint': {
-			"fill-color": colorLayer,
-		}
-	});
-}
-
-function loadLayerPoint(nameLayer, icon){
-    map.addLayer({
-		'id': nameLayer,
-		'type': 'symbol',
-		'source': {
-			// GeoJSON Data source used in vector tiles, documented at
-			// https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
-			'type': 'geojson',
-			'data': 'geojson/' + nameLayer +'.geojson'
-		},
-		'layout': {
-			'icon-image': icon+'-15'
-		}
-	});
-}
-
 
 
 function addSegnalazione(){
     alert("Clicca sul luogo che vuoi fare una segnalazione");
 
+    if($('.tab-content .active')[0].id == "nav-accessiblita"){
+
+    }
+    else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
+
+    }
+    else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
+
+    }
+    else if($('.tab-content .active')[0].id == "nav-cittaAltaFutura"){
+
+    }
+
     map.on('click', addMarker);
-   /* 
+    
     var popup4 = new mapboxgl.Popup({ offset: 25 })
     .setText('Fermare i lavori di realizzazione del parcheggio.');
 // create DOM element for the marker
@@ -407,7 +361,7 @@ new mapboxgl.Marker(el4)
     .setLngLat([9.666543, 45.706045])
     .setPopup(popup4) // sets a popup on this marker
     .addTo(map);
-*/
+
     
 
 }
@@ -417,7 +371,6 @@ function addMarker(e){
     alert("add");
 
     $('#exampleModal').modal();
-    $("#panelTipologiaSegnalazione").load("modalNewProposta/modalAccessibilita.html");
 
  /*   if (typeof circleMarker !== "undefined" ){ 
       map.removeLayer(circleMarker);         
@@ -432,9 +385,9 @@ function addMarker(e){
     map.off('click', addMarker);            
 }
 
-/*$("#buttonProposta").on("click", function(){
+$("#buttonProposta").on("click", function(){
     alert("ciao");
     
     var id = $('.tab-contentModal .active').attr('id');
     alert(id);
-});*/
+});

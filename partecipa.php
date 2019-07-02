@@ -1,6 +1,6 @@
 <?php
-//ini_set('display_errors', 'Off');
-ini_set('display_errors', 'On');
+ini_set('display_errors', 'Off');
+//ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 include("session.php");
 ?>
@@ -16,8 +16,8 @@ include("session.php");
         <title>Citt&agrave; Alta Plurale | Partecipa</title>
 
     <!-- Custom styles for this template -->
-    <link href="css/cittaAltaFutura.css" rel="stylesheet">
 	<?php require_once('inc/links.inc'); ?>
+    <link href="css/cittaAltaFutura.css" rel="stylesheet">
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
@@ -84,10 +84,9 @@ include("session.php");
           </div>
       </div>
 
-		<div class="row text-center">
+		<div id="map-intro-div" class="row text-center">
 			<h3 class="m-auto map-intro"></h3>
-			<p class="map-intro-text">Qua ci va invece il testo relativo alla tematica selezionata:
-			Il testo di questo div va modificato tramite javascript, al click del bottone qua sopra.</p>
+			<p class="map-intro-text"></p>
 		
 		</div>
 
