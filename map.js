@@ -229,25 +229,37 @@ marker.on('dragend', onDragEnd);
 $('#buttonAccessibilita').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     accessibilita();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 $('#buttonCostruito').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     funzioniCostruito();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 $('#buttonSpaziInutilizzati').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     spaziInutilizzati();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
+});
+
+$('#buttonFattoriDinamizzanti').on('click', function(event) {
+	$('#tematica .btn').not(this).removeClass('active');
+	fattoriDinamizzanti()
+	$('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 $('#buttonCittaAltaFutura').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
     cittaAltaFutura();
+    $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
 function accessibilita(){
     removeLayer();
+	$('.map-intro').html('ACCESSIBILIT&Agrave;');
+	$('.map-intro-text').html('Città Alta può essere raggiunta mediante autobus e funicolari, mezzi privati e percorsi pedonali o combinando tali modalità per affrontare l’altimetria. Essa infatti prevede più accessi che andrebbero potenziati per incentivare una migliore distribuzione dei flussi.');
 
     var color = ["#00cb00", "#ffb915", "#000000", "#ffffff"];
     var layerName = ["pisteCiclabili", "atbBus", "ferrovieBg", "autostradeBg"];
@@ -271,6 +283,8 @@ function accessibilita(){
 
 function funzioniCostruito(){
     removeLayer();
+	$('.map-intro').html('FUNZIONI DEGLI EDIFICI');
+	$('.map-intro-text').html('Gli edifici di Città Alta rispondono a molteplici funzioni: residenziale, commerciale, turistica, formativa e culturale. Per evitare la concentrazione solo in alcune aree, bisognerebbe promuovere interventi che rispondano ai bisogni dei diversi abitanti. ');
 
     var color = ["#6f6f6f", "#ffffff", "#ffff00", "#ff007f", "#0000ff", "#00ffff", "#aa0000"];
     var layerName = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto"];
@@ -285,6 +299,8 @@ function funzioniCostruito(){
 
 function spaziInutilizzati(){
     removeLayer();
+	$('.map-intro').html('EDIFICI DA RIQUALIFICARE');
+	$('.map-intro-text').html('Città Alta è un borgo compatto che non consente un’ulteriore espansione del costruito. Essa, tuttavia, mostra la presenza di diversi edifici dismessi o poco utilizzati che potrebbero essere adibiti a nuova funzione per soddisfare i bisogni degli abitanti.');
 
     var color = ["#00007f"];
     var layerName = ["spaziInutilizzati"];
@@ -295,8 +311,19 @@ function spaziInutilizzati(){
 
 }
 
+function fattoriDinamizzanti(){
+    removeLayer();
+	$('.map-intro').html('FATTORI DINAMIZZANTI');
+	$('.map-intro-text').html('Città Alta è il cuore pulsante di Bergamo: vi accedono diverse categorie di abitanti che hanno in comune il movimento e a seconda del periodo disegnano tanti volti mutevoli che attestano quanto la Città sia abitata da cittadini mobili.');
+
+}
+
+
 function cittaAltaFutura(){
     removeLayer();
+	$('.map-intro').html('COMPLETA LA MAPPA');
+	$('.map-intro-text').html('Punta il marker azzurro sul punto esatto del luogo per il quale vuoi fare una segnalazione');
+
 }
 
 function removeLayer(){
