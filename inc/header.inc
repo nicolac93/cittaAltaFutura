@@ -6,10 +6,10 @@
 			<div class="col-sm float-md-right text-md-right">
               <ul class="list-inline">
                   <li>
-                      <a href="#"><i class="fab fa-facebook-f fa-fw"></i></a>
-                      <a href="#"><i class="fab fa-instagram fa-fw"></i></a>
-                      <a href="#"><i class="fab fa-twitter fa-fw"></i></a>
-                      <a href="#"><i class="fab fa-youtube fa-fw"></i></a>
+                      <a href="https://www.facebook.com/Citt%C3%A0-Alta-Plurale-426485558174998/?modal=admin_todo_tour" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a>
+                      <a href="https://www.instagram.com/cst_diathesislab/" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+                      <a href="https://twitter.com/DiathesisLab" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+                      <a href="https://www.youtube.com/channel/UCPTRH-eRdapQYjrnYTwrAtw" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
                   </li>
               </ul>
 			</div>
