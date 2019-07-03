@@ -22,15 +22,15 @@ function sendMail($SMusername,$SMname,$SMsurname){
             'allow_self_signed' => true
         )
     );
-    $mail->Username = 'calcolatore.co2@gmail.com';                 // SMTP username
-    $mail->Password = 'co2calculator';                           // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+    $mail->Username = 'diathesis@unibg.it';                 // SMTP username
+    $mail->Password = 'Geografi1';                           // SMTP password
+    $mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
 
-    $mail->From = 'calcolatore.co2@gmail.com';
+    $mail->From = 'diathesis@unibg.it';
     $mail->FromName = 'Città Alta Plurale';
     $mail->addAddress($SMusername, $SMname . " " . $SMsurname);     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('calcolatore.co2@gmail.com', 'Informazioni');
+    $mail->addReplyTo('diathesis@unibg.it', 'Informazioni');
 //                    $mail->addCC('mail@studenti.unibg.it');
     //$mail->addBCC('bcc@example.com');
 
