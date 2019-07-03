@@ -27,9 +27,9 @@ include('session.php');
 				
 				<div class="row">
 					<div class="col-lg-12 mt-5 pb-5 text-center">
-						<h4>CST - DiathesisLab | Universit&agrave; degli studi di Bergamo</h4>
-						<h1 class="section-heading">Città Alta Plurale</h1>
-						<h3>Processo partecipativo Tripla elica per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
+						<h4>Citt&agrave; Alta Plurale</h4>
+						<h1 class="section-heading">Processo partecipativo per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h1>
+						<h3></h3>
 					</div>
 				</div>
 				
@@ -37,19 +37,87 @@ include('session.php');
 					<div class="col-md-4 order-md-2 text-center ">
 					   <img src="img/logo500.png" style="width:70%">
 					</div>
-					<div class="col-md-4 order-md-1 text-center pb-2 pt-3">
+					<div class="col-md-4 order-md-1 text-center pb-2 pt-3" onclick="$('#modal-video-1').modal();" style="cursor:pointer;">
 						<h5>Mobilit&agrave; mensile degli abitanti (febbraio 2019)</h5>
-						<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
-							<source src="video/Wifi HeatMap_FestiviFebbraio.mp4" type="video/mp4">
-						</video>
+						<div class="video-box" onclick="$('#modal-video-1').modal();" style="cursor:pointer;">
+							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
+								<source src="video/Wifi HeatMap_FestiviFebbraio.mp4" type="video/mp4">
+							</video>
+							<div class="video-overlay">
+								<div class="overlay-content"><i class="fa fa-play fa-4x"></i></div>
+							</div>
+						</div>
 					</div>
 					<div class="col-md-4 order-md-3 text-center  pb-2 pt-3">
 						<h5>Mobilit&agrave; annuale degli abitanti (2018)</h5>
-						<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
-							<source src="video/Wifi HeatMap_LavorativiFebbraio.mp4" type="video/mp4">
-						</video>
+						<div class="video-box" onclick="$('#modal-video-2').modal();" style="cursor:pointer;">
+							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
+								<source src="video/Wifi HeatMap_LavorativiFebbraio.mp4" type="video/mp4">
+							</video>
+							<div class="video-overlay">
+								<div class="overlay-content"><i class="fa fa-play fa-4x"></i></div>
+							</div>
+						</div>
 					</div>
 				</div>
+				
+				
+<!-- MODAL VIDEO 1 -->
+<div class="modal fade" id="modal-video-1" tabindex="-1" role="dialog" aria-labelledby="modal-video-label">
+    <div class="modal-dialog" role="document"  style="max-width:1100px;">
+        <div class="modal-content">
+            <div class="modal-header">
+				Mobilità mensile degli abitanti (febbraio 2019)
+				<button type="button" class="close" data-dismiss="modal" aria-label="Chiudi">
+                    <span aria-hidden="true">&times;</span>
+                </button>				
+            </div>
+            <div class="modal-body">
+                <div class="modal-video">
+                    <div class="embed-responsive embed-responsive-16by9">
+						<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
+							<source src='video/Wifi HeatMap_FestiviFebbraio.mp4' type='video/mp4'>
+							<p class='vjs-no-js'>
+							Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
+							<a href='https://videojs.com/html5-video-support/' target='_blank'>supporti HTML5 video</a>
+							</p>
+						</video>						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>				
+				
+<!-- MODAL VIDEO 2 -->
+<div class="modal fade" id="modal-video-2" tabindex="-1" role="dialog" aria-labelledby="modal-video-label">
+    <div class="modal-dialog" role="document"  style="max-width:1100px;">
+        <div class="modal-content">
+            <div class="modal-header">
+				Mobilit&agrave; annuale degli abitanti (2018)
+				<button type="button" class="close" data-dismiss="modal" aria-label="Chiudi">
+                    <span aria-hidden="true">&times;</span>
+                </button>				
+            </div>
+            <div class="modal-body">
+                <div class="modal-video">
+                    <div class="embed-responsive embed-responsive-16by9">
+						<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
+							<source src='video/Wifi HeatMap_LavorativiFebbraio.mp4' type='video/mp4'>
+							<p class='vjs-no-js'>
+							Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
+							<a href='https://videojs.com/html5-video-support/' target='_blank'>supporti HTML5 video</a>
+							</p>
+						</video>						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>				
+				
+
+
 				<hr class="primary"/>
 				<section>
 					<div class="container">
@@ -61,7 +129,7 @@ include('session.php');
 						</div>
 						
 						<div class="row">
-							<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' poster='MY_VIDEO_POSTER.jpg' data-setup='{}'>
+							<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
 								<source src='https://www.dropbox.com/s/m144y093my9jt82/Citt%C3%A0AltaPlurale.mp4?dl=1' type='video/mp4'>
 								<p class='vjs-no-js'>
 								Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
