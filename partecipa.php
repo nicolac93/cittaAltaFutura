@@ -42,7 +42,6 @@ include("session.php");
 		
 		<div class="row text-center">
 			<p>
-			Qua ci metterei una breve introduzione tipo:
 			Osserva la mappa sottostante sullla situazione attuale di Città Alta e rispondi al questionario inserendo i tuoi consigli
 			</p>
 		
