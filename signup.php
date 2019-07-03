@@ -144,7 +144,11 @@ session_start();
 									<span class="help-block"><?php echo $tipo_err; ?></span>
 								</div>
 								<div class="form-group">
-									<input type="submit" class="btn" value="Continua">
+									<input type="checkbox" id="ppCheck" class="form-check-input" onclick="toggleSubmit()" style="margin-left:0px;">
+									<label class="form-check-label">Ho letto e accetto la <a href="privacy-policy.php" target="_blank">Privacy Policy</a></label>
+								</div>
+								<div class="form-group ">
+									<input id="submitButton" type="submit" class="btn" value="Continua" disabled>
 								</div>
 								<span class="help-block"><?php echo $mail_err; ?></span>
 								<p>Hai già un profilo? <a href="login.php">Accedi qui</a>.</p>
@@ -153,6 +157,18 @@ session_start();
 					</div>
 				</div>
 			</div>
+			
+			<script>
+			function toggleSubmit() {
+			  var checkBox = document.getElementById("ppCheck");
+			  var submitButton = document.getElementById("submitButton");
+			  if (checkBox.checked == true){
+				submitButton.disabled = false;
+			  } else {
+				 submitButton.disabled = true;
+			  }
+			}
+			</script>
 
 			<div class="position-absolute" style="right:0px;bottom:0px;">
 				<a href="login.php">
