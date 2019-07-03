@@ -20,8 +20,10 @@ function sendMail($SMusername,$SMname,$SMsurname){
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true
-        )
+        )/*,
+        'smtp_port' => '465'*/
     );
+    $mail->Port = 465;
     $mail->Username = 'diathesis@unibg.it';                 // SMTP username
     $mail->Password = 'Geografi1';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
@@ -57,4 +59,20 @@ function sendMail($SMusername,$SMname,$SMsurname){
         return 'OK';
     }
 }
+
+function sendMail2($SMusername,$SMname,$SMsurname){
+    $to      = '$SMusername';
+    $subject = 'Registrazione Città Alta Plurale';
+    $code = hash("crc32b", $SMusername); // Creates a code from the mail
+    $message = "Benvenuto " . $SMname . ",\n\n"
+            ."Per procedere alla registrazione sul sistema partecipativo di Città Alta Futura, \n"
+            . "ti servirà il seguente codice: \n".$code
+            ."\n Grazie per la collaborazione!";
+    $headers = 'From: diathesis@unibg.it' . "\r\n" .
+    'Reply-To: diathesis@unibg.it' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+    return mail($to, $subject, $message, $headers);
+}
+ 
 ?> 
