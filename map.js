@@ -114,65 +114,6 @@ function unlike(id){
     });
 }
 
-
-/*
-// create the popup
-var popup = new mapboxgl.Popup({ offset: 25 })
-    .setHTML("<div class=\"card h-100\"><a href=\"#\"><img class='card-img-top' src='img/piazzaVecchia.jpg'></a><div class=\"card-body\"><h5 class=\"card-title\">Piazza Vecchia</h5><p class=\"card-text\"><strong>Segnalazione: </strong><?php echo $row['destinatari']?></p><p class=\"card-text\"><strong>Motivazione: </strong>Creare delle isole pedonali per renderlo più sicuro ai pedoni.</p><p class=\"card-text\"><button style='font-size:12px'><i class='fas fa-thumbs-up'></i> Like</button>  <button style='font-size:12px'><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>");
-
-// create DOM element for the marker
-var el = document.createElement('div');
-el.id = 'marker';
-el.style.backgroundImage = "url('img/piazzaVecchia.jpg')";
-// create the marker
-new mapboxgl.Marker(el)
-    .setLngLat([9.662965, 45.704083])
-    .setPopup(popup) // sets a popup on this marker
-    .addTo(map);
-
-// create the popup
-var popup = new mapboxgl.Popup({ offset: 25 })
-    .setText('Rendere la piazza una porta d\'accesso alla corsarola.');
-// create DOM element for the marker
-var el2 = document.createElement('div');
-el2.id = 'marker';
-el2.style.backgroundImage = "url('img/piazzaCittadella.jpg')";
-// create the marker
-new mapboxgl.Marker(el2)
-    .setLngLat([9.659408, 45.705815])
-    .setPopup(popup) // sets a popup on this marker
-    .addTo(map);
-
-// create the popup
-var popup3 = new mapboxgl.Popup({ offset: 25 })
-    .setText('Creare delle isole pedonali per renderlo più sicuro ai pedoni.');
-// create DOM element for the marker
-var el3 = document.createElement('div');
-el3.id = 'marker';
-el3.style.backgroundImage = "url('img/colleAperto.jpg')";
-// create the marker
-new mapboxgl.Marker(el3)
-    .setLngLat([9.658154, 45.706664])
-    .setPopup(popup3) // sets a popup on this marker
-    .addTo(map);
-
-// create the popup
-*/
-
-/*	
-map.on('load', function() {
-    // Insert the layer beneath any symbol layer.
-    var layers = map.getStyle().layers;
-
-    var labelLayerId;
-    for (var i = 0; i < layers.length; i++) {
-        if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
-            labelLayerId = layers[i].id;
-            break;
-        }
-    }
-});*/
-
 function loadEdifici(){
 	map.addLayer({
 		'id': 'room-extrusion',
@@ -456,12 +397,24 @@ function addMarker(e){
                   fillOpacity: 0.5
               }).addTo(map);
 */
-    map.off('click', addMarker);            
+    map.off('click', addMarker);           
 }
 
-/*$("#buttonProposta").on("click", function(){
-    alert("ciao");
+$("#buttonProposta").on("click", function(){
+    if($('#selectTipologiaSegnalazione').val() == 1){
+        alert("a");
+    }
+    if($('#selectTipologiaSegnalazione').val() == 2){
+        alert("b");
+    }
+    if($('#selectTipologiaSegnalazione').val() == 3){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalEdificiDaRiqualificare.html");
+    }
+    if($('#selectTipologiaSegnalazione').val() == 4){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalFattoriDinamizzanti.html");
+    }
+    if($('#selectTipologiaSegnalazione').val() == 5){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
+    }
     
-    var id = $('.tab-contentModal .active').attr('id');
-    alert(id);
-});*/
+});
