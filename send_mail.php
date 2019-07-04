@@ -9,7 +9,7 @@ function sendMail($SMusername,$SMname,$SMsurname){
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
 
-    iconv_set_encoding("internal_encoding", "UTF-8");
+    //iconv_set_encoding("internal_encoding", "UTF-8");
     $mail = new PHPMailer;
 
     $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -21,8 +21,7 @@ function sendMail($SMusername,$SMname,$SMsurname){
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true
-        )/*,
-        'smtp_port' => '465'*/
+        )
     );
     $mail->Port = 465;
     //$mail->Username = 'calcolatore.co2@gmail.com';                 // SMTP username
