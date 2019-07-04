@@ -9,6 +9,7 @@ function sendMail($SMusername,$SMname,$SMsurname){
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
 
+    iconv_set_encoding("internal_encoding", "UTF-8");
     $mail = new PHPMailer;
 
     $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -24,12 +25,14 @@ function sendMail($SMusername,$SMname,$SMsurname){
         'smtp_port' => '465'*/
     );
     $mail->Port = 465;
+    //$mail->Username = 'calcolatore.co2@gmail.com';                 // SMTP username
+    //$mail->Password = 'co2calculator';
     $mail->Username = 'diathesis@unibg.it';                 // SMTP username
     $mail->Password = 'Geografi1';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
 
     $mail->From = 'diathesis@unibg.it';
-    $mail->FromName = 'Città Alta Plurale';
+    $mail->FromName = utf8_decode('Città Alta Plurale');
     $mail->addAddress($SMusername, $SMname . " " . $SMsurname);     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
     $mail->addReplyTo('diathesis@unibg.it', 'Informazioni');
@@ -40,17 +43,18 @@ function sendMail($SMusername,$SMname,$SMsurname){
     //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
     $mail->isHTML(true);                                  // Set email format to HTML
-
-    $mail->Subject = 'Registrazione Città Alta Plurale';
+    
+    // ."\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+    $mail->Subject = utf8_decode('Registrazione Città Alta Plurale');
     $code = hash("crc32b", $SMusername); // Creates a code from the mail
-    $mail->Body    = "Benvenuto " . $SMname . ",<BR><BR>"
+    $mail->Body    = utf8_decode("Benvenuto " . $SMname . ",<BR><BR>"
             ."Per procedere alla registrazione sul sistema partecipativo di Città Alta plurale, <BR>"
             . "ti servirà il seguente codice: <BR> <b>".$code."</b>"
-            ."<BR> Grazie per la collaborazione!";
-    $mail->AltBody = "Benvenuto " . $SMname . ",\n\n"
+            ."<BR> Grazie per la collaborazione!");
+    $mail->AltBody = utf8_decode("Benvenuto " . $SMname . ",\n\n"
             ."Per procedere alla registrazione sul sistema partecipativo di Città Alta Futura, \n"
             . "ti servirà il seguente codice: \n".$code
-            ."\n Grazie per la collaborazione!";
+            ."\n Grazie per la collaborazione!");
 
     if(!$mail->send()) {
 //        echo 'Message could not be sent.';
@@ -58,21 +62,6 @@ function sendMail($SMusername,$SMname,$SMsurname){
     } else {
         return 'OK';
     }
-}
-
-function sendMail2($SMusername,$SMname,$SMsurname){
-    $to      = '$SMusername';
-    $subject = 'Registrazione Città Alta Plurale';
-    $code = hash("crc32b", $SMusername); // Creates a code from the mail
-    $message = "Benvenuto " . $SMname . ",\n\n"
-            ."Per procedere alla registrazione sul sistema partecipativo di Città Alta Futura, \n"
-            . "ti servirà il seguente codice: \n".$code
-            ."\n Grazie per la collaborazione!";
-    $headers = 'From: diathesis@unibg.it' . "\r\n" .
-    'Reply-To: diathesis@unibg.it' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-
-    return mail($to, $subject, $message, $headers);
 }
  
 ?> 
