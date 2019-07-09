@@ -133,6 +133,11 @@ button a {color:#fff!important;}
     font-weight: 500;
 }
 
+.body-logo {
+	width: 50%;
+    padding-top: 0px;	
+}
+
 
 /* VIDEO */
 .video-overlay {
@@ -441,7 +446,7 @@ form p {
     /*margin-bottom: 20px;*/
     max-width: 90%;
     line-height: 1.2rem;
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
 .form-check-input .form-check-label {
@@ -451,6 +456,20 @@ form p {
 .form-control-sm {
 height: 2.5rem;
 width: -webkit-fill-available;
+}
+
+
+/* CARDS */
+div.card > .card-body > h5.card-title {
+    font-size: 12px;
+    line-height: 13px;
+    margin-bottom: .2rem;
+}
+
+div.card > .card-body > .card-text {
+	font-size: 10px;
+    line-height: 12px;
+    margin-bottom: .2rem;
 }
 
 /* STATS */
@@ -547,10 +566,20 @@ padding: 0 15px;
     .modalBack {
         padding: 2rem 1rem;
     }
+    .body-logo {
+		width: 100%;
+		padding-top: 50px;	
+	}
+
 }
 
 .modalBack-fluid {
     padding-right: 0;
     padding-left: 0;
     border-radius: 0;
+}
+
+
+@media (max-width: 576px) {
+    h1.section-heading{font-size: 40px;}
 }
