@@ -27,17 +27,16 @@ include('session.php');
 				
 				<div class="row">
 					<div class="col-lg-12 mt-5 pb-5 text-center">
-						<h4>Citt&agrave; Alta Plurale</h4>
-						<h1 class="section-heading">Processo partecipativo per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h1>
-						<h3></h3>
+						<h1 class="section-heading">Processo partecipativo per la revisione di Città Alta</h1>
+						<h3>Processo partecipativo per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
 					</div>
 				</div>
 				
 				<div class="row">
-					<div class="col-md-4 order-md-2 text-center ">
-					   <img src="img/logo500.png" style="width:70%">
+					<div class="col-md-2 order-md-2 text-center" >
+					   <img class="body-logo" src="img/logo500.png">
 					</div>
-					<div class="col-md-4 order-md-1 text-center pb-2 pt-3" onclick="$('#modal-video-1').modal();" style="cursor:pointer;">
+					<div class="col-md-5 order-md-1 text-center pb-2 pt-3" onclick="$('#modal-video-1').modal();" style="cursor:pointer;">
 						<h5>Mobilit&agrave; mensile degli abitanti (febbraio 2019)</h5>
 						<div class="video-box" onclick="$('#modal-video-1').modal();" style="cursor:pointer;">
 							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
@@ -48,7 +47,7 @@ include('session.php');
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 order-md-3 text-center  pb-2 pt-3">
+					<div class="col-md-5 order-md-3 text-center  pb-2 pt-3">
 						<h5>Mobilit&agrave; annuale degli abitanti (2018)</h5>
 						<div class="video-box" onclick="$('#modal-video-2').modal();" style="cursor:pointer;">
 							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
@@ -137,6 +136,11 @@ include('session.php');
 								</p>
 							</video>						
 						</div>
+						<div class="row">
+							<div class="col-12">
+								<h4>Ora che hai visto il video puoi </h4>
+							</div>
+						</div>
 					</div>
 				</section>
 
@@ -151,7 +155,7 @@ include('session.php');
 						</div>
 						<div class="row">
 							<div class="col-lg-12" style="text-align: center;">
-								<h3 class="section-heading">Enti Promotori</h2>
+								<h3 class="section-heading">Enti Promotori</h3>
 								
 							</div>
 							<div class="col-sm-6" style="text-align: center;">

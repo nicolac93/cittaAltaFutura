@@ -28,7 +28,6 @@ include('session.php');
 		<!--     *********   TODO   **********     -->
 		<main class="container">
 			<div class="col-12 text-center pt-5">
-				<h4>Città Alta Plurale</h4>
 				<h1 class="section-heading mt-0 mb-3">Il Team</h1>
 				<h3>le persone che hanno collaborato al progetto</h3>
 			</div>

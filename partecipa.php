@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors', 'Off');
-//ini_set('display_errors', 'On');
+//ini_set('display_errors', 'Off');
+ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 include("session.php");
 ?>
@@ -31,13 +31,12 @@ include("session.php");
 		</header>
 
     <!-- Page Content -->
-    <div class="container">
-
+    <main class="container">
+	
 
 
 		<div class="text-center mt-5">
-			<h4>Città Alta Plurale</h4>
-			<h1 class="section-heading mt-0 mb-5">inchiesta partecipativa</h1>
+			<h1 class="section-heading mt-5 mb-5">Partecipa</h1>
 		</div>
 		
 		<div class="row text-center">
@@ -299,7 +298,7 @@ include("session.php");
       </div>
   </div>     
 
-</div>
+</main>
 
 	<!-- Scripts -->
 	<?php require_once('inc/footerscripts.inc'); ?>

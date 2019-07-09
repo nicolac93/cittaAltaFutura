@@ -30,7 +30,6 @@ include('session.php');
 		<main class="container">
 			<div class="row">
 				<div class="col-12  text-center mt-5">
-					<h4>Città Alta Plurale</h4>
 					<h1 class="section-heading mt-0 mb-3">Calendario eventi</h1>
 					<h3>segui gli eventi organizzati per voi</h3>
 				</div>

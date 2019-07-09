@@ -29,7 +29,6 @@ include('session.php');
 			<main class="container">
 				<div class="row">
 					<div class="col-12 text-center mt-5">
-						<h4>Città Alta Plurale</h4>
 						<h1 class="section-heading mt-0 mb-3">Statistiche</h1>
 						<h3>le vostre opinioni</h3>
 					</div>
@@ -152,6 +151,29 @@ include('session.php');
 									}
 
 				},
+				tooltips: {
+					titleFontSize: 15,
+					bodyFontSize: 18,
+					footerFontSize: 15,
+					callbacks: {
+						label: function(tooltipItem, data) {
+							var dataset = data.datasets[tooltipItem.datasetIndex];
+							var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+								return previousValue + currentValue;
+							});
+							var currentLabel = data.labels[tooltipItem.index];
+							var currentValue = dataset.data[tooltipItem.index];
+							var percentage = Math.floor(((currentValue/total) * 100)+0.5);
+							
+							return " " + currentValue + " risposte: " + percentage + "%";
+						},
+						footer: function(tooltipItems, data) {
+							console.log(JSON.stringify(tooltipItems));
+							return  data.labels[tooltipItems[0].index];
+							
+						}
+					}
+				}, 
 				
 			};
 

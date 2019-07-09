@@ -27,7 +27,6 @@ include('session.php');
 			<main class="container">
 			  <div class="row">
 				<div class="col-12 text-center mt-5">
-					<h4>Città Alta Plurale</h4>
 					<h1 class="section-heading mt-0 mb-3">Il Progetto</h1>
 					<h3>Processo partecipativo Tripla elica per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
 				</div>
