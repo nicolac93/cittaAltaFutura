@@ -401,20 +401,28 @@ function addMarker(e){
 }
 
 $("#buttonProposta").on("click", function(){
+    
+    var tipologia = $('#selectTipologiaSegnalazione').val();
+    var nameBuilding = $('#inputNameBuilding').val()
+    var motivazione = $('#textAreaMotivazione').val()
+
+    alert(motivazione);
+
+
     if($('#selectTipologiaSegnalazione').val() == 1){
-        alert("a");
+        
     }
     if($('#selectTipologiaSegnalazione').val() == 2){
-        alert("b");
+        
     }
     if($('#selectTipologiaSegnalazione').val() == 3){
-        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalEdificiDaRiqualificare.html");
+        
     }
     if($('#selectTipologiaSegnalazione').val() == 4){
-        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalFattoriDinamizzanti.html");
+        
     }
     if($('#selectTipologiaSegnalazione').val() == 5){
-        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
+        
     }
     
 });

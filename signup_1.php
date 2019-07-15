@@ -1,6 +1,7 @@
-<?php
-ini_set('display_errors', 'Off');
-//ini_set('display_errors', 'On');
+
+
+    <?php
+ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 session_start();
     // Include config file

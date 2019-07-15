@@ -1,6 +1,6 @@
 <?php
-//ini_set('display_errors', 'Off');
-ini_set('display_errors', 'On');
+ini_set('display_errors', 'Off');
+//ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 session_start();
     // Include config file
@@ -54,7 +54,7 @@ session_start();
         
         // Validate name
         if(empty(trim($_POST['tipo']))){
-            $tipo_err = "Per favore seleziona la categoria.";     
+            $tipo_err = "Per favore seleziona un tipo.";     
         } else{
             $tipo = trim($_POST['tipo']);
         }
@@ -100,7 +100,7 @@ session_start();
 		<!-- Links -->
 		<?php require_once('inc/links.inc'); ?>
         <style type="text/css">
-            input[type=text], input[type=password],select {
+            input[type=text], input[type=password] {
                 width: 100%;
                 padding: 15px;
                 margin: 5px 0 15px 0;
@@ -108,7 +108,7 @@ session_start();
                 background: #f1f1f1;
             }
 
-            input[type=text]:focus, input[type=password]:focus,select:focus {
+            input[type=text]:focus, input[type=password]:focus {
                 background-color: #ddd;
                 outline: none;
             }
@@ -139,16 +139,8 @@ session_start();
 									<span class="help-block"><?php echo $name_err; ?></span>
 								</div>
 								<div class="form-group <?php echo (!empty($tipo_err)) ? 'has-error' : ''; ?>">
-									<label>Categoria di abitante</label>
-									<!--input list="browsers" name="tipo" value="<?php echo $tipo; ?>"-->
-                                                                        <select name="tipo">
-                                                                           <option value="" selected></option>
-                                                                           <option value="Studente">Studente</option>
-                                                                           <option value="Residente">Residente</option>
-                                                                           <option value="Turista">Turista</option>
-                                                                           <option value="Personale Universitario">Personale Universitario</option>
-                                                                           <option value="altro">altro</option>
-                                                                        </select>  
+									<label>Tipo</label>
+									<input type="text" name="tipo" value="<?php echo $tipo; ?>">
 									<span class="help-block"><?php echo $tipo_err; ?></span>
 								</div>
 								<div class="form-group">
