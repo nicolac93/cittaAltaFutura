@@ -27,8 +27,8 @@ include('session.php');
 				
 				<div class="row">
 					<div class="col-lg-12 mt-5 pb-5 text-center">
-						<h1 class="section-heading">Processo partecipativo per la revisione di Città Alta</h1>
-						<h3>Processo partecipativo per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
+						<h1 class="section-heading">Processo partecipativo per Città Alta</h1>
+						<h3>Per la revisione del Piano Particolareggiato di Città Alta e Borgo Canale (PPRCA)</h3>
 					</div>
 				</div>
 				
@@ -40,7 +40,7 @@ include('session.php');
 						<h5>Mobilit&agrave; mensile degli abitanti (febbraio 2019)</h5>
 						<div class="video-box" onclick="$('#modal-video-1').modal();" style="cursor:pointer;">
 							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
-								<source src="video/Wifi HeatMap_FestiviFebbraio.mp4" type="video/mp4">
+								<source src="video/Wifi_HeatMap_FebbraioOraxOra_Leg_compresso.mp4" type="video/mp4">
 							</video>
 							<div class="video-overlay">
 								<div class="overlay-content"><i class="fa fa-play fa-4x"></i></div>
@@ -48,10 +48,10 @@ include('session.php');
 						</div>
 					</div>
 					<div class="col-md-5 order-md-3 text-center  pb-2 pt-3">
-						<h5>Mobilit&agrave; annuale degli abitanti (2018)</h5>
+						<h5>Mobilit&agrave; settimanale degli abitanti (settimana di Natale 2018) <!--Mobilit&agrave; annuale degli abitanti (2018)--></h5>
 						<div class="video-box" onclick="$('#modal-video-2').modal();" style="cursor:pointer;">
 							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
-								<source src="video/Wifi HeatMap_LavorativiFebbraio.mp4" type="video/mp4">
+								<source src="video/natale_2018_1week__19-07-05_02-08-27-025__all__minute__video_compresso.mp4" type="video/mp4">
 							</video>
 							<div class="video-overlay">
 								<div class="overlay-content"><i class="fa fa-play fa-4x"></i></div>
@@ -75,7 +75,7 @@ include('session.php');
                 <div class="modal-video">
                     <div class="embed-responsive embed-responsive-16by9">
 						<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
-							<source src='video/Wifi HeatMap_FestiviFebbraio.mp4' type='video/mp4'>
+							<source src='video/Wifi_HeatMap_FebbraioOraxOra_Leg_compresso.mp4' type='video/mp4'>
 							<p class='vjs-no-js'>
 							Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
 							<a href='https://videojs.com/html5-video-support/' target='_blank'>supporti HTML5 video</a>
@@ -93,7 +93,7 @@ include('session.php');
     <div class="modal-dialog" role="document"  style="max-width:1100px;">
         <div class="modal-content">
             <div class="modal-header">
-				Mobilit&agrave; annuale degli abitanti (2018)
+				Mobilit&agrave; settimanale degli abitanti (settimana di Natale 2018) <!--Mobilit&agrave; annuale degli abitanti (2018)-->
 				<button type="button" class="close" data-dismiss="modal" aria-label="Chiudi">
                     <span aria-hidden="true">&times;</span>
                 </button>				
@@ -102,7 +102,7 @@ include('session.php');
                 <div class="modal-video">
                     <div class="embed-responsive embed-responsive-16by9">
 						<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
-							<source src='video/Wifi HeatMap_LavorativiFebbraio.mp4' type='video/mp4'>
+							<source src='video/natale_2018_1week__19-07-05_02-08-27-025__all__minute__video_compresso.mp4' type='video/mp4'>
 							<p class='vjs-no-js'>
 							Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
 							<a href='https://videojs.com/html5-video-support/' target='_blank'>supporti HTML5 video</a>
@@ -122,14 +122,14 @@ include('session.php');
 					<div class="container">
 						<div class="row pb-1">
 							<div class="col-lg-12 text-center">
-								<h3 class="titoloevidenziato">Per ben progettare il futuro della città è necessario conoscere il suo passato e il suo presente! </h3>
+								<h3 class="titoloevidenziato">Progettare significa far partecipare gli abitanti e considerare il passato e il presente di Città Alta </h3>
 								<h4>Inizia con questo filmato per capire l’evoluzione di Città Alta nell’ultimo secolo e il suo attuale dinamismo.</h4>
 							</div>
 						</div>
 						
 						<div class="row">
 							<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
-								<source src='https://www.dropbox.com/s/m144y093my9jt82/Citt%C3%A0AltaPlurale.mp4?dl=1' type='video/mp4'>
+                                                                <source src='https://www.dropbox.com/s/m144y093my9jt82/Citt%C3%A0AltaPlurale.mp4?dl=0' type='video/mp4'>
 								<p class='vjs-no-js'>
 								Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
 								<a href='https://videojs.com/html5-video-support/' target='_blank'>supporti HTML5 video</a>
@@ -138,7 +138,7 @@ include('session.php');
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h4>Ora che hai visto il video puoi </h4>
+								<h4>Ora che hai visto il video puoi partecipare!</h4>
 							</div>
 						</div>
 					</div>

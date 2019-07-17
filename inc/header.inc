@@ -30,10 +30,10 @@
                   <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="partecipa.php">Partecipa</a>
+                <a class="nav-link" href="progetto.php">Il Progetto</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="progetto.php">Il Progetto</a>
+                  <a class="nav-link" href="partecipa.php">Partecipa</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="stats.php">Statistiche</a>
