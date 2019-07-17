@@ -124,7 +124,7 @@ include("session.php");
 
       <div class="row" id="videoFattoriDinamizzanti">
           <video autoplay muted loop style="width:100%;opacity:1;">
-              <source src="img/BergamoPublicSpace_corto.mp4" type="video/mp4">
+              <source src="video/Wifi_HeatMap_FebbraioOraxOra_Leg_compresso.mp4" type="video/mp4">
           </video>
       </div>
 
@@ -233,7 +233,8 @@ include("session.php");
       <!-- Fine questionario -->
 
       <!-- tabs -->
-      <div class="col-12 text-center"><h3 class="section-heading">Esprimi la tua opinione</h3></div>
+      <div id="surveys">
+        <div class="col-12 text-center"><h3 class="section-heading">Esprimi la tua opinione</h3></div>
       
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -241,7 +242,7 @@ include("session.php");
             <a class="nav-item nav-link" id="nav-funzioniCostruito-tab" data-toggle="tab" href="#nav-funzioniCostruito" role="tab" aria-controls="nav-funzioniCostruito" aria-selected="false"><i class='fas fa-building'></i> Funzioni degli edifici</a>
             <a class="nav-item nav-link" id="nav-spaziInutilizzati-tab" data-toggle="tab" href="#nav-spaziInutilizzati" role="tab" aria-controls="nav-spaziInutilizzati" aria-selected="false"><i class='far fa-building'></i> Edifici da riqualificare</a>
             <a class="nav-item nav-link" id="nav-fattoriDinamizzanti-tab" data-toggle="tab" href="#nav-fattoriDinamizzanti" role="tab" aria-controls="nav-fattoriDinamizzanti" aria-selected="false"><i class='fas fa-sync'></i> Fattori dinamizzandi</a>
-            <a class="nav-item nav-link" id="nav-cittaAltaFutura-tab" data-toggle="tab" href="#nav-cittaAltaFutura" role="tab" aria-controls="nav-cittaAltaFutura" aria-selected="false"><i class='fa fa-list'></i> Inchiesta partecipativa</a>
+            <!--a class="nav-item nav-link" id="nav-cittaAltaFutura-tab" data-toggle="tab" href="#nav-cittaAltaFutura" role="tab" aria-controls="nav-cittaAltaFutura" aria-selected="false"><i class='fa fa-list'></i> Inchiesta partecipativa</a-->
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -249,7 +250,7 @@ include("session.php");
           <div class="tab-pane fade" id="nav-funzioniCostruito" role="tabpanel" aria-labelledby="nav-funzioniCostruito-tab"><div class="jumbotron" ><div id="navSurveyFunzioniCostruito"></div></div></div>
           <div class="tab-pane fade" id="nav-spaziInutilizzati" role="tabpanel" aria-labelledby="nav-spaziInutilizzati-tab"><div class="jumbotron" ><div id="navSurveySpaziInutilizzati"></div></div></div>
           <div class="tab-pane fade" id="nav-fattoriDinamizzanti" role="tabpanel" aria-labelledby="nav-fattoriDinamizzanti-tab"><div class="jumbotron" ><div id="navSurveyFattoriDinamizzanti"></div></div></div>
-          <div class="tab-pane fade" id="nav-cittaAltaFutura" role="tabpanel" aria-labelledby="nav-cittaAltaFutura-tab"><div class="jumbotron" ><div id="navSurveyCittaAltaFutura"></div></div></div>
+          <!--div class="tab-pane fade" id="nav-cittaAltaFutura" role="tabpanel" aria-labelledby="nav-cittaAltaFutura-tab"><div class="jumbotron" ><div id="navSurveyCittaAltaFutura"></div></div></div-->
         </div>
       </div>
       <!-- fine tabs -->
