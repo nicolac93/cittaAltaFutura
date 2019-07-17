@@ -65,21 +65,21 @@ include("session.php");
         </label>
       </div> -->
       <div class="row" id="tematica">
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary btn-lg btn-block" value="accessibilita" id="buttonAccessibilita"><i class='fa fa-bicycle fa-2x'></i>ACCESSIBILITA'</button>
-          </div>
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fa fa-building fa-2x'></i>FUNZIONI DEGLI EDIFICI</button>
-          </div>
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='fa fa-house-damage fa-2x'></i>EDIFICI DA RIQUALIFICARE</button>
-          </div>
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary btn-lg btn-block" value="fattoriDinamizzanti" id="buttonFattoriDinamizzanti"><i class='fas fa-sync fa-2x'></i>FATTORI DINAMIZZANTI</button>
-          </div>
-          <div class="col-sm-12">
-            <button type="button" class="btn btn-primary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-users fa-2x'></i>COMPLETA LA MAPPA</button>
-          </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-primary btn-lg btn-block" value="accessibilita" id="buttonAccessibilita"><i class='fa fa-bicycle fa-2x'></i>ACCESSIBILITA'</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-primary btn-lg btn-block" value="costruito" id="buttonCostruito"><i class='fa fa-building fa-2x'></i>FUNZIONI DEGLI EDIFICI</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-primary btn-lg btn-block" value="spaziInutilizzati" id="buttonSpaziInutilizzati"><i class='fa fa-house-damage fa-2x'></i>EDIFICI DA RIQUALIFICARE</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-primary btn-lg btn-block" value="fattoriDinamizzanti" id="buttonFattoriDinamizzanti"><i class='fas fa-sync fa-2x'></i>FATTORI DINAMIZZANTI</button>
+        </div>
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-primary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-users fa-2x'></i>COMPLETA LA MAPPA</button>
+        </div>
       </div>
 
 		<div id="map-intro-div" class="row text-center">

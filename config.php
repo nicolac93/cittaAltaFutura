@@ -9,7 +9,6 @@
    */
    define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'bgemail');
-   //define('DB_PASSWORD', 'Co2Calculator');
    define('DB_PASSWORD', '');
    define('DB_DATABASE', 'my_bgemail');
    
