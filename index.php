@@ -129,7 +129,7 @@ include('session.php');
 						
 						<div class="row">
 							<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
-                                                                <source src='https://www.dropbox.com/s/m144y093my9jt82/Citt%C3%A0AltaPlurale.mp4?dl=0' type='video/mp4'>
+                                                                <source src='http://urbannexus.unibg.it/video/Citt%e0AltaPlurale.mp4' type='video/mp4'>
 								<p class='vjs-no-js'>
 								Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
 								<a href='https://videojs.com/html5-video-support/' target='_blank'>supporti HTML5 video</a>
