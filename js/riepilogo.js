@@ -145,7 +145,7 @@ function submitAccessibilita(){
         domanda5 = 2;
 
     var domanda51_dettagli = null;
-    domanda51_dettagli = document.getElementById("domanda51").value;
+    domanda51_dettagli = document.getElementById("domanda5_1_dettagli").value;
 
     var userID = 2;
 
@@ -166,7 +166,8 @@ function submitAccessibilita(){
             "&DOMANDA_5_DETTAGLI=" + domanda51_dettagli,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            alert("Step 1 di 4 completato. Vai allo step 2");
+            $('#nav-funzioniCostruito-tab').tab('show');
         },  
     });
 
@@ -176,53 +177,57 @@ function submitFunzioniCostruito(){
     var userID;
     var domanda1 = null;
     var domanda1_dettagli = null;
-    if(document.getElementById("domanda1_1").checked){
+    if(document.getElementById("domanda1_1_2").checked){
         domanda1 = 1;
-        domanda1_dettagli = document.getElementById("domanda1_dettagli").value;
+        domanda1_dettagli = document.getElementById("domanda1_dettagli_2").value;
     }
-    else if(document.getElementById("domanda1_2").checked){
+    else if(document.getElementById("domanda1_2_2").checked){
         domanda1 = 2;
     }
 
     var domanda2 = null;
     var domanda2_dettagli = null;
-    if(document.getElementById("domanda2_1").checked){
+    if(document.getElementById("domanda2_1_2").checked){
         domanda2 = 1;
-        domanda2_dettagli = document.getElementById("domanda2_dettagli").value;
+        domanda2_dettagli = document.getElementById("domanda2_dettagli_2").value;
     }
-    else if(document.getElementById("domanda2_2").checked){
+    else if(document.getElementById("domanda2_2_2").checked){
         domanda2 = 2;
     }
 
     var domanda3 = null;
     var domanda3_dettagli = null;
-    if(document.getElementById("domanda3_1").checked){
+    if(document.getElementById("domanda3_1_2").checked){
         domanda3 = 1;
-        domanda3_dettagli = document.getElementById("domanda3_dettagli").value;
+        domanda3_dettagli = document.getElementById("domanda3_dettagli_2").value;
     }
-    else if(document.getElementById("domanda3_2").checked){
+    else if(document.getElementById("domanda3_2_2").checked){
         domanda3 = 2;
     }
 
 
     var domanda4 = null;
     var domanda41 = null;
-    var domanda42 = null;
+    var domanda41_dettagli = null;
+    var domanda42_dettagli = null;
 
-    if(document.getElementById("domanda4_1").checked){
+    if(document.getElementById("domanda4_1_2").checked){
         domanda4 = 1;
         
-        if(document.getElementById("domanda41_1").checked)
+        if(document.getElementById("domanda41_1_2").checked)
             domanda41 = 1;
-        else if(document.getElementById("domanda41_2").checked)
+        else if(document.getElementById("domanda41_2_2").checked)
             domanda41 = 2;
-        else if(document.getElementById("domanda41_3").checked)
+        else if(document.getElementById("domanda41_3_2").checked)
             domanda41 = 3;
-
+        else if(document.getElementById("domanda41_4_2").checked) {
+            domanda41 = 4;
+            domanda41_dettagli = document.getElementById("domanda41_dettagli_2").value;
+        }
     }
-    else if(document.getElementById("domanda4_2").checked){
+    else if(document.getElementById("domanda4_2_2").checked){
         domanda4 = 2;
-        domanda42 = document.getElementById("domanda42").value;
+        domanda42_dettagli = document.getElementById("domanda42_2").value;
     }
 
 
@@ -230,53 +235,113 @@ function submitFunzioniCostruito(){
     var domanda51 = null;
     var domanda51_dettagli = null;
 
-    if(document.getElementById("domanda5_1").checked){
+    if(document.getElementById("domanda5_1_2").checked){
         domanda5 = 1;
-        domanda51_dettagli = document.getElementById("domanda51_dettagli").value;
+        domanda51_dettagli = document.getElementById("domanda51_dettagli_2").value;
 
-        if(document.getElementById("domanda51_1").checked)
+        if(document.getElementById("domanda51_1_2").checked)
             domanda51 = 1;
-        else if(document.getElementById("domanda51_2").checked)
+        else if(document.getElementById("domanda51_2_2").checked)
             domanda51 = 2;
-        else if(document.getElementById("domanda51_3").checked)
+        else if(document.getElementById("domanda51_3_2").checked)
             domanda51 = 3;
 
     }
-    else if(document.getElementById("domanda5_2").checked){
+    else if(document.getElementById("domanda5_2_2").checked){
         domanda5 = 2;
     }
 
     var domanda6 = null;
     var domanda61 = null;
     var domanda61_dettagli =  null;
+    var domanda62 = null;
+    var domanda62_dettagli = null;
 
-    if(document.getElementById("domanda6_1").checked){
+    if(document.getElementById("domanda6_1_2").checked){
         domanda6 = 1;
-        domanda61_dettagli = document.getElementById("domanda61_dettagli").value;
+        domanda61_dettagli = document.getElementById("domanda61_dettagli_2").value;
 
-        if(document.getElementById("domanda61_1").checked)
+        if(document.getElementById("domanda61_1_2").checked)
             domanda61 = 1;
-        else if(document.getElementById("domanda61_2").checked)
+        else if(document.getElementById("domanda61_2_2").checked)
             domanda61 = 2;
-        else if(document.getElementById("domanda61_3").checked)
+        else if(document.getElementById("domanda61_3_2").checked)
             domanda61 = 3;
+        else if(document.getElementById("domanda61_4_2").checked)
+            domanda61 = 4;
+        else if(document.getElementById("domanda61_5_2").checked)
+            domanda61 = 5;
 
     }
-    else if(document.getElementById("domanda6_2").checked){
+    else if(document.getElementById("domanda6_2_2").checked){
         domanda6 = 2;
+
+        if(document.getElementById("domanda62_1_2").checked)
+            domanda62 = 1;
+        else if(document.getElementById("domanda62_2_2").checked)
+            domanda62 = 2;
+        else if(document.getElementById("domanda62_3_2").checked)
+            domanda62 = 3;
+        else if(document.getElementById("domanda62_4_2").checked) {
+            domanda62 = 4;
+            domanda62_dettagli = document.getElementById("domanda62_dettagli_2").value;
+        }
+
+
     }
 
 
     var domanda7 = null;
     var domanda7_dettagli = null;
 
-    if(document.getElementById("domanda7_1").checked)
+    if(document.getElementById("domanda7_1_2").checked)
         domanda7 = 1;
-    else if(document.getElementById("domanda7_2").checked)
+    else if(document.getElementById("domanda7_2_2").checked)
         domanda7 = 2;
-    else if(document.getElementById("domanda7_3").checked)
+    else if(document.getElementById("domanda7_3_2").checked)
         domanda7 = 3;
-    domanda7_dettagli = document.getElementById("domanda7_dettagli").value;
+    domanda7_dettagli = document.getElementById("domanda7_dettagli_2").value;
+
+
+    var domanda8 = null;
+    var domanda8_dettagli = null;
+
+    if(document.getElementById("domanda8_1_2").checked)
+        domanda8 = 1;
+    else if(document.getElementById("domanda8_2_2").checked)
+        domanda8 = 2;
+    else if(document.getElementById("domanda8_3_2").checked)
+        domanda8 = 3;
+    else if(document.getElementById("domanda8_4_2").checked)
+        domanda8 = 4;
+    else if(document.getElementById("domanda8_5_2").checked) {
+        domanda8 = 5;
+        domanda8_dettagli = document.getElementById("domanda8_5dettagli_2").value;
+    }
+
+    var domanda9 = null;
+    var domanda9_dettagli = null;
+
+    if(document.getElementById("domanda9_1_2").checked)
+        domanda9 = 1;
+    else if(document.getElementById("domanda9_2_2").checked)
+        domanda9 = 2;
+    else if(document.getElementById("domanda9_3_2").checked)
+        domanda9 = 3;
+    else if(document.getElementById("domanda9_4_2").checked)
+        domanda9 = 4;
+    else if(document.getElementById("domanda9_5_2").checked) {
+        domanda9 = 5;
+    }else if(document.getElementById("domanda9_6_2").checked)
+        domanda9 = 6;
+    else if(document.getElementById("domanda9_7_2").checked) {
+        domanda9 = 7;
+    }
+
+    domanda9_dettagli = document.getElementById("domanda9_dettagli_2").value;
+
+
+
     
     var userID = 2;
 
@@ -290,18 +355,24 @@ function submitFunzioniCostruito(){
             "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
             "&DOMANDA_3=" + domanda3 + 
             "&DOMANDA_3_DETTAGLI=" + domanda3_dettagli +
-            "&&DOMANDA_3=" + domanda3 + 
             "&DOMANDA_4=" + domanda4 + 
             "&DOMANDA_41=" + domanda41 +
-            "&DOMANDA_42=" + domanda42 +
+            "&DOMANDA_41_DETTAGLI=" + domanda41_dettagli +
+            "&DOMANDA_42_DETTAGLI=" + domanda42_dettagli +
             "&DOMANDA_5=" + domanda5 +
             "&DOMANDA_51=" + domanda51 + 
             "&DOMANDA_51_DETTAGLI=" + domanda51_dettagli +
             "&DOMANDA_6=" + domanda6 +
             "&DOMANDA_61=" + domanda61 + 
             "&DOMANDA_61_DETTAGLI=" + domanda61_dettagli +
+            "&DOMANDA_62=" + domanda62 +
+            "&DOMANDA_62_DETTAGLI=" + domanda62_dettagli +
             "&DOMANDA_7=" + domanda7 + 
-            "&DOMANDA_7_DETTAGLI=" + domanda7_dettagli,
+            "&DOMANDA_7_DETTAGLI=" + domanda7_dettagli +
+            "&DOMANDA_8=" + domanda8 +
+            "&DOMANDA_8_DETTAGLI=" + domanda8_dettagli +
+            "&DOMANDA_9=" + domanda9 +
+            "&DOMANDA_9_DETTAGLI=" + domanda9_dettagli,
         dataType: "html",
         success: function(msg){
             alert(msg);
@@ -357,7 +428,8 @@ function submitSpaziInutilizzati(){
             "&DOMANDA_3=" + domanda3,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            alert("Step 3 di 4 completato. Vai allo step 4");
+            $('#nav-fattoriDinamizzanti-tab').tab('show');
         },  
     });
     
@@ -369,80 +441,80 @@ function submitFattoriDinamizzanti(){
     var domanda1 = null;
     var domanda1_dettagli = null;
 
-    if(document.getElementById("domanda1_1").checked)
+    if(document.getElementById("domanda1_1_4").checked) {
         domanda1 = 1;
-    else if(document.getElementById("domanda1_2").checked)
+    }
+    else if(document.getElementById("domanda1_2_4").checked) {
         domanda1 = 2;
-    domanda1_dettagli = document.getElementById("domanda1_dettagli").value;
+    }
+    domanda1_dettagli = document.getElementById("domanda1_dettagli_4").value;
 
 
     var domanda2 = null;
     var domanda2_dettagli = null;
 
-    if(document.getElementById("domanda2_1").checked){
+    if(document.getElementById("domanda2_1_4").checked){
         domanda2 = 1;
     }
-    else if(document.getElementById("domanda2_2").checked){
+    else if(document.getElementById("domanda2_2_4").checked){
         domanda2 = 2;
     }
-    domanda2_dettagli = document.getElementById("domanda2_dettagli").value;
+    domanda2_dettagli = document.getElementById("domanda2_dettagli_4").value;
 
 
     var domanda3 = null;
     var domanda3_dettagli = null;
 
-    if(document.getElementById("domanda3_1").checked){
+    if(document.getElementById("domanda3_1_4").checked){
         domanda3 = 1;
     }
-    else if(document.getElementById("domanda3_2").checked){
+    else if(document.getElementById("domanda3_2_4").checked){
         domanda3 = 2;
     }
-    domanda3_dettagli = document.getElementById("domanda3_dettagli").value;
+    domanda3_dettagli = document.getElementById("domanda3_dettagli_4").value;
 
 
     var domanda4 = null;
     var domanda4_dettagli = null;
 
-    if(document.getElementById("domanda4_1").checked){
+    if(document.getElementById("domanda4_1_4").checked){
         domanda4 = 1;
     }
-    else if(document.getElementById("domanda4_2").checked){
+    else if(document.getElementById("domanda4_2_4").checked){
         domanda4 = 2;
     }
-    else if(document.getElementById("domanda4_3").checked){
+    else if(document.getElementById("domanda4_3_4").checked){
         domanda4 = 3;
     }
-    else if(document.getElementById("domanda4_4").checked){
+    else if(document.getElementById("domanda4_4_4").checked){
         domanda4 = 4;
-        domanda4_dettagli = document.getElementById("domanda4_4_dettagli").value;
+        domanda4_dettagli = document.getElementById("domanda4_4_dettagli_4").value;
     }
 
 
     var domanda5 = null;
     var domanda5_dettagli = null;
 
-    if(document.getElementById("domanda5_1").checked){
+    if(document.getElementById("domanda5_1_4").checked){
         domanda5 = 1;
-        domanda5_dettagli = document.getElementById("domanda5_1_dettagli").value;
+        domanda5_dettagli = document.getElementById("domanda5_1_dettagli_4").value;
     }
-    else if(document.getElementById("domanda5_2").checked){
+    else if(document.getElementById("domanda5_2_4").checked){
         domanda5 = 2;
-        domanda5_dettagli = document.getElementById("domanda5_2_dettagli").value;
+        domanda5_dettagli = document.getElementById("domanda5_2_dettagli_4").value;
     }
-    else if(document.getElementById("domanda5_3").checked){
+    else if(document.getElementById("domanda5_3_4").checked){
         domanda5 = 3;
-        domanda5_dettagli = document.getElementById("domanda5_3_dettagli").value;
+        domanda5_dettagli = document.getElementById("domanda5_3_dettagli_4").value;
     }
-    else if(document.getElementById("domanda5_4").checked){
+    else if(document.getElementById("domanda5_4_4").checked){
         domanda5 = 4;
-        domanda5_dettagli = document.getElementById("domanda5_4_dettagli").value;
+        domanda5_dettagli = document.getElementById("domanda5_4_dettagli_4").value;
     }
-    else if(document.getElementById("domanda5_5").checked){
+    else if(document.getElementById("domanda5_5_4").checked){
         domanda5 = 5;
-        domanda5_dettagli = document.getElementById("domanda5_5_dettagli").value;
+        domanda5_dettagli = document.getElementById("domanda5_5_dettagli_4").value;
     }
-
-    alert(domanda5_dettagli);
 
     var userID = 2;
     $.ajax({
@@ -453,15 +525,15 @@ function submitFattoriDinamizzanti(){
             "&DOMANDA_1_DETTAGLI=" + domanda1_dettagli +
             "&DOMANDA_2=" + domanda2 +
             "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
-            "&&DOMANDA_3=" + domanda3 +
+            "&DOMANDA_3=" + domanda3 +
             "&DOMANDA_3_DETTAGLI=" + domanda3_dettagli +
-            "&&DOMANDA_4=" + domanda4 +
+            "&DOMANDA_4=" + domanda4 +
             "&DOMANDA_4_DETTAGLI=" + domanda4_dettagli +
-            "&&DOMANDA_5=" + domanda5 +
+            "&DOMANDA_5=" + domanda5 +
             "&DOMANDA_5_DETTAGLI=" + domanda5_dettagli,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            alert("Step 4 di 4 completato! \nGrazie per la collaborazione");
         },
         error: function(msg){
             alert(msg);
@@ -555,7 +627,7 @@ function subimtCittaAltaFutura(){
             "&DOMANDA_1_DETTAGLI=" + domanda1_dettagli +
             "&DOMANDA_2=" + domanda2 + 
             "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
-            "&&DOMANDA_3=" + domanda3 + 
+            "&DOMANDA_3=" + domanda3 +
             "&DOMANDA_3_DETTAGLI=" + domanda3_dettagli,
         dataType: "html",
         success: function(msg){

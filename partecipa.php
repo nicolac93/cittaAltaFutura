@@ -78,7 +78,7 @@ include("session.php");
           <button type="button" class="btn btn-primary btn-lg btn-block" value="fattoriDinamizzanti" id="buttonFattoriDinamizzanti"><i class='fas fa-sync fa-2x'></i>FATTORI DINAMIZZANTI</button>
         </div>
         <div class="col-sm-12">
-          <button type="button" class="btn btn-primary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-users fa-2x'></i>COMPLETA LA MAPPA</button>
+          <button type="button" class="btn btn-primary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura" onclick="addSegnalazione()"><i class='fa fa-users fa-2x'></i>COMPLETA LA MAPPA</button>
         </div>
       </div>
 
@@ -242,23 +242,35 @@ include("session.php");
       <!-- tabs -->
       <div id="surveys">
         <div class="col-12 text-center"><h3 class="section-heading">Esprimi la tua opinione</h3></div>
-      
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-accessiblita-tab" data-toggle="tab" href="#nav-accessiblita" role="tab" aria-controls="nav-accessiblita" aria-selected="true"><i class='fas fa-bicycle'></i> Accessibilità</a>
-            <a class="nav-item nav-link" id="nav-funzioniCostruito-tab" data-toggle="tab" href="#nav-funzioniCostruito" role="tab" aria-controls="nav-funzioniCostruito" aria-selected="false"><i class='fas fa-building'></i> Funzioni degli edifici</a>
-            <a class="nav-item nav-link" id="nav-spaziInutilizzati-tab" data-toggle="tab" href="#nav-spaziInutilizzati" role="tab" aria-controls="nav-spaziInutilizzati" aria-selected="false"><i class='far fa-building'></i> Edifici da riqualificare</a>
-            <a class="nav-item nav-link" id="nav-fattoriDinamizzanti-tab" data-toggle="tab" href="#nav-fattoriDinamizzanti" role="tab" aria-controls="nav-fattoriDinamizzanti" aria-selected="false"><i class='fas fa-sync'></i> Fattori dinamizzandi</a>
-            <!--a class="nav-item nav-link" id="nav-cittaAltaFutura-tab" data-toggle="tab" href="#nav-cittaAltaFutura" role="tab" aria-controls="nav-cittaAltaFutura" aria-selected="false"><i class='fa fa-list'></i> Inchiesta partecipativa</a-->
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-accessiblita" role="tabpanel" aria-labelledby="nav-accessiblita-tab"><div class="jumbotron" ><div id="navSurveyAccessibilita"></div></div></div>
-          <div class="tab-pane fade" id="nav-funzioniCostruito" role="tabpanel" aria-labelledby="nav-funzioniCostruito-tab"><div class="jumbotron" ><div id="navSurveyFunzioniCostruito"></div></div></div>
-          <div class="tab-pane fade" id="nav-spaziInutilizzati" role="tabpanel" aria-labelledby="nav-spaziInutilizzati-tab"><div class="jumbotron" ><div id="navSurveySpaziInutilizzati"></div></div></div>
-          <div class="tab-pane fade" id="nav-fattoriDinamizzanti" role="tabpanel" aria-labelledby="nav-fattoriDinamizzanti-tab"><div class="jumbotron" ><div id="navSurveyFattoriDinamizzanti"></div></div></div>
-          <!--div class="tab-pane fade" id="nav-cittaAltaFutura" role="tabpanel" aria-labelledby="nav-cittaAltaFutura-tab"><div class="jumbotron" ><div id="navSurveyCittaAltaFutura"></div></div></div-->
-        </div>
+
+          <?php
+            if($_SESSION['login_user_id']==0){
+                echo "<div class=\"row text-center\">";
+                echo    "<p>";
+                echo        "Accedi per esprimere la tua opinione";
+                echo    "</p>";
+                echo "</div>";
+            }else{
+
+                echo "<nav id=\"nav-header\">
+                      <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">
+                        <a class=\"nav-item nav-link active\" id=\"nav-accessiblita-tab\" data-toggle=\"tab\" href=\"#nav-accessiblita\" role=\"tab\" aria-controls=\"nav-accessiblita\" aria-selected=\"true\"><i class='fas fa-bicycle'></i> Accessibilità</a>
+                        <a class=\"nav-item nav-link\" id=\"nav-funzioniCostruito-tab\" data-toggle=\"tab\" href=\"#nav-funzioniCostruito\" role=\"tab\" aria-controls=\"nav-funzioniCostruito\" aria-selected=\"false\"><i class='fas fa-building'></i> Funzioni degli edifici</a>
+                        <a class=\"nav-item nav-link\" id=\"nav-spaziInutilizzati-tab\" data-toggle=\"tab\" href=\"#nav-spaziInutilizzati\" role=\"tab\" aria-controls=\"nav-spaziInutilizzati\" aria-selected=\"false\"><i class='far fa-building'></i> Edifici da riqualificare</a>
+                        <a class=\"nav-item nav-link\" id=\"nav-fattoriDinamizzanti-tab\" data-toggle=\"tab\" href=\"#nav-fattoriDinamizzanti\" role=\"tab\" aria-controls=\"nav-fattoriDinamizzanti\" aria-selected=\"false\"><i class='fas fa-sync'></i> Fattori dinamizzandi</a>
+                      </div>
+                      </nav>
+                      <div class=\"tab-content\" id=\"nav-tabContent\">
+                        <div class=\"tab-pane fade show active\" id=\"nav-accessiblita\" role=\"tabpanel\" aria-labelledby=\"nav-accessiblita-tab\"><div class=\"jumbotron\" ><div id=\"navSurveyAccessibilita\"></div></div></div>
+                        <div class=\"tab-pane fade\" id=\"nav-funzioniCostruito\" role=\"tabpanel\" aria-labelledby=\"nav-funzioniCostruito-tab\"><div class=\"jumbotron\" ><div id=\"navSurveyFunzioniCostruito\"></div></div></div>
+                        <div class=\"tab-pane fade\" id=\"nav-spaziInutilizzati\" role=\"tabpanel\" aria-labelledby=\"nav-spaziInutilizzati-tab\"><div class=\"jumbotron\" ><div id=\"navSurveySpaziInutilizzati\"></div></div></div>
+                        <div class=\"tab-pane fade\" id=\"nav-fattoriDinamizzanti\" role=\"tabpanel\" aria-labelledby=\"nav-fattoriDinamizzanti-tab\"><div class=\"jumbotron\" ><div id=\"navSurveyFattoriDinamizzanti\"></div></div></div>
+                      </div>";
+
+            }
+          ?>
+
+
       </div>
       <!-- fine tabs -->
       
