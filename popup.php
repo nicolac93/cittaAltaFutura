@@ -13,10 +13,11 @@
             echo "\"id\": " . $obj->id . ", ";
             echo "\"latitudine\": " . $obj->latitudine . ", ";
             echo "\"longitudine\": " . $obj->longitudine . ", ";
-            echo "\"nome\": \"" . $obj->nome_luogo . "\", ";
-            echo "\"categoria\": " . $obj->categoria . ", ";
-            echo "\"immagine\": \"" . $obj->immagine . "\", ";
             echo "\"tipologia\": \"" . $obj->tipologia . "\", ";
+            echo "\"nome\": \"" . $obj->nome_luogo . "\", ";
+            echo "\"proposta\": \"" . $obj->proposta . "\", ";
+            echo "\"propostaText\": \"" . $obj->propostaText . "\", ";
+            echo "\"immagine\": \"" . $obj->immagine . "\", ";
             echo "\"motivazione\": \"" . $obj->motivazione . "\" ";
             
             echo "},";

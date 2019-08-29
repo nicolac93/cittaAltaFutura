@@ -22,51 +22,72 @@ $('#selector button').click(function() {
 $('#tematica button').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
 
-    if($(this).val() == 'accessibilita') { 
+    if($(this).val() == 'accessibilita') {
         $("#leggend").load("leggenda/accessibilitaLeggend.html");
         $('#nav-accessiblita-tab').tab('show');
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
-    else if($(this).val() == 'costruito') { 
+    else if($(this).val() == 'costruito') {
         $("#leggend").load("leggenda/costruitoLeggend.html");
         $('#nav-funzioniCostruito-tab').tab('show');
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($(this).val() == 'spaziInutilizzati') {
         $("#leggend").load("leggenda/riqualificazioneLeggend.html");
         $('#nav-spaziInutilizzati-tab').tab('show');
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
-    else if($(this).val() == 'fattoriDinamizzanti') { 
+    else if($(this).val() == 'fattoriDinamizzanti') {
         $('#nav-fattoriDinamizzanti-tab').tab('show');
         $('#map-riepilogo').css("display", 'none');
         $('#videoFattoriDinamizzanti').css("display", 'block');
+        $('#addSegnalazione').css("display", 'none');
     }
-    else if($(this).val() == 'cittaAltaPlurale') { 
-        $('#nav-cittaAltaFutura-tab').tab('show');
+    else if($(this).val() == 'completaLaMappa') {
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'block');
     }
 });
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     if($('.tab-content .active')[0].id == "nav-accessiblita"){
-        $("#buttonAddSegnalazione").html("<i class='fas fa-bicycle'></i> Completa la mappa");
+        $("#leggend").load("leggenda/accessibilitaLeggend.html");
+        $('#nav-accessiblita-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
-        $("#buttonAddSegnalazione").html("<i class='fas fa-building'></i> Completa la mappa");
+        $("#leggend").load("leggenda/costruitoLeggend.html");
+        $('#nav-funzioniCostruito-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-fattoriDinamizzanti"){
-        $("#buttonAddSegnalazione").html("<i class='far fa-building'></i> Completa la mappa");
+        $('#nav-fattoriDinamizzanti-tab').tab('show');
+        $('#map-riepilogo').css("display", 'none');
+        $('#videoFattoriDinamizzanti').css("display", 'block');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
-        $("#buttonAddSegnalazione").html("<i class='far fa-building'></i> Completa la mappa");
+        $("#leggend").load("leggenda/riqualificazioneLeggend.html");
+        $('#nav-spaziInutilizzati-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-cittaAltaFutura"){
-        $("#buttonAddSegnalazione").html("<i class='fa fa-list'></i> Completa la mappa");
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'block');
     }
 });   
 
@@ -166,7 +187,7 @@ function submitAccessibilita(){
             "&DOMANDA_5_DETTAGLI=" + domanda51_dettagli,
         dataType: "html",
         success: function(msg){
-            alert("Step 1 di 4 completato. Vai allo step 2");
+            $("#modalSurveyStep1").modal();
             $('#nav-funzioniCostruito-tab').tab('show');
         },  
     });
@@ -375,7 +396,8 @@ function submitFunzioniCostruito(){
             "&DOMANDA_9_DETTAGLI=" + domanda9_dettagli,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            $("#modalSurveyStep2").modal();
+            $('#nav-spaziInutilizzati-tab').tab('show');
         },  
     });
 
@@ -428,7 +450,7 @@ function submitSpaziInutilizzati(){
             "&DOMANDA_3=" + domanda3,
         dataType: "html",
         success: function(msg){
-            alert("Step 3 di 4 completato. Vai allo step 4");
+            $("#modalSurveyStep3").modal();
             $('#nav-fattoriDinamizzanti-tab').tab('show');
         },  
     });
@@ -533,7 +555,7 @@ function submitFattoriDinamizzanti(){
             "&DOMANDA_5_DETTAGLI=" + domanda5_dettagli,
         dataType: "html",
         success: function(msg){
-            alert("Step 4 di 4 completato! \nGrazie per la collaborazione");
+            $("#modalSurveyStep4").modal();
         },
         error: function(msg){
             alert(msg);
@@ -635,11 +657,6 @@ function subimtCittaAltaFutura(){
         },  
     });
 
-}
-
-
-function saveProposta(){
-    alert("ciao");
 }
 
 $('#selectTipologiaSegnalazione').on('change',function() {

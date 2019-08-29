@@ -29,7 +29,7 @@
 				</div>
 				<div class="col-lg-4">
 					<h3 class="footer-title" >UNIBG</h3>
-					<a href="https://www.unibg.it/" target="_blank"><img src="img/LogoFooter.png" height="85"></a>
+					<a href="https://www.unibg.it/ricerca/strutture-ricerca/centri-ateneo/cst" target="_blank"><img src="img/LogoFooter.png" height="85"></a>
  
 				</div>
 				  

@@ -48,7 +48,7 @@ include('session.php');
 						</div>
 					</div>
 					<div class="col-md-5 order-md-3 text-center  pb-2 pt-3">
-						<h5>Mobilit&agrave; settimanale degli abitanti (settimana di Natale 2018) <!--Mobilit&agrave; annuale degli abitanti (2018)--></h5>
+						<h5>Mobilit&agrave; degli abitanti (settimana di Natale 2018) <!--Mobilit&agrave; annuale degli abitanti (2018)--></h5>
 						<div class="video-box" onclick="$('#modal-video-2').modal();" style="cursor:pointer;">
 							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
 								<source src="video/natale_2018_1week__19-07-05_02-08-27-025__all__minute__video_compresso.mp4" type="video/mp4">
@@ -149,7 +149,7 @@ include('session.php');
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12 text-center">
-								<button type="button" class="btn btn-secondary btn-lg mt-3 mb-5" ><a href="partecipa.php">PARTECIPA!</a></button>
+								<button type="button" class="btn btn-secondary btn-lg mt-3 mb-5" ><a href="login.php">REGISTRATI E PARTECIPA!</a></button>
 								<hr class="primary">
 							</div>
 						</div>

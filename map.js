@@ -1,4 +1,7 @@
-var layer = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto", "pisteCiclabili", "atbBus", "spaziInutilizzati", "ferrovieBg", "autostradeBg", "parcheggiBg", "aereoportoBGY", "stazioniBiGi", "fermateATB", "eVai"];
+var layer = ["CA_nonSpecificato", "CA_residenziale", "CA_ricettivoUfficiale", "CA_serviziAnziani", "CA_serviziIstruzioneCultura", "CA_serviziReligiosi", "CA_misto", "pisteCiclabili", "atbBus", "cittaAlta", "ferrovieBg", "autostradeBg", "parcheggiBg", "aereoportoBGY", "stazioniBiGi", "fermateATB", "eVai", "stradeBG"];
+
+var layerStatus = null;
+var correntLayerStyle = "satellite";
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xhOTMiLCJhIjoiY2l2Y2ozYnZ5MDBocTJ5bzZiM284NGkyMiJ9.4VUvTxBv0zqgjY7t3JTFOQ';
 var map = new mapboxgl.Map({
@@ -9,13 +12,45 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
+map.addControl(new mapboxgl.NavigationControl());
+
+map.on("load", function () {
+   accessibilita();
+   $('#buttonAccessibilita').addClass('active').siblings().removeClass('active');
+   $("#leggend").load("leggenda/accessibilitaLeggend.html");
+});
+
 //var layerList = document.getElementById('menu');
 //var inputs = layerList.getElementsByTagName('input');
 var inputs = "basic";
 
 function switchLayer(layer) {
-    map.setStyle('mapbox://styles/mapbox/' + layer + '-v9');
-	loadEdifici();
+
+    if(correntLayerStyle != layer) {
+
+        correntLayerStyle = layer;
+
+        map.setStyle('mapbox://styles/mapbox/' + layer + '-v9');
+
+        map.on('style.load', function () {
+            if (layerStatus == "accessibilita") {
+                accessibilita();
+            }
+            if (layerStatus == "funzioniCostruito") {
+                funzioniCostruito();
+            }
+            if (layerStatus == "spaziInutilizzati") {
+                spaziInutilizzati();
+            }
+            if (layerStatus == "fattoriDinamizzanti") {
+                fattoriDinamizzanti();
+            }
+            if (layerStatus == "completaLaMappa") {
+                cittaAltaFutura();
+            }
+        });
+    }
+
 }
 
 for (var i = 0; i < inputs.length; i++) {
@@ -39,9 +74,9 @@ function addPopup(msg){
         // create the popup
 
         var strpopup = "<div class=\"card h-100\">" +
-            "<a href=\"#\"><img class='card-img-top' src='img/"+ obj[i].immagine +"'></a>" + 
+            //"<a href=\"#\"><img class='card-img-top' src='img/"+ obj[i].immagine +"'></a>" +
             "<div class=\"card-body\"><h5 class=\"card-title\">" + obj[i].nome + "</h5>" +
-            "<p class=\"card-text\"><strong>Segnalazione: </strong>"+ obj[i].tipologia +"</p>" +
+            "<p class=\"card-text\"><strong>Proposta: </strong>"+ obj[i].proposta +"</p>" +
             "<p class=\"card-text\"><strong>Motivazione: </strong>" + obj[i].motivazione + "</p>" + 
             "<p class=\"card-text\"><button style='font-size:12px' onclick=\"like('" + obj[i].id + "')\"><i class='fas fa-thumbs-up'></i> Like</button> " +
             " <button style='font-size:12px' onclick=\"unlike('" + obj[i].id + "')\"><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
@@ -61,6 +96,8 @@ function addPopup(msg){
         }else if(obj[i].categoria == 3){
             el.style.backgroundImage = "url('img/buildingWhite.PNG')";
         }else if(obj[i].categoria == 4){
+            el.style.backgroundImage = "url('img/sync-solid.svg')";
+        }else if(obj[i].categoria == 5){
             el.style.backgroundImage = "url('img/sync-solid.svg')";
         }
         
@@ -186,15 +223,48 @@ $('#buttonCittaAltaFutura').on('click', function(event) {
     $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
 });
 
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    if($('.tab-content .active')[0].id == "nav-accessiblita"){
+        $('#tematica .btn').not(this).removeClass('active');
+        accessibilita();
+        $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
+    }
+    else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
+        $('#tematica .btn').not(this).removeClass('active');
+        funzioniCostruito();
+        $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
+    }
+    else if($('.tab-content .active')[0].id == "nav-fattoriDinamizzanti"){
+        $('#tematica .btn').not(this).removeClass('active');
+        fattoriDinamizzanti()
+        $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
+    }
+    else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
+        $('#tematica .btn').not(this).removeClass('active');
+        spaziInutilizzati();
+        $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
+    }
+    else if($('.tab-content .active')[0].id == "nav-cittaAltaFutura"){
+        $('#tematica .btn').not(this).removeClass('active');
+        cittaAltaFutura();
+        $('html,body').animate({scrollTop: $('#map-intro-div').offset().top-190},'slow');
+    }
+});
+
+
+
+
 function accessibilita(){
+    layerStatus = "accessibilita";
+    switchLayer('satellite');
     document.getElementById("surveys").style.display = "block";
     $( ".marker" ).remove();
     removeLayer();
 	$('.map-intro').html('ACCESSIBILIT&Agrave;');
 	$('.map-intro-text').html('Città Alta può essere raggiunta mediante autobus e funicolari, mezzi privati e percorsi pedonali o combinando tali modalità per affrontare l’altimetria. Essa infatti prevede più accessi che andrebbero potenziati per incentivare una migliore distribuzione dei flussi.');
 
-    var color = ["#00cb00", "#ffb915", "#000000", "#ffffff"];
-    var layerName = ["pisteCiclabili", "atbBus", "ferrovieBg", "autostradeBg"];
+    var color = ["#ffffff", "#00cb00", "#ffb915", "#000000", "#ffffff"];
+    var layerName = ["stradeBG", "pisteCiclabili", "atbBus", "ferrovieBg", "autostradeBg"];
 
     for(i=0; i< layerName.length; i++){
         loadLayer(layerName[i], color[i]);
@@ -214,6 +284,8 @@ function accessibilita(){
 }
 
 function funzioniCostruito(){
+    layerStatus = "funzioniCostruito";
+    switchLayer('satellite');
     document.getElementById("surveys").style.display = "block";
     $( ".marker" ).remove();
     removeLayer();
@@ -226,20 +298,20 @@ function funzioniCostruito(){
     for(i=0; i< layerName.length; i++){
         loadBuilding(layerName[i], color[i]);
     }
-
-
     
 }
 
 function spaziInutilizzati(){
+    layerStatus = "spaziInutilizzati";
+    switchLayer('streets');
     document.getElementById("surveys").style.display = "block";
     $( ".marker" ).remove();
     removeLayer();
 	$('.map-intro').html('EDIFICI DA RIQUALIFICARE');
 	$('.map-intro-text').html('Città Alta è un borgo compatto che non consente un’ulteriore espansione del costruito. Essa, tuttavia, mostra la presenza di diversi edifici dismessi o poco utilizzati che potrebbero essere adibiti a nuova funzione per soddisfare i bisogni degli abitanti.');
 
-    var color = ["#00007f"];
-    var layerName = ["spaziInutilizzati"];
+    var color = ["#ececec"];
+    var layerName = ["cittaAlta"];
 
     for(i=0; i< layerName.length; i++){
         loadBuilding(layerName[i], color[i]);
@@ -248,6 +320,7 @@ function spaziInutilizzati(){
 }
 
 function fattoriDinamizzanti(){
+    layerStatus = "fattoriDinamizzanti";
     document.getElementById("surveys").style.display = "block";
     $( ".marker" ).remove();
     removeLayer();
@@ -258,23 +331,25 @@ function fattoriDinamizzanti(){
 
 
 function cittaAltaFutura(){
+    layerStatus = "completaLaMappa";
+    switchLayer('streets');
     document.getElementById("surveys").style.display = "none";
     $( ".marker" ).remove();
     removeLayer();
 	$('.map-intro').html('COMPLETA LA MAPPA');
-	$('.map-intro-text').html('Punta il marker azzurro sul punto esatto del luogo per il quale vuoi fare una segnalazione');
+	$('.map-intro-text').html('Clicca sul pulsante "Aggiungi una segnalazione" e seleziona la tipologia di proposta che vuoi inserire');
     
     $.ajax({
-    type: "POST",
-    url: "popup.php",
+        type: "POST",
+        url: "popup.php",
 
-    success: function(msg){
-        addPopup(msg);
-    },
-    error: function(){
-        alert("Chiamata fallita!!!");
-    },
-});
+        success: function(msg){
+            addPopup(msg);
+        },
+        error: function(){
+            alert("Chiamata fallita!!!");
+        },
+    });
 
 }
 
@@ -371,7 +446,7 @@ function loadLayerPoint(nameLayer, icon){
 
 
 function addSegnalazione(){
-    alert("Clicca sul luogo che vuoi fare una segnalazione");
+    $("#modalSegnalazione").modal();
 
     map.on('click', addMarker);
    /* 
@@ -393,10 +468,10 @@ new mapboxgl.Marker(el4)
 
 function addMarker(e){
 
-    alert("add");
-
     $('#exampleModal').modal();
     $("#panelTipologiaSegnalazione").load("modalNewProposta/modalAccessibilita.html");
+
+    $("#coordinateSegnalazione").val(JSON.stringify(e.lngLat));
 
  /*   if (typeof circleMarker !== "undefined" ){ 
       map.removeLayer(circleMarker);         
@@ -414,31 +489,59 @@ function addMarker(e){
 $("#buttonProposta").on("click", function(){
     
     var tipologia = $('#selectTipologiaSegnalazione').val();
-    var nameBuilding = $('#inputNameBuilding').val()
-    var motivazione = $('#textAreaMotivazione').val()
+    var nameBuilding = $('#inputNameBuilding').val();
+    var motivazione = $('#textAreaMotivazione').val();
+    var selectProposta = null;
+    var textAreaProposta = null;
 
-    alert(motivazione);
+    var obj = JSON.parse($("#coordinateSegnalazione").val());
 
 
     if($('#selectTipologiaSegnalazione').val() == 1){
-       // alert("a");
+        selectProposta = $("#selectProposta").val();
 
     }
     if($('#selectTipologiaSegnalazione').val() == 2){
-       // alert("b");
+        selectProposta = $("#selectProposta").val();
 
     }
     if($('#selectTipologiaSegnalazione').val() == 3){
-        //$("#panelTipologiaSegnalazione").load("modalNewProposta/modalEdificiDaRiqualificare.html");
+        selectProposta = $("#selectProposta").val();
 
     }
     if($('#selectTipologiaSegnalazione').val() == 4){
-        //$("#panelTipologiaSegnalazione").load("modalNewProposta/modalFattoriDinamizzanti.html");
+        selectProposta = $("#selectProposta").val();
 
     }
     if($('#selectTipologiaSegnalazione').val() == 5){
-        //$("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
-
+        textAreaProposta = $("#textAreaProposta").val();
     }
+
+    var userID = 2;
+    var immagine = document.getElementById("inputImgFileName");
+    //alert(immagine.files[0].webkitRelativePath);
+
+    $.ajax({
+        type: "POST",
+        url: "./addSurvey/addSegnalazione.php",
+        data: "id_utente=" + userID +
+            "&tipologia=" + tipologia +
+            "&nameBuilding=" + nameBuilding +
+            "&motivazione=" + motivazione +
+            "&selectProposta=" + selectProposta +
+            "&textAreaProposta=" + textAreaProposta +
+            "&immagine" + immagine +
+            "&lat=" + obj.lat +
+            "&long=" + obj.lng,
+        dataType: "html",
+        success: function(msg){
+            alert("Aggiunta una nuova segnalazione");
+            $('#exampleModal').modal("hide");
+            cittaAltaFutura();
+
+        },
+    });
+
+
     
 });

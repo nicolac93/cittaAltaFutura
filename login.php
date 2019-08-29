@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
    if($count == 1) {
       $_SESSION['login_user'] = $myusername;
-      header("location: index.php");
+      header("location: partecipa.php");
    }else {
       $error = "Hai inserito credenziali non corrette. Per favore controlla.";
    }

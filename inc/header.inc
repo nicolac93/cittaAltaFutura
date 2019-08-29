@@ -1,7 +1,7 @@
 	<div class="top-container container-fluid d-none d-md-block">
 		<div class="row" style="padding-bottom:0px;">
 			<div class="col-sm">
-			  <span style="font-size:13px;">CST-DiathesisLab - Via Salvecchio 19 | Universita degli Studi di Bergamo</span>
+			  <span style="font-size:13px;">CST-DiathesisLab - Via Salvecchio 19 | Università degli Studi di Bergamo</span>
 			</div>
 			<div class="col-sm float-md-right text-md-right">
               <ul class="list-inline">
@@ -34,6 +34,13 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="partecipa.php">Partecipa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Segnalazioni degli utenti</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Mappa delle segnalazioni</a>
+                        <a class="dropdown-item" href="#">Tabella delle segnalazioni</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="stats.php">Statistiche</a>
