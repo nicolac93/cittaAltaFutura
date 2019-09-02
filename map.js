@@ -270,7 +270,7 @@ function accessibilita(){
         loadLayer(layerName[i], color[i]);
     }
 
-    var color = ["#4272db", "#5a5a5a"];
+    var color = ["#808080", "#5a5a5a"];
     var layerName = ["parcheggiBg", "aereoportoBGY"];
     
     for(i=0; i< layerName.length; i++){
@@ -443,29 +443,59 @@ function loadLayerPoint(nameLayer, icon){
 	});
 }
 
+// --------------------------------- GESTIONE SEGNALAZIONE START ----------------------------------------------------
 
+var pointSegnalazione;
 
 function addSegnalazione(){
-    $("#modalSegnalazione").modal();
-
-    map.on('click', addMarker);
-   /* 
-    var popup4 = new mapboxgl.Popup({ offset: 25 })
-    .setText('Fermare i lavori di realizzazione del parcheggio.');
-// create DOM element for the marker
-var el4 = document.createElement('div');
-el4.id = 'marker';
-el4.style.backgroundImage = "url('img/parcheggioFara.jpg')";
-// create the marker
-new mapboxgl.Marker(el4)
-    .setLngLat([9.666543, 45.706045])
-    .setPopup(popup4) // sets a popup on this marker
-    .addTo(map);
-*/
-    
-
+    $("#modalSceltaTipologiaSegnalazione").modal();
 }
 
+$("#buttonConfermaTipologiaSegnalazione").click(function(){
+
+    $("#buttonTipologiaSegnalazione").html($('input:radio[name="radioTipologia"]:checked').val());
+
+    //Chiudo la finestra precedente
+    $("#modalSceltaTipologiaSegnalazione").modal("hide");
+
+    //Apro l'avviso di come posizionare il marker
+    $("#modalSegnalazione").modal();
+
+    //Cambio il botton (o il testo)
+    $('#addSegnalazione').css("display", 'none');
+    $('#confermaPosizioneSegnalazione').css("display", 'block');
+
+    //Visualizzo il marker
+    pointSegnalazione = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([9.662884, 45.704280])
+        .addTo(map);
+
+});
+
+
+function confermaPosizioneSegnalazione(){
+    $('#exampleModal').modal();
+
+    var tipologia = $("#buttonTipologiaSegnalazione").html();
+
+    if(tipologia == 1){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalAccessibilita.html");
+    }
+    if(tipologia == 2){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalFunzioneDegliEdifici.html");
+    }
+    if(tipologia == 3){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalEdificiDaRiqualificare.html");
+    }
+    if(tipologia == 4){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalFattoriDinamizzanti.html");
+    }
+    if(tipologia == 5){
+        $("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
+    }
+}
 function addMarker(e){
 
     $('#exampleModal').modal();
@@ -488,13 +518,11 @@ function addMarker(e){
 
 $("#buttonProposta").on("click", function(){
     
-    var tipologia = $('#selectTipologiaSegnalazione').val();
+    var tipologia = $("#buttonTipologiaSegnalazione").html();
     var nameBuilding = $('#inputNameBuilding').val();
     var motivazione = $('#textAreaMotivazione').val();
     var selectProposta = null;
     var textAreaProposta = null;
-
-    var obj = JSON.parse($("#coordinateSegnalazione").val());
 
 
     if($('#selectTipologiaSegnalazione').val() == 1){
@@ -517,6 +545,8 @@ $("#buttonProposta").on("click", function(){
         textAreaProposta = $("#textAreaProposta").val();
     }
 
+    var lngLat = pointSegnalazione.getLngLat();
+
     var userID = 2;
     var immagine = document.getElementById("inputImgFileName");
     //alert(immagine.files[0].webkitRelativePath);
@@ -531,17 +561,22 @@ $("#buttonProposta").on("click", function(){
             "&selectProposta=" + selectProposta +
             "&textAreaProposta=" + textAreaProposta +
             "&immagine" + immagine +
-            "&lat=" + obj.lat +
-            "&long=" + obj.lng,
+            "&lat=" + lngLat.lat +
+            "&long=" + lngLat.lng,
         dataType: "html",
         success: function(msg){
-            alert("Aggiunta una nuova segnalazione");
+            $("#modalNewSegnalazione").modal();
             $('#exampleModal').modal("hide");
             cittaAltaFutura();
 
         },
     });
 
+    pointSegnalazione.remove();
+    $('#addSegnalazione').css("display", 'block');
+    $('#confermaPosizioneSegnalazione').css("display", 'none');
 
-    
+
+
+
 });

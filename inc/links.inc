@@ -18,7 +18,6 @@
 		<meta name="theme-color" content="#ffffff">
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.css">
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet" />
         <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
         <link href="vendor/font-awesome/css/all.css" rel="stylesheet"  type="text/css" />

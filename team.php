@@ -42,119 +42,115 @@ include('session.php');
 					</h3>
 				</div>
 			</div>-->
-            <h4>Geografi e urbanisti</h4>
+            <h3>Geografi e urbanisti</h3>
             <hr class="primary">
 			<div class="row">
-                <div class="col-lg-2 col-sm-6 text-center">
+                <div class="col-lg-12 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/casti.jpg" alt="">
-                    <h3>Emanuela Casti<br>
+                    <h4>Emanuela Casti<br>
                         <!--<small>Coordinatore scientifico</small>-->
-                    </h3>
+                    </h4>
                 </div>
-                <div class="col-lg-2 col-sm-6 text-center">
-                    <img class="rounded-circle img-responsive img-center" src="" alt="">
-                    <!--<h3>Emanuela Casti<br>
-                        <small>Coordinatore scientifico</small>
-                    </h3>-->
-                </div>
-				<div class="col-lg-2 col-sm-6 text-center">
+            </div>
+            <div class="row">
+				<div class="col-lg-3 col-sm-6 text-center">
 					<img class="rounded-circle img-responsive img-center" src="img/fulvio.jpg" alt="">
-					<h3>Fulvio Adobati<br>
+					<h4>Fulvio Adobati<br>
                         <!--<small>Rapporti istituzionali</small>-->
-                    </h3>
+                    </h4>
                 </div>
-                <div class="col-lg-2 col-sm-6 text-center">
+                <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/federica.jpg" alt="">
-                    <h3>Federica Burini<br>
+                    <h4>Federica Burini<br>
                         <!--<small>Processi partecipativi</small>-->
-                    </h3>
+                    </h4>
                 </div>
-                <div class="col-lg-2 col-sm-6 text-center">
+                <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/alessandra.jpg" alt="">
-                    <h3>Alessandra Ghisalberti<br>
+                    <h4>Alessandra Ghisalberti<br>
                         <!--<small>Rigenerazione Urbana</small>-->
-                    </h3>
+                    </h4>
                 </div>
-                <div class="col-lg-2 col-sm-6 text-center">
+                <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/renato.jpg" alt="">
-                    <h3>Renato Ferlinghetti<br>
+                    <h4>Renato Ferlinghetti<br>
                         <!--<small>Storia della città</small>-->
-                    </h3>
+                    </h4>
                 </div>
             </div>
             <br>
-            <h4>Programmatori e ingegneri informatici</h4>
+            <h3>Programmatori e ingegneri informatici</h3>
             <hr class="primary">
             <div class="row">
                 <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/federico.jpg" alt="">
-                    <h3>Federico Carrara<br>
+                    <h4>Federico Carrara<br>
                         <!--<small>Big Data analysis</small>-->
-					</h3>
+					</h4>
 				</div>
 				<div class="col-lg-3 col-sm-6 text-center">
 					<img class="rounded-circle img-responsive img-center" src="img/demi.jpg" alt="">
-					<h3>Hideomi Koishi<br>
+					<h4>Hideomi Koishi<br>
 						<!--<small>Web designer</small>-->
-					</h3>
+					</h4>
 				</div>
 				<div class="col-lg-3 col-sm-6 text-center">
 					<img class="rounded-circle img-responsive img-center" src="img/nicola.jpg" alt="">
-					<h3>Nicola Cortesi<br>
+					<h4>Nicola Cortesi<br>
 						<!--<small>Web developer e web designer</small>-->
-					</h3>
+					</h4>
 				</div>
 				<div class="col-lg-3 col-sm-6 text-center">
 					<img class="rounded-circle img-responsive img-center" src="img/kevin.jpg" alt="">
-					<h3>Kevin Gotti<br>
+					<h4>Kevin Gotti<br>
 						<!--<small>Web developer e web designer</small>-->
-					</h3>
+					</h4>
 				</div>
 			</div>
 			<br>
-            <h4>Media e comunicazione</h4>
+            <h3>Media e comunicazione</h3>
             <hr class="primary">
 			<div class="row">
 				<div class="col-lg-6 col-sm-6 text-center">
 					<img class="rounded-circle img-responsive img-center" src="img/elena.jpg" alt="">
-					<h3>Elena Vittoria - Plat1<br>
+					<h4>Elena Vittoria - Plat1<br>
 						<!--<small>Video maker</small>-->
-					</h3>
+					</h4>
 				</div>
 				<div class="col-lg-6 col-sm-6 text-center">
 					<img class="rounded-circle img-responsive img-center" src="img/maria.jpg" alt="">
-					<h3>Maria Grazia Cammarota<br>
+					<h4>Maria Grazia Cammarota<br>
 						<!--<small>Revisione testi</small>-->
-					</h3>
+					</h4>
 				</div>
 			</div>
             <br>
-            <h4>Collaboratori alla ricerca e dottorandi</h4>
+            <h3>Collaboratori alla ricerca e dottorandi</h3>
             <hr class="primary">
             <div class="row">
                 <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/alketa.jpg" alt="">
-                    <h3>Alketa Aliaj<br>
+                    <h4>Alketa Aliaj<br>
                         <!--<small>Comunicazione e social media</small>-->
-                    </h3>
+                    </h4>
                 </div>
                 <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/daniele.jpg" alt="">
-                    <h3>Daniele Mezzapelle<br>
+                    <h4>Daniele Mezzapelle<br>
                         <!--<small>Data analysis e mapping</small>-->
-                    </h3>
+                    </h4>
                 </div>
                 <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/elisa.jpg" alt="">
-                    <h3>Elisa Consolandi<br>
+                    <h4>Elisa Consolandi<br>
                         <!--<small>Raccolta dati e mapping</small>-->
-                    </h3>
+                    </h4>
                 </div>
                 <div class="col-lg-3 col-sm-6 text-center">
                     <img class="rounded-circle img-responsive img-center" src="img/marta.jpg" alt="">
-                    <h3>Marta Rodeschini<br>
+                    <h4>Marta Rodeschini<br>
                        <!-- <small>Indagine di terreno e processo partecipativo</small>-->
-                    </h3>
+                    </h4>
                 </div>
             </div>
 

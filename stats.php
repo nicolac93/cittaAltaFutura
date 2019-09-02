@@ -83,27 +83,7 @@ include('session.php');
 						</div>
 						
 						<div class="row statsContainer">
-							<h3>5. Saresti d’accordo nel promuovere Città Alta come “Cittadella della Cultura”?</h3>
-							<div class="col-12 py-4">
-								<div class="col-sm-6 float-left">
-									<canvas id="chart4" class="chart"></canvas>
-								</div>
-								<div class="col-sm-6 float-left">
-									<div id="pie-legend4" class="pie-legend"></div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row statsContainer">
-							<h3>6. Quali servizi di base mancano in Città Alta?</h3>
-						</div>
-						
-						<div class="row statsContainer">
 							<h3>7. Incentivi alla funzione residenziale</h3>
-						</div>
-						
-						<div class="row statsContainer">
-							<h3>8. Pensi che sia una buona soluzione quella di rivitalizzare gli edifici dismessi o poco utilizzati di Città Alta mediante alloggi con prezzi calmierati rivolti alla popolazione universitaria così da estendere la sua presenza anche nella fascia serale e notturna?</h3>
 						</div>
 						
 						<div class="row statsContainer">

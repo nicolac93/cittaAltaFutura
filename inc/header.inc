@@ -26,25 +26,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <!--<li class="nav-item">
                   <a class="nav-link" href="index.php">Home</a>
-                </li>
+                </li>-->
                 <li class="nav-item">
-                <a class="nav-link" href="progetto.php">Il Progetto</a>
+                <a class="nav-link" href="progetto.php">Progetto</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="partecipa.php">Partecipa</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Segnalazioni degli utenti</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Infografica</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Mappa delle segnalazioni</a>
-                        <a class="dropdown-item" href="#">Tabella delle segnalazioni</a>
+                        <a class="dropdown-item" href="stats.php">Statistiche</a>
+                        <a class="dropdown-item" href="mappaRiepilogo.php">Mappa delle segnalazioni</a>
+                        <a class="dropdown-item" href="tableRiepilogo.php">Tabella delle segnalazioni</a>
                     </div>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                   <a class="nav-link" href="stats.php">Statistiche</a>
-                </li>
+                </li>-->
                 <li class="nav-item">
                   <a class="nav-link" href="calendario.php">Calendario</a>
                 </li>

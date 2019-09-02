@@ -89,8 +89,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         $('#videoFattoriDinamizzanti').css("display", 'none');
         $('#addSegnalazione').css("display", 'block');
     }
-});   
-
+});
 
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')

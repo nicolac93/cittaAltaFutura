@@ -118,11 +118,20 @@ include("session.php");
                 Aggiungi una segnalazione
             </button>
         </div>
+          <div id="confermaPosizioneSegnalazione">
+              <button type="button" class="btn btn-primary" id="buttonConfermaPosizioneSegnalazione" onclick="confermaPosizioneSegnalazione()">
+                  Conferma posizione segnalazione
+              </button>
+          </div>
+          <div id="tipologiaSegnalazione">
+              <button type="button" class="btn btn-primary" id="buttonTipologiaSegnalazione">
+                  Conferma posizione segnalazione
+              </button>
+          </div>
 
         <div id="leggend"></div>
 
         <div id='map'></div>
-        <pre id='coordinates' class='coordinates'></pre>
       </div>
       <!-- End of Map segnalazioni -->  
       
@@ -314,16 +323,6 @@ include("session.php");
             </div>
 
             <div class="modal-body">
-            <div>
-                <label>Tipologia Proposta</label>
-                <select class="form-control select-icon" title="Scegli una tipologia" id="selectTipologiaSegnalazione" >
-                <option value="1" data-icon="glyphicon-picture">Accessibilità</option>
-                <option value="2">Funzione delgi edifici</option>
-                <option value="3">Edifici da riqulificare</option>
-                <option value="4">Fattori dinamizzanti</option>
-                <option value="5">Città alta per tutti</option>
-                </select>
-            </div>
             <div id="panelTipologiaSegnalazione"></div>
             <input type="hidden" id="coordinateSegnalazione" name="coordinateSegnalazione" value="">
             </div>
@@ -336,6 +335,65 @@ include("session.php");
     </div>
 </div>
 
+<div class="modal fade" id="modalSceltaTipologiaSegnalazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    <label>Scegli la tipologia della tua proposta </label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia1" value="1">
+                        <label class="form-check-label" for="exampleRadios1">
+                            <i class='fas fa-bicycle'></i> Accessibilità
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia2" value="2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <i class='fas fa-building'></i> Funzione delgi edifici
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia3" value="3">
+                        <label class="form-check-label" for="exampleRadios3">
+                            <i class='far fa-building'></i> Edifici da riqulificare
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia4" value="4">
+                        <label class="form-check-label" for="exampleRadios4">
+                            <i class='fas fa-sync'></i> Fattori dinamizzanti
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia5" value="5">
+                        <label class="form-check-label" for="exampleRadios5">
+                            <i class='fa fa-users'></i> Città alta per tutti
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                <button type="button" class="btn btn-primary" id="buttonConfermaTipologiaSegnalazione">Conferma</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <!-- modal controllo segnalazione -->
 <div class="modal fade" id="modalSegnalazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -347,7 +405,26 @@ include("session.php");
                 </button>
             </div>
             <div class="modal-body">
-                Clicca sul luogo che vuoi fare una segnalazione
+                Sposta il marker azzura sul luogo dove vuoi fare una segnalazione e clicca il pulsante conferma posizione
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalNewSegnalazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Aggiungi nuova segnalazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Aggiunta nuova segnalazione
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
