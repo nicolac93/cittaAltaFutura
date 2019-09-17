@@ -40,7 +40,7 @@ include('session.php');
 						<h5>Mobilit&agrave; mensile degli abitanti (febbraio 2019)</h5>
 						<div class="video-box" onclick="$('#modal-video-1').modal();" style="cursor:pointer;">
 							<video autoplay muted loop style="height:100%;width:100%;opacity:1;">
-								<source src="video/Wifi_HeatMap_FebbraioOraxOra_Leg_compresso.mp4" type="video/mp4">
+								<source src="video/Wifi_HeatMap_FebbraioOraxOraBarraGrigia_leg_compressed.mp4" type="video/mp4">
 							</video>
 							<div class="video-overlay">
 								<div class="overlay-content"><i class="fa fa-play fa-4x"></i></div>
@@ -75,7 +75,7 @@ include('session.php');
                 <div class="modal-video">
                     <div class="embed-responsive embed-responsive-16by9">
 						<video autoplay muted loop id='my-video' class='video-js' controls preload='auto' width='100%' height='100%' data-setup='{}'>
-							<source src='video/Wifi_HeatMap_FebbraioOraxOra_Leg_compresso.mp4' type='video/mp4'>
+							<source src='video/Wifi_HeatMap_FebbraioOraxOraBarraGrigia_leg_compressed.mp4' type='video/mp4'>
 							<p class='vjs-no-js'>
 							Per visualizzare correttamente questo video, &egrave; necessario abilitare JavaScript, e aggiornare il browser ad una versione pi&ugrave; recente che 
 							<a href='https://videojs.com/html5-video-support/' target='_blank'>supporti HTML5 video</a>
