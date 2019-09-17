@@ -2,21 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="800562d0-9dc8-46b6-8dbc-abd3d7eca258" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/addSurvey/addFattoriDinamizzanti.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/like.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addSurvey/addAccessibilita.php" beforeDir="false" afterPath="$PROJECT_DIR$/addSurvey/addAccessibilita.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cittaAltaFutura.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cittaAltaFutura.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addSegnalazione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addSurvey/addCostruito.php" beforeDir="false" afterPath="$PROJECT_DIR$/addSurvey/addCostruito.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addSurvey/addFattoriDinamizzanti.php" beforeDir="false" afterPath="$PROJECT_DIR$/addSurvey/addFattoriDinamizzanti.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addSurvey/addSegnalazione.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cittaAltaPlurale.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cittaAltaPlurale.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mapRiepilogo.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mapRiepilogo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/buildingBlack.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/buildingBlack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/buildingWhite.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/img/buildingWhite.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cycle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/cycle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/footer.inc" beforeDir="false" afterPath="$PROJECT_DIR$/inc/footer.inc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/mapRiepilogo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/mapRiepilogo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/riepilogo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/riepilogo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leggenda/costruitoLeggend.html" beforeDir="false" afterPath="$PROJECT_DIR$/leggenda/costruitoLeggend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/like.php" beforeDir="false" afterPath="$PROJECT_DIR$/like.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mappaRiepilogo.php" beforeDir="false" afterPath="$PROJECT_DIR$/mappaRiepilogo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modalNewProposta/modalAccessibilita.html" beforeDir="false" afterPath="$PROJECT_DIR$/modalNewProposta/modalAccessibilita.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modalNewProposta/modalCittaAltaPerTutti.html" beforeDir="false" afterPath="$PROJECT_DIR$/modalNewProposta/modalCittaAltaPerTutti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modalNewProposta/modalEdificiDaRiqualificare.html" beforeDir="false" afterPath="$PROJECT_DIR$/modalNewProposta/modalEdificiDaRiqualificare.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modalNewProposta/modalFattoriDinamizzanti.html" beforeDir="false" afterPath="$PROJECT_DIR$/modalNewProposta/modalFattoriDinamizzanti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modalNewProposta/modalFunzioneDegliEdifici.html" beforeDir="false" afterPath="$PROJECT_DIR$/modalNewProposta/modalFunzioneDegliEdifici.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partecipa.php" beforeDir="false" afterPath="$PROJECT_DIR$/partecipa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/popup.php" beforeDir="false" afterPath="$PROJECT_DIR$/popup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/survey/accessibilita.html" beforeDir="false" afterPath="$PROJECT_DIR$/survey/accessibilita.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stats.php" beforeDir="false" afterPath="$PROJECT_DIR$/stats.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/survey/fattoriDinamizzanti.html" beforeDir="false" afterPath="$PROJECT_DIR$/survey/fattoriDinamizzanti.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/survey/funzioniCostruito.html" beforeDir="false" afterPath="$PROJECT_DIR$/survey/funzioniCostruito.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/survey/spaziInutilizzati.html" beforeDir="false" afterPath="$PROJECT_DIR$/survey/spaziInutilizzati.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tableRiepilogo.php" beforeDir="false" afterPath="$PROJECT_DIR$/tableRiepilogo.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,38 +39,164 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/riepilogo.js">
+        <entry file="file://$PROJECT_DIR$/partecipa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="361" column="7" lean-forward="true" selection-start-line="361" selection-start-column="7" selection-end-line="361" selection-end-column="7" />
+            <state relative-caret-position="561">
+              <caret line="522" column="91" selection-start-line="522" selection-start-column="91" selection-end-line="522" selection-end-column="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1734">
+              <caret line="18" column="81" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/session.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/partecipa.php">
+        <entry file="file://$PROJECT_DIR$/js/riepilogo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="790">
+              <caret line="801" column="50" selection-start-line="801" selection-start-column="50" selection-end-line="801" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/survey/funzioniCostruito.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="91" selection-end-column="111" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tableRiepilogo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="824">
+              <caret line="219" selection-start-line="163" selection-end-line="219" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+                <element signature="e#67#75#0" expanded="true" />
+                <element signature="e#71#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/like.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="708">
+              <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/footer.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/cittaAltaPlurale.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="383" column="30" lean-forward="true" selection-start-line="383" selection-start-column="4" selection-end-line="383" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>costruito</find>
-      <find>tematica</find>
-      <find>nav-spaziInutilizzati-tab</find>
-      <find>_POST</find>
+      <find>cittaAltaFutura</find>
+      <find>cittaAltaFutura()</find>
+      <find>.load</find>
+      <find>id='map</find>
+      <find>map.js</find>
+      <find>map</find>
+      <find>REGIS</find>
+      <find>primary</find>
+      <find>removeL</find>
+      <find>load</find>
+      <find>CittaAltaFutura</find>
+      <find>addP</find>
+      <find>buttonPropost</find>
+      <find>formSegnalazione</find>
+      <find>card-img-top</find>
+      <find>img/</find>
+      <find>pop</find>
+      <find>Saresti d’accordo nel promuovere Città Alta come “Cittadella della Cultura”</find>
+      <find>Saresti d’accordo a favorire la creazione di percorsi alternativi alla Corsarola</find>
+      <find>like</find>
+      <find>Airbnb</find>
       <find>butto</find>
+      <find>button</find>
+      <find>Step 4 d</find>
+      <find>console</find>
+      <find>addPopup</find>
+      <find>lik</find>
+      <find>=&quot;like</find>
+      <find>=&quot;unlike</find>
+      <find>aggiun</find>
     </findStrings>
     <replaceStrings>
       <replace>_GET</replace>
+      <replace>_POST</replace>
+      <replace>=&quot;tableLike</replace>
+      <replace>=&quot;tableUnlike</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -67,33 +205,53 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/survey/funzioniCostruito.html" />
-        <option value="$PROJECT_DIR$/partecipa.php" />
+        <option value="$PROJECT_DIR$/survey/accessibilita.html" />
         <option value="$PROJECT_DIR$/addSurvey/addAccessibilita.php" />
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/leggenda/riqualificazioneLeggend.html" />
+        <option value="$PROJECT_DIR$/survey/spaziInutilizzati.html" />
+        <option value="$PROJECT_DIR$/inc/modalMessage.inc" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/progetto.php" />
+        <option value="$PROJECT_DIR$/leggenda/accessibilitaLeggend.html" />
+        <option value="$PROJECT_DIR$/leggenda/costruitoLeggend.html" />
+        <option value="$PROJECT_DIR$/team.php" />
+        <option value="$PROJECT_DIR$/inc/header.inc" />
+        <option value="$PROJECT_DIR$/css/cittaAltaFutura.css" />
+        <option value="$PROJECT_DIR$/inc/links.inc" />
+        <option value="$PROJECT_DIR$/mappaRiepilogo.php" />
+        <option value="$PROJECT_DIR$/css/mapRiepilogo.css" />
+        <option value="$PROJECT_DIR$/modalNewProposta/modalCittaAltaPerTutti.html" />
+        <option value="$PROJECT_DIR$/ajaxupload.php" />
+        <option value="$PROJECT_DIR$/addSurvey/addSegnalazione.php" />
+        <option value="$PROJECT_DIR$/modalNewProposta/modalAccessibilita.html" />
+        <option value="$PROJECT_DIR$/modalNewProposta/modalFattoriDinamizzanti.html" />
+        <option value="$PROJECT_DIR$/modalNewProposta/modalFunzioneDegliEdifici.html" />
+        <option value="$PROJECT_DIR$/modalNewProposta/modalEdificiDaRiqualificare.html" />
+        <option value="$PROJECT_DIR$/addSegnalazione.php" />
+        <option value="$PROJECT_DIR$/js/mapRiepilogo.js" />
+        <option value="$PROJECT_DIR$/survey/funzioniCostruito.html" />
         <option value="$PROJECT_DIR$/survey/fattoriDinamizzanti.html" />
         <option value="$PROJECT_DIR$/addSurvey/addFattoriDinamizzanti.php" />
-        <option value="$PROJECT_DIR$/js/riepilogo.js" />
+        <option value="$PROJECT_DIR$/addSurvey/addCostruito.php" />
+        <option value="$PROJECT_DIR$/stats.php" />
+        <option value="$PROJECT_DIR$/css/cittaAltaPlurale.css" />
         <option value="$PROJECT_DIR$/popup.php" />
         <option value="$PROJECT_DIR$/like.php" />
+        <option value="$PROJECT_DIR$/tableRiepilogo.php" />
+        <option value="$PROJECT_DIR$/inc/footer.inc" />
         <option value="$PROJECT_DIR$/map.js" />
+        <option value="$PROJECT_DIR$/partecipa.php" />
+        <option value="$PROJECT_DIR$/js/riepilogo.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/cittaAlta.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1245" />
-    <option name="y" value="382" />
-    <option name="width" value="1120" />
-    <option name="height" value="800" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-6" />
+    <option name="y" value="-6" />
+    <option name="width" value="1357" />
+    <option name="height" value="853" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -116,7 +274,32 @@
             <path>
               <item name="cittaAlta" type="b2602c69:ProjectViewProjectNode" />
               <item name="cittaAlta" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cittaAlta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cittaAlta" type="462c0819:PsiDirectoryNode" />
+              <item name="geojson" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cittaAlta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cittaAlta" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cittaAlta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cittaAlta" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cittaAlta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cittaAlta" type="462c0819:PsiDirectoryNode" />
+              <item name="leggenda" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cittaAlta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cittaAlta" type="462c0819:PsiDirectoryNode" />
+              <item name="modalNewProposta" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cittaAlta" type="b2602c69:ProjectViewProjectNode" />
@@ -131,10 +314,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cava2" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cittaAlta\" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cittaAlta\geojson" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -160,21 +353,57 @@
       <updated>1561384409754</updated>
       <workItem from="1561384413694" duration="10851000" />
       <workItem from="1561492503954" duration="3175000" />
+      <workItem from="1563896320467" duration="625000" />
+      <workItem from="1563995337803" duration="13440000" />
+      <workItem from="1564429765986" duration="361000" />
+      <workItem from="1564430375591" duration="3478000" />
+      <workItem from="1564501862071" duration="3413000" />
+      <workItem from="1564758649412" duration="4101000" />
+      <workItem from="1565116122346" duration="7729000" />
+      <workItem from="1565701432864" duration="5381000" />
+      <workItem from="1565715259470" duration="5775000" />
+      <workItem from="1566827716077" duration="31000" />
+      <workItem from="1566904453593" duration="32352000" />
+      <workItem from="1567433849237" duration="4474000" />
+      <workItem from="1567583508833" duration="41663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14026000" />
+    <option name="totallyTimeSpent" value="136849000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1245" y="382" width="1120" height="800" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18022181" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12846482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32922733" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1913646" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Gulp" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -184,93 +413,17 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Gulp" order="0" side_tool="true" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.12908325" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/survey/funzioniCostruito.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315">
-          <caret line="179" column="10" selection-start-line="179" selection-start-column="10" selection-end-line="179" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/survey/fattoriDinamizzanti.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="136" column="83" selection-start-line="136" selection-start-column="73" selection-end-line="136" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/survey/accessibilita.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1927" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addSurvey/addAccessibilita.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/popup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="2" lean-forward="true" selection-end-line="28" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addSurvey/addFattoriDinamizzanti.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/like.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="106" column="28" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#p#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#p#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/contact_me.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
@@ -290,17 +443,358 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/riepilogo.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="361" column="7" lean-forward="true" selection-start-line="361" selection-start-column="7" selection-end-line="361" selection-end-column="7" />
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addSurvey/addSpaziInutilizzati.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addSurvey/addAccessibilita.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geojson/cittaAlta.geojson">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leggenda/riqualificazioneLeggend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/spaziInutilizzati.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leggenda/accessibilitaLeggend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#th#0;n#tr#2;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#th#0;n#tr#2;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="131" column="102" selection-start-line="131" selection-start-column="102" selection-end-line="131" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leggenda/costruitoLeggend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/modalMessage.inc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/accessibilita.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="157" column="113" selection-start-line="157" selection-start-column="113" selection-end-line="157" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/cittaAltaFutura.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="112" lean-forward="true" selection-start-line="2" selection-start-column="85" selection-end-line="2" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/links.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/progetto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="e#67#75#0" expanded="true" />
+            <element signature="e#67#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session_login.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/header.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="73" selection-start-line="42" selection-start-column="73" selection-end-line="42" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mapRiepilogo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cittaAltaFutura.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="148" selection-start-line="148" selection-end-line="164" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/footerscripts.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modalNewProposta/modalCittaAltaPerTutti.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="113" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajaxupload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modalNewProposta/modalAccessibilita.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modalNewProposta/modalFattoriDinamizzanti.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modalNewProposta/modalFunzioneDegliEdifici.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modalNewProposta/modalEdificiDaRiqualificare.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addSegnalazione.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mappaRiepilogo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#67#75#0" expanded="true" />
+            <element signature="e#71#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mapRiepilogo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="36" column="65" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4515">
+          <caret line="755" selection-start-line="8" selection-end-line="755" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addSurvey/addFattoriDinamizzanti.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/fattoriDinamizzanti.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="122" column="27" lean-forward="true" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addSurvey/addCostruito.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/funzioniCostruito.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="91" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cittaAltaPlurale.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="383" column="30" lean-forward="true" selection-start-line="383" selection-start-column="4" selection-end-line="383" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stats.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="767" column="36" selection-start-line="767" selection-start-column="36" selection-end-line="767" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tableRiepilogo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="824">
+          <caret line="219" selection-start-line="163" selection-end-line="219" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#td#0;n#!!top" expanded="true" />
+            <element signature="e#67#75#0" expanded="true" />
+            <element signature="e#71#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/like.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/footer.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-468" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/partecipa.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="561">
+          <caret line="522" column="91" selection-start-line="522" selection-start-column="91" selection-end-line="522" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734">
+          <caret line="18" column="81" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/riepilogo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="801" column="50" selection-start-line="801" selection-start-column="50" selection-end-line="801" selection-end-column="50" />
         </state>
       </provider>
     </entry>

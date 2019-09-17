@@ -19,8 +19,10 @@
 					<ul class="list-unstyled row footer-menu">
 						<li class="list-item col-5 py-1"><a href="index.php">Home</a></li>
 						<li class="list-item col-5 py-1"><a href="partecipa.php">Partecipa</a></li>
-						<li class="list-item col-5 py-1"><a href="progetto.php">Il Progetto</a></li>
+						<li class="list-item col-5 py-1"><a href="progetto.php">Progetto</a></li>
 						<li class="list-item col-5 py-1"><a href="stats.php">Statistiche</a></li>
+                        <li class="list-item col-5 py-1"><a href="stats.php">Mappa delle segnalazioni</a></li>
+                        <li class="list-item col-5 py-1"><a href="stats.php">Tabella delle segnalazioni</a></li>
 						<li class="list-item col-5 py-1"><a href="calendario.php">Calendario</a></li>
 						<li class="list-item col-5 py-1"><a href="team.php">Team</a></li>
 						<li class="list-item col-5 py-1"><a href="privacy-policy.php">Privacy Policy</a></li>
@@ -29,7 +31,7 @@
 				</div>
 				<div class="col-lg-4">
 					<h3 class="footer-title" >UNIBG</h3>
-					<a href="https://www.unibg.it/" target="_blank"><img src="img/LogoFooter.png" height="85"></a>
+					<a href="https://www.unibg.it/ricerca/strutture-ricerca/centri-ateneo/cst" target="_blank"><img src="img/LogoFooter.png" height="85"></a>
  
 				</div>
 				  

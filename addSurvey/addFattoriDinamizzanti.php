@@ -9,9 +9,9 @@
                         '".$_POST['DOMANDA_2_DETTAGLI']."',
                         ".$_POST['DOMANDA_3'].",
                         '".$_POST['DOMANDA_3_DETTAGLI']."',
-                        ".$_POST['DOMANDA_4'].",
+                        '".$_POST['DOMANDA_4']."',
                         '".$_POST['DOMANDA_4_DETTAGLI']."',
-                        ".$_POST['DOMANDA_5'].",
+                        '".$_POST['DOMANDA_5']."',
                         '".$_POST['DOMANDA_5_DETTAGLI']."')";
 
     echo $query;

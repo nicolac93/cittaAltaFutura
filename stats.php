@@ -35,7 +35,9 @@ include('session.php');
 					<hr class="primary">
 					<div class="container">
 						<div class="row statsContainer">
-							<h3>1. Quali collegamenti ritieni utile rafforzare?</h3>
+							<h3>1. Il Piano particolareggiato di Città Alta (PPRCA 2005-2015) proponeva tre linee di collegamento di Città Alta.
+                                Quali collegamenti ritieni utile rafforzare?
+                            </h3>
 							<div class="col-12 py-4">
 								<div class="col-sm-6 float-left">
 									<canvas id="chart0" class="chart"></canvas>
@@ -47,7 +49,7 @@ include('session.php');
 						</div>
 						
 						<div class="row statsContainer">
-							<h3>2. Pensi che la peculiarità di Città Alta, ovvero l’altimetria, sia una potenzialità?</h3>
+							<h3>2. Quali interventi ritieni utili rispetto alla mobilità privata?</h3>
 							<div class="col-12 py-4">
 								<div class="col-sm-6 float-left">
 									<canvas id="chart1" class="chart"></canvas>
@@ -59,7 +61,7 @@ include('session.php');
 						</div>
 						
 						<div class="row statsContainer">
-							<h3>3. Vorresti incentivare l’apertura di negozi di vicinato?</h3>
+							<h3>3. Pensi che le attività ricettive che si stanno diffondendo anche su iniziativa personale (es. Airbnb) potrebbero essere rivolte a:</h3>
 							<div class="col-12 py-4">
 								<div class="col-sm-6 float-left">
 									<canvas id="chart2" class="chart"></canvas>
@@ -71,8 +73,8 @@ include('session.php');
 						</div>
 						
 						<div class="row statsContainer">
-							<h3>4. Pensi che le attività ricettive che si stanno diffondendo anche su iniziativa personale (es. Airbnb) siano una buona risposta a tale fenomeno?</h3>
 							<div class="col-12 py-4">
+                                <h3>4. Saresti d’accordo nel promuovere Città Alta come “Cittadella della Cultura”?</h3>
 								<div class="col-sm-6 float-left">
 									<canvas id="chart3" class="chart"></canvas>
 								</div>
@@ -80,35 +82,29 @@ include('session.php');
 									<div id="pie-legend3" class="pie-legend"></div>
 								</div>
 							</div>
+                            <!--<div class="col-6 py-4">
+                                <h3>4.1 Se NO, Quale futuro vedi per città alta?</h3>
+                                <div class="col-sm-6 float-left">
+                                    <canvas id="chart4" class="chart"></canvas>
+                                </div>
+                                <div class="col-sm-6 float-left">
+                                    <div id="pie-legend4" class="pie-legend"></div>
+                                </div>
+                            </div>-->
 						</div>
 						
 						<div class="row statsContainer">
-							<h3>5. Saresti d’accordo nel promuovere Città Alta come “Cittadella della Cultura”?</h3>
-							<div class="col-12 py-4">
-								<div class="col-sm-6 float-left">
-									<canvas id="chart4" class="chart"></canvas>
-								</div>
-								<div class="col-sm-6 float-left">
-									<div id="pie-legend4" class="pie-legend"></div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row statsContainer">
-							<h3>6. Quali servizi di base mancano in Città Alta?</h3>
-						</div>
-						
-						<div class="row statsContainer">
-							<h3>7. Incentivi alla funzione residenziale</h3>
-						</div>
-						
-						<div class="row statsContainer">
-							<h3>8. Pensi che sia una buona soluzione quella di rivitalizzare gli edifici dismessi o poco utilizzati di Città Alta mediante alloggi con prezzi calmierati rivolti alla popolazione universitaria così da estendere la sua presenza anche nella fascia serale e notturna?</h3>
-						</div>
-						
-						<div class="row statsContainer">
-							<h3>9. Quali strategie ritieni utili per porre freno alle derive banalizzanti del turismo?</h3>
-						</div>
+							<h3>5. Alcuni edifici poco utilizzati o gli alloggi di edilizia popolare potrebbero essere rivolti ad abitanti che fruiscono di Città Alta per periodi prolungati</h3>
+                            <div class="col-12 py-4">
+                                <div class="col-sm-6 float-left">
+                                    <canvas id="chart5" class="chart"></canvas>
+                                </div>
+                                <div class="col-sm-6 float-left">
+                                    <div id="pie-legend5" class="pie-legend"></div>
+                                </div>
+                            </div>
+                        </div>
+
 					</div>
 				</div>
 			</main>
@@ -116,12 +112,54 @@ include('session.php');
 	<script>
 
 	window.addEventListener('load', 
-	  function() { 
+	  function() {
+
+	    // ================================ DOMANDA 1 ====================================================
+
+          <?php
+            $ris = array(3);
+              $sql = "SELECT COUNT(*) as num_risposte FROM accessibilita WHERE DOMANDA_1=1";
+
+              if (mysqli_query($conn, $sql)) {
+                  echo "";
+              } else {
+                  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+              }
+              $result = mysqli_query($conn, $sql);
+              $row = mysqli_fetch_assoc($result);
+              $ris[0] = $row["num_risposte"];
+
+              $sql = "SELECT COUNT(*) as num_risposte FROM accessibilita WHERE DOMANDA_1=2";
+
+              if (mysqli_query($conn, $sql)) {
+                  echo "";
+              } else {
+                  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+              }
+              $result = mysqli_query($conn, $sql);
+              $row = mysqli_fetch_assoc($result);
+              $ris[1] = $row["num_risposte"];
+
+              $sql = "SELECT COUNT(*) as num_risposte FROM accessibilita WHERE DOMANDA_1=3";
+
+              if (mysqli_query($conn, $sql)) {
+                  echo "";
+              } else {
+                  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+              }
+              $result = mysqli_query($conn, $sql);
+              $row = mysqli_fetch_assoc($result);
+              $ris[2] = $row["num_risposte"];
+
+
+          ?>
+
+
 
 		var ctx = document.getElementById("chart0").getContext("2d");
 		var data = {
 				datasets: [{
-					data: [27, 20, 55],
+					data: [<?php echo $ris[0];?>, <?php echo $ris[1];?>, <?php echo $ris[2];?>],
 					backgroundColor: ['rgba(256,0,0,1)','rgba(0,0,128,1)','rgba(255,255,0,1)']
 				}],
 				labels: [
@@ -165,7 +203,8 @@ include('session.php');
 							var currentValue = dataset.data[tooltipItem.index];
 							var percentage = Math.floor(((currentValue/total) * 100)+0.5);
 							
-							return " " + currentValue + " risposte: " + percentage + "%";
+							//return " " + currentValue + " risposte: " + percentage + "%";
+							return " " + percentage + "%";
 						},
 						footer: function(tooltipItems, data) {
 							console.log(JSON.stringify(tooltipItems));
@@ -184,6 +223,567 @@ include('session.php');
 		});
 
 		$("#pie-legend0").html(pieChart0.generateLegend());
+
+
+          // ================================ DOMANDA 2 ====================================================
+
+          <?php
+          $ris = array(3);
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM accessibilita WHERE DOMANDA_4=1";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[0] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM accessibilita WHERE DOMANDA_4=2";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[1] = $row["num_risposte"];
+
+          ?>
+
+
+          var ctx1 = document.getElementById("chart1").getContext("2d");
+          var data = {
+              datasets: [{
+                  data: [<?php echo $ris[0];?>, <?php echo $ris[1];?>],
+                  backgroundColor: ['rgba(256,0,0,1)','rgba(0,0,128,1)']
+              }],
+              labels: [
+                  'Chiudere l\'accesso a Città Alta ai veicoli privati',
+                  'Aumentare gli spazi di sosta'
+              ]
+          };
+
+          var options = {
+              responsive: true,
+              legend: {
+                  display: false,
+                  legendCallback: function(chart) {
+                      var text = [];
+                      text.push('<ul class="' + chart.id + '-legend">');
+                      for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+                          text.push('<li><span style="background-color:' +
+                              chart.data.datasets[0].backgroundColor[i] + '" >');
+                          if (chart.data.labels[i]) {
+                              text.push(chart.data.labels[i]);
+                          }
+                          text.push('</span></li>');
+                      }
+                      text.push('</ul>');
+                      return text.join("");
+                  }
+
+              },
+              tooltips: {
+                  titleFontSize: 15,
+                  bodyFontSize: 18,
+                  footerFontSize: 15,
+                  callbacks: {
+                      label: function(tooltipItem, data) {
+                          var dataset = data.datasets[tooltipItem.datasetIndex];
+                          var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                              return previousValue + currentValue;
+                          });
+                          var currentLabel = data.labels[tooltipItem.index];
+                          var currentValue = dataset.data[tooltipItem.index];
+                          var percentage = Math.floor(((currentValue/total) * 100)+0.5);
+
+                          return " " + percentage + "%";
+                      },
+                      footer: function(tooltipItems, data) {
+                          console.log(JSON.stringify(tooltipItems));
+                          return  data.labels[tooltipItems[0].index];
+
+                      }
+                  }
+              },
+
+          };
+
+          var pieChart1 = new Chart(ctx1, {
+              type: 'pie',
+              data: data,
+              options: options
+          });
+
+          $("#pie-legend1").html(pieChart1.generateLegend());
+
+          // ================================ DOMANDA 3 ====================================================
+
+          <?php
+          $ris = array(3);
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_4=1";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[0] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_4=2";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[1] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_4=3";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[2] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_4=4";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[3] = $row["num_risposte"];
+
+          ?>
+
+          var ctx1 = document.getElementById("chart2").getContext("2d");
+          var data = {
+              datasets: [{
+                  data: [<?php echo $ris[0];?>, <?php echo $ris[1];?>, <?php echo $ris[2];?>, <?php echo $ris[3];?>],
+                  backgroundColor: ['rgba(256,0,0,1)','rgba(0,0,128,1)','rgba(255,255,0,1)','rgba(0,255,0,1)']
+              }],
+              labels: [
+                  'Turisti che risiedono per lunghi periodi',
+                  'Docenti o lavoratori pendolari su Città Alta',
+                  'Studenti',
+                  'Altro'
+              ]
+          };
+
+          var options = {
+              responsive: true,
+              legend: {
+                  display: false,
+                  legendCallback: function(chart) {
+                      var text = [];
+                      text.push('<ul class="' + chart.id + '-legend">');
+                      for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+                          text.push('<li><span style="background-color:' +
+                              chart.data.datasets[0].backgroundColor[i] + '" >');
+                          if (chart.data.labels[i]) {
+                              text.push(chart.data.labels[i]);
+                          }
+                          text.push('</span></li>');
+                      }
+                      text.push('</ul>');
+                      return text.join("");
+                  }
+
+              },
+              tooltips: {
+                  titleFontSize: 15,
+                  bodyFontSize: 18,
+                  footerFontSize: 15,
+                  callbacks: {
+                      label: function(tooltipItem, data) {
+                          var dataset = data.datasets[tooltipItem.datasetIndex];
+                          var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                              return previousValue + currentValue;
+                          });
+                          var currentLabel = data.labels[tooltipItem.index];
+                          var currentValue = dataset.data[tooltipItem.index];
+                          var percentage = Math.floor(((currentValue/total) * 100)+0.5);
+
+                          return " " + percentage + "%";
+                      },
+                      footer: function(tooltipItems, data) {
+                          console.log(JSON.stringify(tooltipItems));
+                          return  data.labels[tooltipItems[0].index];
+
+                      }
+                  }
+              },
+
+          };
+
+          var pieChart2 = new Chart(ctx1, {
+              type: 'pie',
+              data: data,
+              options: options
+          });
+
+          $("#pie-legend2").html(pieChart2.generateLegend());
+
+
+
+          // ================================ DOMANDA 4 ====================================================
+
+          <?php
+          $ris = array(4);
+          $sql = "SELECT DOMANDA_1, COUNT(*) as num_risposte FROM accessibilita GROUP BY DOMANDA_1";
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_6=1";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[0] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_62=1";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[1] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_62=2";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[2] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_62=3";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[3] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM funzionicostruito WHERE DOMANDA_62=4";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[4] = $row["num_risposte"];
+
+          ?>
+
+          var ctx1 = document.getElementById("chart3").getContext("2d");
+          var data = {
+              datasets: [{
+                  data: [<?php echo $ris[0];?>, <?php echo $ris[1];?>, <?php echo $ris[2];?>, <?php echo $ris[3];?>, <?php echo $ris[4];?>],
+                  backgroundColor: ['rgba(256,0,0,1)','rgba(0,0,128,1)','rgba(255,255,0,1)','rgba(0,255,0,1)', 'rgba(128,255,0,1)']
+              }],
+              labels: [
+                  'Si',
+                  'No, Borgo antico',
+                  'No, Cittadella internazionale',
+                  'No, Città del paesaggio verde e di pietra',
+                  'No, Altro'
+              ]
+          };
+
+          var options = {
+              responsive: true,
+              legend: {
+                  display: false,
+                  legendCallback: function(chart) {
+                      var text = [];
+                      text.push('<ul class="' + chart.id + '-legend">');
+                      for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+                          text.push('<li><span style="background-color:' +
+                              chart.data.datasets[0].backgroundColor[i] + '" >');
+                          if (chart.data.labels[i]) {
+                              text.push(chart.data.labels[i]);
+                          }
+                          text.push('</span></li>');
+                      }
+                      text.push('</ul>');
+                      return text.join("");
+                  }
+
+              },
+              tooltips: {
+                  titleFontSize: 15,
+                  bodyFontSize: 18,
+                  footerFontSize: 15,
+                  callbacks: {
+                      label: function(tooltipItem, data) {
+                          var dataset = data.datasets[tooltipItem.datasetIndex];
+                          var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                              return previousValue + currentValue;
+                          });
+                          var currentLabel = data.labels[tooltipItem.index];
+                          var currentValue = dataset.data[tooltipItem.index];
+                          var percentage = Math.floor(((currentValue/total) * 100)+0.5);
+
+                          return " " + percentage + "%";
+                      },
+                      footer: function(tooltipItems, data) {
+                          console.log(JSON.stringify(tooltipItems));
+                          return  data.labels[tooltipItems[0].index];
+
+                      }
+                  }
+              },
+
+          };
+
+          var pieChart3 = new Chart(ctx1, {
+              type: 'pie',
+              data: data,
+              options: options
+          });
+
+          $("#pie-legend3").html(pieChart3.generateLegend());
+
+
+
+          // ================================ DOMANDA 4.1 ==================================================
+
+          <?php
+          $sql = "SELECT DOMANDA_1, COUNT(*) as num_risposte FROM accessibilita GROUP BY DOMANDA_1";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $i=0;
+          $result = mysqli_query($conn, $sql);
+
+          $ris = array(3);
+
+          while($row = mysqli_fetch_assoc($result)){
+              $ris[$i] = $row["num_risposte"];
+              $i = $i+1;
+          }
+
+          ?>
+          /*
+          var ctx1 = document.getElementById("chart4").getContext("2d");
+          var data = {
+              datasets: [{
+                  data: [27, 20, 14, 16],
+                  backgroundColor: ['rgba(256,0,0,1)','rgba(0,0,128,1)','rgba(255,255,0,1)','rgba(0,255,0,1)']
+              }],
+              labels: [
+                  'Borgo antico',
+                  'Cittadella internazionale',
+                  'Città del paesaggio verde e di pietra',
+                  'Altro'
+              ]
+          };
+
+          var options = {
+              responsive: true,
+              legend: {
+                  display: false,
+                  legendCallback: function(chart) {
+                      var text = [];
+                      text.push('<ul class="' + chart.id + '-legend">');
+                      for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+                          text.push('<li><span style="background-color:' +
+                              chart.data.datasets[0].backgroundColor[i] + '" >');
+                          if (chart.data.labels[i]) {
+                              text.push(chart.data.labels[i]);
+                          }
+                          text.push('</span></li>');
+                      }
+                      text.push('</ul>');
+                      return text.join("");
+                  }
+
+              },
+              tooltips: {
+                  titleFontSize: 15,
+                  bodyFontSize: 18,
+                  footerFontSize: 15,
+                  callbacks: {
+                      label: function(tooltipItem, data) {
+                          var dataset = data.datasets[tooltipItem.datasetIndex];
+                          var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                              return previousValue + currentValue;
+                          });
+                          var currentLabel = data.labels[tooltipItem.index];
+                          var currentValue = dataset.data[tooltipItem.index];
+                          var percentage = Math.floor(((currentValue/total) * 100)+0.5);
+
+                          return " " + currentValue + " risposte: " + percentage + "%";
+                      },
+                      footer: function(tooltipItems, data) {
+                          console.log(JSON.stringify(tooltipItems));
+                          return  data.labels[tooltipItems[0].index];
+
+                      }
+                  }
+              },
+
+          };
+
+          var pieChart41 = new Chart(ctx1, {
+              type: 'pie',
+              data: data,
+              options: options
+          });
+
+          $("#pie-legend4").html(pieChart41.generateLegend());
+*/
+
+          // ================================ DOMANDA 5 ====================================================
+
+          <?php
+          $ris = array(3);
+          $sql = "SELECT COUNT(*) as num_risposte FROM spaziinutilizzati WHERE DOMANDA_1=1";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[0] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM spaziinutilizzati WHERE DOMANDA_1=2";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[1] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM spaziinutilizzati WHERE DOMANDA_1=3";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[2] = $row["num_risposte"];
+
+          $sql = "SELECT COUNT(*) as num_risposte FROM spaziinutilizzati WHERE DOMANDA_1=4";
+
+          if (mysqli_query($conn, $sql)) {
+              echo "";
+          } else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          }
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $ris[3] = $row["num_risposte"];
+
+          ?>
+
+          var ctx1 = document.getElementById("chart5").getContext("2d");
+          var data = {
+              datasets: [{
+                  data: [<?php echo $ris[0];?>, <?php echo $ris[1];?>, <?php echo $ris[2];?>, <?php echo $ris[3];?>],
+                  backgroundColor: ['rgba(256,0,0,1)','rgba(0,0,128,1)','rgba(255,255,0,1)','rgba(0,255,0,1)']
+              }],
+              labels: [
+                  'A coppie di giovani o famiglie con bambini',
+                  'A persone anziane',
+                  'A studenti',
+                  'A docenti e lavoratori pendolari'
+              ]
+          };
+
+          var options = {
+              responsive: true,
+              legend: {
+                  display: false,
+                  legendCallback: function(chart) {
+                      var text = [];
+                      text.push('<ul class="' + chart.id + '-legend">');
+                      for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+                          text.push('<li><span style="background-color:' +
+                              chart.data.datasets[0].backgroundColor[i] + '" >');
+                          if (chart.data.labels[i]) {
+                              text.push(chart.data.labels[i]);
+                          }
+                          text.push('</span></li>');
+                      }
+                      text.push('</ul>');
+                      return text.join("");
+                  }
+
+              },
+              tooltips: {
+                  titleFontSize: 15,
+                  bodyFontSize: 18,
+                  footerFontSize: 15,
+                  callbacks: {
+                      label: function(tooltipItem, data) {
+                          var dataset = data.datasets[tooltipItem.datasetIndex];
+                          var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                              return previousValue + currentValue;
+                          });
+                          var currentLabel = data.labels[tooltipItem.index];
+                          var currentValue = dataset.data[tooltipItem.index];
+                          var percentage = Math.floor(((currentValue/total) * 100)+0.5);
+
+                          return " " + percentage + "%";
+                      },
+                      footer: function(tooltipItems, data) {
+                          console.log(JSON.stringify(tooltipItems));
+                          return  data.labels[tooltipItems[0].index];
+
+                      }
+                  }
+              },
+
+          };
+
+          var pieChart5 = new Chart(ctx1, {
+              type: 'pie',
+              data: data,
+              options: options
+          });
+
+          $("#pie-legend5").html(pieChart5.generateLegend());
 
 
 	  }, false);

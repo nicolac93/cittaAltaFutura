@@ -1,27 +1,27 @@
 <div id="propostaAccessibilita">
     <div class="form-group">
         <label for="exampleFormControlInput1">Nome dell'edificio e/o indirizzo:</label>
-        <input type="text" class="form-control" id="inputNameBuilding" placeholder="Nome del luogo">
+        <input type="text" class="form-control" id="inputNameBuilding" name="inputNameBuilding" placeholder="Nome del luogo">
     </div>
 
     <div class="form-group">
     <label for="exampleFormControlSelect2">Inserisci la tua proposta di miglioramento della mobilità scegliendo una di queste categorie:</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>Collegamento con le altre aree della città</option>
-        <option>Trasporto pubblico</option>
-        <option>Mobilità verde e condivisa</option>
-        <option>Mobilità privata</option>
-        <option>Altimetria</option>
+    <select multiple class="form-control" id="selectProposta" name="selectProposta">
+        <option value="Collegamento con le altre aree della città">Collegamento con le altre aree della città</option>
+        <option value="Trasporto pubblico">Trasporto pubblico</option>
+        <option value="Mobilità verde e condivisa">Mobilità verde e condivisa</option>
+        <option value="Mobilità privata">Mobilità privata</option>
+        <option value="Altimetria">Altimetria</option>
     </select>
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Motivazione</label>
-        <textarea class="form-control" id="textAreaMotivazione" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1">Illustra la tua proposta</label>
+        <textarea class="form-control" id="textAreaMotivazione" name="textAreaMotivazione" rows="3"></textarea>
     </div>
 
     <div class="form-group">
         <label for="exampleFormControlFile1">Carica la tua fotografia</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <input type="file" class="form-control-file" id="inputImgFileName" name=inputImgFileName">
     </div>
 </div>

@@ -22,54 +22,74 @@ $('#selector button').click(function() {
 $('#tematica button').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
 
-    if($(this).val() == 'accessibilita') { 
+    if($(this).val() == 'accessibilita') {
         $("#leggend").load("leggenda/accessibilitaLeggend.html");
         $('#nav-accessiblita-tab').tab('show');
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
-    else if($(this).val() == 'costruito') { 
+    else if($(this).val() == 'costruito') {
         $("#leggend").load("leggenda/costruitoLeggend.html");
         $('#nav-funzioniCostruito-tab').tab('show');
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($(this).val() == 'spaziInutilizzati') {
         $("#leggend").load("leggenda/riqualificazioneLeggend.html");
         $('#nav-spaziInutilizzati-tab').tab('show');
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
-    else if($(this).val() == 'fattoriDinamizzanti') { 
+    else if($(this).val() == 'fattoriDinamizzanti') {
         $('#nav-fattoriDinamizzanti-tab').tab('show');
         $('#map-riepilogo').css("display", 'none');
         $('#videoFattoriDinamizzanti').css("display", 'block');
+        $('#addSegnalazione').css("display", 'none');
     }
-    else if($(this).val() == 'cittaAltaPlurale') { 
-        $('#nav-cittaAltaFutura-tab').tab('show');
+    else if($(this).val() == 'completaLaMappa') {
         $('#map-riepilogo').css("display", 'block');
         $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'block');
     }
 });
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     if($('.tab-content .active')[0].id == "nav-accessiblita"){
-        $("#buttonAddSegnalazione").html("<i class='fas fa-bicycle'></i> Completa la mappa");
+        $("#leggend").load("leggenda/accessibilitaLeggend.html");
+        $('#nav-accessiblita-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-funzioniCostruito"){
-        $("#buttonAddSegnalazione").html("<i class='fas fa-building'></i> Completa la mappa");
+        $("#leggend").load("leggenda/costruitoLeggend.html");
+        $('#nav-funzioniCostruito-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-fattoriDinamizzanti"){
-        $("#buttonAddSegnalazione").html("<i class='far fa-building'></i> Completa la mappa");
+        $('#nav-fattoriDinamizzanti-tab').tab('show');
+        $('#map-riepilogo').css("display", 'none');
+        $('#videoFattoriDinamizzanti').css("display", 'block');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-spaziInutilizzati"){
-        $("#buttonAddSegnalazione").html("<i class='far fa-building'></i> Completa la mappa");
+        $("#leggend").load("leggenda/riqualificazioneLeggend.html");
+        $('#nav-spaziInutilizzati-tab').tab('show');
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'none');
     }
     else if($('.tab-content .active')[0].id == "nav-cittaAltaFutura"){
-        $("#buttonAddSegnalazione").html("<i class='fa fa-list'></i> Completa la mappa");
+        $('#map-riepilogo').css("display", 'block');
+        $('#videoFattoriDinamizzanti').css("display", 'none');
+        $('#addSegnalazione').css("display", 'block');
     }
-});   
-
+});
 
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
@@ -145,7 +165,7 @@ function submitAccessibilita(){
         domanda5 = 2;
 
     var domanda51_dettagli = null;
-    domanda51_dettagli = document.getElementById("domanda51").value;
+    domanda51_dettagli = document.getElementById("domanda5_1_dettagli").value;
 
     var userID = 2;
 
@@ -166,7 +186,8 @@ function submitAccessibilita(){
             "&DOMANDA_5_DETTAGLI=" + domanda51_dettagli,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            $("#modalSurveyStep1").modal();
+            $('#nav-funzioniCostruito-tab').tab('show');
         },  
     });
 
@@ -176,107 +197,171 @@ function submitFunzioniCostruito(){
     var userID;
     var domanda1 = null;
     var domanda1_dettagli = null;
-    if(document.getElementById("domanda1_1").checked){
+    if(document.getElementById("domanda1_1_2").checked){
         domanda1 = 1;
-        domanda1_dettagli = document.getElementById("domanda1_dettagli").value;
+        domanda1_dettagli = document.getElementById("domanda1_dettagli_2").value;
     }
-    else if(document.getElementById("domanda1_2").checked){
+    else if(document.getElementById("domanda1_2_2").checked){
         domanda1 = 2;
     }
 
     var domanda2 = null;
     var domanda2_dettagli = null;
-    if(document.getElementById("domanda2_1").checked){
+    if(document.getElementById("domanda2_1_2").checked){
         domanda2 = 1;
-        domanda2_dettagli = document.getElementById("domanda2_dettagli").value;
+        domanda2_dettagli = document.getElementById("domanda2_dettagli_2").value;
     }
-    else if(document.getElementById("domanda2_2").checked){
+    else if(document.getElementById("domanda2_2_2").checked){
         domanda2 = 2;
     }
 
     var domanda3 = null;
     var domanda3_dettagli = null;
-    if(document.getElementById("domanda3_1").checked){
+    if(document.getElementById("domanda3_1_2").checked){
         domanda3 = 1;
-        domanda3_dettagli = document.getElementById("domanda3_dettagli").value;
+        domanda3_dettagli = document.getElementById("domanda3_dettagli_2").value;
     }
-    else if(document.getElementById("domanda3_2").checked){
+    else if(document.getElementById("domanda3_2_2").checked){
         domanda3 = 2;
     }
 
 
     var domanda4 = null;
     var domanda41 = null;
-    var domanda42 = null;
+    var domanda41_dettagli = null;
+    var domanda42_dettagli = null;
 
-    if(document.getElementById("domanda4_1").checked){
+    if(document.getElementById("domanda4_1_2").checked){
         domanda4 = 1;
         
-        if(document.getElementById("domanda41_1").checked)
+        if(document.getElementById("domanda41_1_2").checked)
             domanda41 = 1;
-        else if(document.getElementById("domanda41_2").checked)
+        else if(document.getElementById("domanda41_2_2").checked)
             domanda41 = 2;
-        else if(document.getElementById("domanda41_3").checked)
+        else if(document.getElementById("domanda41_3_2").checked)
             domanda41 = 3;
-
+        else if(document.getElementById("domanda41_4_2").checked) {
+            domanda41 = 4;
+            domanda41_dettagli = document.getElementById("domanda41_dettagli_2").value;
+        }
     }
-    else if(document.getElementById("domanda4_2").checked){
+    else if(document.getElementById("domanda4_2_2").checked){
         domanda4 = 2;
-        domanda42 = document.getElementById("domanda42").value;
+        domanda42_dettagli = document.getElementById("domanda42_2").value;
     }
 
 
     var domanda5 = null;
-    var domanda51 = null;
+    var domanda51 = "";
     var domanda51_dettagli = null;
 
-    if(document.getElementById("domanda5_1").checked){
+    if(document.getElementById("domanda5_1_2").checked){
         domanda5 = 1;
-        domanda51_dettagli = document.getElementById("domanda51_dettagli").value;
+        domanda51_dettagli = document.getElementById("domanda51_dettagli_2").value;
 
-        if(document.getElementById("domanda51_1").checked)
-            domanda51 = 1;
-        else if(document.getElementById("domanda51_2").checked)
-            domanda51 = 2;
-        else if(document.getElementById("domanda51_3").checked)
-            domanda51 = 3;
+        if(document.getElementById("domanda51_1_2").checked)
+            domanda51 = domanda51 + 1;
+        if(document.getElementById("domanda51_2_2").checked)
+            domanda51 = domanda51 + 2;
+        if(document.getElementById("domanda51_3_2").checked)
+            domanda51 = domanda51 + 3;
 
     }
-    else if(document.getElementById("domanda5_2").checked){
+    else if(document.getElementById("domanda5_2_2").checked){
         domanda5 = 2;
     }
 
     var domanda6 = null;
-    var domanda61 = null;
+    var domanda61 = "";
     var domanda61_dettagli =  null;
+    var domanda62 = null;
+    var domanda62_dettagli = null;
 
-    if(document.getElementById("domanda6_1").checked){
+    if(document.getElementById("domanda6_1_2").checked){
         domanda6 = 1;
-        domanda61_dettagli = document.getElementById("domanda61_dettagli").value;
+        domanda61_dettagli = document.getElementById("domanda61_dettagli_2").value;
 
-        if(document.getElementById("domanda61_1").checked)
-            domanda61 = 1;
-        else if(document.getElementById("domanda61_2").checked)
-            domanda61 = 2;
-        else if(document.getElementById("domanda61_3").checked)
-            domanda61 = 3;
+        if(document.getElementById("domanda61_1_2").checked)
+            domanda61 = domanda61 + 1;
+        if(document.getElementById("domanda61_2_2").checked)
+            domanda61 = domanda61 + 2;
+        if(document.getElementById("domanda61_3_2").checked)
+            domanda61 = domanda61 + 3;
+        if(document.getElementById("domanda61_4_2").checked)
+            domanda61 = domanda61 + 4;
+        if(document.getElementById("domanda61_5_2").checked)
+            domanda61 = domanda61 + 5;
 
     }
-    else if(document.getElementById("domanda6_2").checked){
+    else if(document.getElementById("domanda6_2_2").checked){
         domanda6 = 2;
+
+        if(document.getElementById("domanda62_1_2").checked)
+            domanda62 = 1;
+        else if(document.getElementById("domanda62_2_2").checked)
+            domanda62 = 2;
+        else if(document.getElementById("domanda62_3_2").checked)
+            domanda62 = 3;
+        else if(document.getElementById("domanda62_4_2").checked) {
+            domanda62 = 4;
+            domanda62_dettagli = document.getElementById("domanda62_dettagli_2").value;
+        }
+
+
     }
 
 
     var domanda7 = null;
     var domanda7_dettagli = null;
 
-    if(document.getElementById("domanda7_1").checked)
+    if(document.getElementById("domanda7_1_2").checked)
         domanda7 = 1;
-    else if(document.getElementById("domanda7_2").checked)
+    else if(document.getElementById("domanda7_2_2").checked)
         domanda7 = 2;
-    else if(document.getElementById("domanda7_3").checked)
+    else if(document.getElementById("domanda7_3_2").checked)
         domanda7 = 3;
-    domanda7_dettagli = document.getElementById("domanda7_dettagli").value;
+    domanda7_dettagli = document.getElementById("domanda7_dettagli_2").value;
+
+
+    var domanda8 = "";
+    var domanda8_dettagli = null;
+
+    if(document.getElementById("domanda8_1_2").checked)
+        domanda8 = domanda8 + 1;
+    if(document.getElementById("domanda8_2_2").checked)
+        domanda8 = domanda8 +  2;
+    if(document.getElementById("domanda8_3_2").checked)
+        domanda8 = domanda8 +  3;
+    if(document.getElementById("domanda8_4_2").checked)
+        domanda8 = domanda8 +  4;
+    if(document.getElementById("domanda8_5_2").checked) {
+        domanda8 = domanda8 +  5;
+        domanda8_dettagli = document.getElementById("domanda8_5dettagli_2").value;
+    }
+
+    var domanda9 = "";
+    var domanda9_dettagli = null;
+
+    if(document.getElementById("domanda9_1_2").checked)
+        domanda9 = domanda9 +  1;
+    if(document.getElementById("domanda9_2_2").checked)
+        domanda9 = domanda9 +  2;
+    if(document.getElementById("domanda9_3_2").checked)
+        domanda9 = domanda9 +  3;
+    if(document.getElementById("domanda9_4_2").checked)
+        domanda9 = domanda9 +  4;
+    if(document.getElementById("domanda9_5_2").checked) {
+        domanda9 = domanda9 +  5;
+    }if(document.getElementById("domanda9_6_2").checked)
+        domanda9 = domanda9 +  6;
+    if(document.getElementById("domanda9_7_2").checked) {
+        domanda9 = domanda9 +  7;
+    }
+
+    domanda9_dettagli = document.getElementById("domanda9_dettagli_2").value;
+
+
+
     
     var userID = 2;
 
@@ -290,21 +375,28 @@ function submitFunzioniCostruito(){
             "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
             "&DOMANDA_3=" + domanda3 + 
             "&DOMANDA_3_DETTAGLI=" + domanda3_dettagli +
-            "&&DOMANDA_3=" + domanda3 + 
             "&DOMANDA_4=" + domanda4 + 
             "&DOMANDA_41=" + domanda41 +
-            "&DOMANDA_42=" + domanda42 +
+            "&DOMANDA_41_DETTAGLI=" + domanda41_dettagli +
+            "&DOMANDA_42_DETTAGLI=" + domanda42_dettagli +
             "&DOMANDA_5=" + domanda5 +
             "&DOMANDA_51=" + domanda51 + 
             "&DOMANDA_51_DETTAGLI=" + domanda51_dettagli +
             "&DOMANDA_6=" + domanda6 +
             "&DOMANDA_61=" + domanda61 + 
             "&DOMANDA_61_DETTAGLI=" + domanda61_dettagli +
+            "&DOMANDA_62=" + domanda62 +
+            "&DOMANDA_62_DETTAGLI=" + domanda62_dettagli +
             "&DOMANDA_7=" + domanda7 + 
-            "&DOMANDA_7_DETTAGLI=" + domanda7_dettagli,
+            "&DOMANDA_7_DETTAGLI=" + domanda7_dettagli +
+            "&DOMANDA_8=" + domanda8 +
+            "&DOMANDA_8_DETTAGLI=" + domanda8_dettagli +
+            "&DOMANDA_9=" + domanda9 +
+            "&DOMANDA_9_DETTAGLI=" + domanda9_dettagli,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            $("#modalSurveyStep2").modal();
+            $('#nav-spaziInutilizzati-tab').tab('show');
         },  
     });
 
@@ -357,7 +449,8 @@ function submitSpaziInutilizzati(){
             "&DOMANDA_3=" + domanda3,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            $("#modalSurveyStep3").modal();
+            $('#nav-fattoriDinamizzanti-tab').tab('show');
         },  
     });
     
@@ -369,80 +462,79 @@ function submitFattoriDinamizzanti(){
     var domanda1 = null;
     var domanda1_dettagli = null;
 
-    if(document.getElementById("domanda1_1").checked)
+    if(document.getElementById("domanda1_1_4").checked) {
         domanda1 = 1;
-    else if(document.getElementById("domanda1_2").checked)
+    }
+    else if(document.getElementById("domanda1_2_4").checked) {
         domanda1 = 2;
-    domanda1_dettagli = document.getElementById("domanda1_dettagli").value;
+    }
+    domanda1_dettagli = document.getElementById("domanda1_dettagli_4").value;
 
 
     var domanda2 = null;
     var domanda2_dettagli = null;
 
-    if(document.getElementById("domanda2_1").checked){
+    if(document.getElementById("domanda2_1_4").checked){
         domanda2 = 1;
     }
-    else if(document.getElementById("domanda2_2").checked){
+    else if(document.getElementById("domanda2_2_4").checked){
         domanda2 = 2;
     }
-    domanda2_dettagli = document.getElementById("domanda2_dettagli").value;
+    domanda2_dettagli = document.getElementById("domanda2_dettagli_4").value;
 
 
     var domanda3 = null;
     var domanda3_dettagli = null;
 
-    if(document.getElementById("domanda3_1").checked){
+    if(document.getElementById("domanda3_1_4").checked){
         domanda3 = 1;
     }
-    else if(document.getElementById("domanda3_2").checked){
+    else if(document.getElementById("domanda3_2_4").checked){
         domanda3 = 2;
     }
-    domanda3_dettagli = document.getElementById("domanda3_dettagli").value;
+    domanda3_dettagli = document.getElementById("domanda3_dettagli_4").value;
 
 
-    var domanda4 = null;
+    var domanda4 = "";
     var domanda4_dettagli = null;
 
-    if(document.getElementById("domanda4_1").checked){
-        domanda4 = 1;
+    if(document.getElementById("domanda4_1_4").checked){
+        domanda4 = domanda4 + 1;
     }
-    else if(document.getElementById("domanda4_2").checked){
-        domanda4 = 2;
+    if(document.getElementById("domanda4_2_4").checked){
+        domanda4 = domanda4 + 2;
     }
-    else if(document.getElementById("domanda4_3").checked){
-        domanda4 = 3;
+    if(document.getElementById("domanda4_3_4").checked){
+        domanda4 = domanda4 + 3;
     }
-    else if(document.getElementById("domanda4_4").checked){
-        domanda4 = 4;
-        domanda4_dettagli = document.getElementById("domanda4_4_dettagli").value;
+    if(document.getElementById("domanda4_4_4").checked){
+        domanda4 = domanda4 + 4;
+        domanda4_dettagli = document.getElementById("domanda4_4_dettagli_4").value;
     }
 
 
-    var domanda5 = null;
+    var domanda5 ="";
     var domanda5_dettagli = null;
 
-    if(document.getElementById("domanda5_1").checked){
-        domanda5 = 1;
-        domanda5_dettagli = document.getElementById("domanda5_1_dettagli").value;
+
+    if(document.getElementById("domanda5_1_4").checked){
+        domanda5 = domanda5 + 1;
     }
-    else if(document.getElementById("domanda5_2").checked){
-        domanda5 = 2;
-        domanda5_dettagli = document.getElementById("domanda5_2_dettagli").value;
+    if(document.getElementById("domanda5_2_4").checked){
+        domanda5 = domanda5 + 2;
     }
-    else if(document.getElementById("domanda5_3").checked){
-        domanda5 = 3;
-        domanda5_dettagli = document.getElementById("domanda5_3_dettagli").value;
+    if(document.getElementById("domanda5_3_4").checked){
+        domanda5 = domanda5 + 3;
     }
-    else if(document.getElementById("domanda5_4").checked){
-        domanda5 = 4;
-        domanda5_dettagli = document.getElementById("domanda5_4_dettagli").value;
+    if(document.getElementById("domanda5_4_4").checked){
+        domanda5 = domanda5 + 4;
     }
-    else if(document.getElementById("domanda5_5").checked){
-        domanda5 = 5;
-        domanda5_dettagli = document.getElementById("domanda5_5_dettagli").value;
+    if(document.getElementById("domanda5_5_4").checked){
+        domanda5 = domanda5 + 5;
+
     }
 
-    alert(domanda5_dettagli);
+    domanda5_dettagli = document.getElementById("domanda5_5_dettagli_4").value;
 
     var userID = 2;
     $.ajax({
@@ -453,15 +545,15 @@ function submitFattoriDinamizzanti(){
             "&DOMANDA_1_DETTAGLI=" + domanda1_dettagli +
             "&DOMANDA_2=" + domanda2 +
             "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
-            "&&DOMANDA_3=" + domanda3 +
+            "&DOMANDA_3=" + domanda3 +
             "&DOMANDA_3_DETTAGLI=" + domanda3_dettagli +
-            "&&DOMANDA_4=" + domanda4 +
+            "&DOMANDA_4=" + domanda4 +
             "&DOMANDA_4_DETTAGLI=" + domanda4_dettagli +
-            "&&DOMANDA_5=" + domanda5 +
+            "&DOMANDA_5=" + domanda5 +
             "&DOMANDA_5_DETTAGLI=" + domanda5_dettagli,
         dataType: "html",
         success: function(msg){
-            alert(msg);
+            $("#modalSurveyStep4").modal();
         },
         error: function(msg){
             alert(msg);
@@ -555,7 +647,7 @@ function subimtCittaAltaFutura(){
             "&DOMANDA_1_DETTAGLI=" + domanda1_dettagli +
             "&DOMANDA_2=" + domanda2 + 
             "&DOMANDA_2_DETTAGLI=" + domanda2_dettagli +
-            "&&DOMANDA_3=" + domanda3 + 
+            "&DOMANDA_3=" + domanda3 +
             "&DOMANDA_3_DETTAGLI=" + domanda3_dettagli,
         dataType: "html",
         success: function(msg){
@@ -563,11 +655,6 @@ function subimtCittaAltaFutura(){
         },  
     });
 
-}
-
-
-function saveProposta(){
-    alert("ciao");
 }
 
 $('#selectTipologiaSegnalazione').on('change',function() {
@@ -588,3 +675,130 @@ $('#selectTipologiaSegnalazione').on('change',function() {
         $("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
     }
   });
+
+function like(id) {
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 1,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonLike_"+id).css('background-color', '#4D94C9');
+            $("#buttonUnlike_"+id).css('background-color', '#1B4A6D');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+function tableLike(id) {
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 1,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonTableLike_"+id).css('background-color', '#4D94C9');
+            $("#buttonTableUnlike_"+id).css('background-color', '#1B4A6D');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+function unlike(id){
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 0,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonUnlike_"+id).css('background-color', '#4D94C9');
+            $("#buttonLike_"+id).css('background-color', '#1B4A6D');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+function tableUnlike(id){
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 0,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonTableLike_"+id).css('background-color', '#1B4A6D');
+            $("#buttonTableUnlike_"+id).css('background-color', '#4D94C9');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+$(document).ready(function (e) {
+    $("#formSegnalazione").on('submit',(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "addSegnalazione.php",
+            type: "POST",
+            data:  new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(data)
+            {
+                $("#modalNewSegnalazione").modal();
+                $('#exampleModal').modal("hide");
+                cittaAltaFutura();
+                pointSegnalazione.remove();
+                $('#addSegnalazione').css("display", 'block');
+                $('#confermaPosizioneSegnalazione').css("display", 'none');
+            },
+            error: function(e)
+            {
+                alert(e);
+            }
+        });
+
+
+
+
+    }));
+});
+
+$("#buttonCloseModalStep4").click(function () {
+    cittaAltaFutura();
+    $('#map-riepilogo').css("display", 'block');
+    $('#videoFattoriDinamizzanti').css("display", 'none');
+    $('#addSegnalazione').css("display", 'block');
+    $('#buttonCittaAltaFutura').addClass('active').siblings().removeClass('active');
+});

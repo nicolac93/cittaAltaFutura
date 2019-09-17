@@ -78,7 +78,7 @@ include("session.php");
           <button type="button" class="btn btn-primary btn-lg btn-block" value="fattoriDinamizzanti" id="buttonFattoriDinamizzanti"><i class='fas fa-sync fa-2x'></i>FATTORI DINAMIZZANTI</button>
         </div>
         <div class="col-sm-12">
-          <button type="button" class="btn btn-primary btn-lg btn-block" value="cittaAltaPlurale" id="buttonCittaAltaFutura"><i class='fa fa-users fa-2x'></i>COMPLETA LA MAPPA</button>
+          <button type="button" class="btn btn-primary btn-lg btn-block" value="completaLaMappa" id="buttonCittaAltaFutura" ><i class='fa fa-users fa-2x'></i>COMPLETA LA MAPPA</button>
         </div>
       </div>
 
@@ -113,10 +113,33 @@ include("session.php");
           </div>
         </div>
 
+        <div id="addSegnalazione">
+            <?php
+                if($_SESSION['login_user_id']==0){
+                    echo "<button type=\"button\" class=\"btn btn-primary\" id=\"buttonAddSegnalazione\" onclick=\"addSegnalazione()\" disabled>";
+                    echo "    Accedi per effetture una segnalazione";
+                    echo "</button>";
+                }else{
+                    echo "<button type=\"button\" class=\"btn btn-primary\" id=\"buttonAddSegnalazione\" onclick=\"addSegnalazione()\">";
+                    echo "    Aggiungi una segnalazione";
+                    echo "</button>";
+                }
+            ?>
+        </div>
+          <div id="confermaPosizioneSegnalazione">
+              <button type="button" class="btn btn-primary" id="buttonConfermaPosizioneSegnalazione" onclick="confermaPosizioneSegnalazione()">
+                  Conferma posizione segnalazione
+              </button>
+          </div>
+          <div id="tipologiaSegnalazione">
+              <button type="button" class="btn btn-primary" id="buttonTipologiaSegnalazione">
+                  Conferma posizione segnalazione
+              </button>
+          </div>
+
         <div id="leggend"></div>
 
         <div id='map'></div>
-        <pre id='coordinates' class='coordinates'></pre>
       </div>
       <!-- End of Map segnalazioni -->  
       
@@ -171,7 +194,7 @@ include("session.php");
             if(mysqli_num_rows($result)>0){
               while($row = mysqli_fetch_assoc($result)){ ?>
                 <tr>
-                  <td ><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></td>
+                  <td ><img width='150px' height='100px' class="card-img-top" src=uploads/<?php echo $row['immagine']?> alt=""></td>
                   <td><a href=<?php echo 'segnalazione.php?id='.$row['idSegnalazione']?>><?php echo $row['titolo']?></a></td>
                   <td><?php echo $row['tipologia']?></td>
                   <td><?php echo $row['proposta']?></td>
@@ -211,7 +234,7 @@ include("session.php");
       
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></a>
+            <a href="#"><img class="card-img-top" src=uploads/<?php echo $row['immagine']?> alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
               <a href=<?php echo 'segnalazione.php?id='.$row['idSegnalazione']?>><?php echo $row['titolo']?></a>
@@ -242,23 +265,45 @@ include("session.php");
       <!-- tabs -->
       <div id="surveys">
         <div class="col-12 text-center"><h3 class="section-heading">Esprimi la tua opinione</h3></div>
-      
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-accessiblita-tab" data-toggle="tab" href="#nav-accessiblita" role="tab" aria-controls="nav-accessiblita" aria-selected="true"><i class='fas fa-bicycle'></i> Accessibilità</a>
-            <a class="nav-item nav-link" id="nav-funzioniCostruito-tab" data-toggle="tab" href="#nav-funzioniCostruito" role="tab" aria-controls="nav-funzioniCostruito" aria-selected="false"><i class='fas fa-building'></i> Funzioni degli edifici</a>
-            <a class="nav-item nav-link" id="nav-spaziInutilizzati-tab" data-toggle="tab" href="#nav-spaziInutilizzati" role="tab" aria-controls="nav-spaziInutilizzati" aria-selected="false"><i class='far fa-building'></i> Edifici da riqualificare</a>
-            <a class="nav-item nav-link" id="nav-fattoriDinamizzanti-tab" data-toggle="tab" href="#nav-fattoriDinamizzanti" role="tab" aria-controls="nav-fattoriDinamizzanti" aria-selected="false"><i class='fas fa-sync'></i> Fattori dinamizzandi</a>
-            <!--a class="nav-item nav-link" id="nav-cittaAltaFutura-tab" data-toggle="tab" href="#nav-cittaAltaFutura" role="tab" aria-controls="nav-cittaAltaFutura" aria-selected="false"><i class='fa fa-list'></i> Inchiesta partecipativa</a-->
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-accessiblita" role="tabpanel" aria-labelledby="nav-accessiblita-tab"><div class="jumbotron" ><div id="navSurveyAccessibilita"></div></div></div>
-          <div class="tab-pane fade" id="nav-funzioniCostruito" role="tabpanel" aria-labelledby="nav-funzioniCostruito-tab"><div class="jumbotron" ><div id="navSurveyFunzioniCostruito"></div></div></div>
-          <div class="tab-pane fade" id="nav-spaziInutilizzati" role="tabpanel" aria-labelledby="nav-spaziInutilizzati-tab"><div class="jumbotron" ><div id="navSurveySpaziInutilizzati"></div></div></div>
-          <div class="tab-pane fade" id="nav-fattoriDinamizzanti" role="tabpanel" aria-labelledby="nav-fattoriDinamizzanti-tab"><div class="jumbotron" ><div id="navSurveyFattoriDinamizzanti"></div></div></div>
-          <!--div class="tab-pane fade" id="nav-cittaAltaFutura" role="tabpanel" aria-labelledby="nav-cittaAltaFutura-tab"><div class="jumbotron" ><div id="navSurveyCittaAltaFutura"></div></div></div-->
-        </div>
+
+          <?php
+            if($_SESSION['login_user_id']==0){
+
+                /*echo '<div class="row pb-1">';
+                echo '    <div class="col-lg-12 text-center">';
+				echo '        <h3 class="titoloevidenziato">Accedi per esprimere la tua opinione</h3>';
+				echo '    </div>';
+				echo '</div>';*/
+
+                echo '<div class="row">';
+				echo '    <div class="col-lg-12 text-center">';
+				echo '        <button type="button" class="btn btn-secondary btn-lg mt-3 mb-5" ><a href="login.php">REGISTRATI E PARTECIPA!</a></button>';
+				echo '    </div>';
+				echo '</div>';
+
+
+
+            }else{
+
+                echo "<nav id=\"nav-header\">
+                      <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">
+                        <a class=\"nav-item nav-link active\" id=\"nav-accessiblita-tab\" data-toggle=\"tab\" href=\"#nav-accessiblita\" role=\"tab\" aria-controls=\"nav-accessiblita\" aria-selected=\"true\"><i class='fas fa-bicycle'></i> Accessibilità</a>
+                        <a class=\"nav-item nav-link\" id=\"nav-funzioniCostruito-tab\" data-toggle=\"tab\" href=\"#nav-funzioniCostruito\" role=\"tab\" aria-controls=\"nav-funzioniCostruito\" aria-selected=\"false\"><i class='fas fa-building'></i> Funzioni degli edifici</a>
+                        <a class=\"nav-item nav-link\" id=\"nav-spaziInutilizzati-tab\" data-toggle=\"tab\" href=\"#nav-spaziInutilizzati\" role=\"tab\" aria-controls=\"nav-spaziInutilizzati\" aria-selected=\"false\"><i class='far fa-building'></i> Edifici da riqualificare</a>
+                        <a class=\"nav-item nav-link\" id=\"nav-fattoriDinamizzanti-tab\" data-toggle=\"tab\" href=\"#nav-fattoriDinamizzanti\" role=\"tab\" aria-controls=\"nav-fattoriDinamizzanti\" aria-selected=\"false\"><i class='fas fa-sync'></i> Fattori dinamizzanti</a>
+                      </div>
+                      </nav>
+                      <div class=\"tab-content\" id=\"nav-tabContent\">
+                        <div class=\"tab-pane fade show active\" id=\"nav-accessiblita\" role=\"tabpanel\" aria-labelledby=\"nav-accessiblita-tab\"><div class=\"jumbotron\" ><div id=\"navSurveyAccessibilita\"></div></div></div>
+                        <div class=\"tab-pane fade\" id=\"nav-funzioniCostruito\" role=\"tabpanel\" aria-labelledby=\"nav-funzioniCostruito-tab\"><div class=\"jumbotron\" ><div id=\"navSurveyFunzioniCostruito\"></div></div></div>
+                        <div class=\"tab-pane fade\" id=\"nav-spaziInutilizzati\" role=\"tabpanel\" aria-labelledby=\"nav-spaziInutilizzati-tab\"><div class=\"jumbotron\" ><div id=\"navSurveySpaziInutilizzati\"></div></div></div>
+                        <div class=\"tab-pane fade\" id=\"nav-fattoriDinamizzanti\" role=\"tabpanel\" aria-labelledby=\"nav-fattoriDinamizzanti-tab\"><div class=\"jumbotron\" ><div id=\"navSurveyFattoriDinamizzanti\"></div></div></div>
+                      </div>";
+
+            }
+          ?>
+
+
       </div>
       <!-- fine tabs -->
       
@@ -274,39 +319,274 @@ include("session.php");
 
     <!-- dialog -->
     <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-              <label>Tipologia Proposta</label>
-              <select class="form-control" title="Scegli una tipologia" id="selectTipologiaSegnalazione">
-                <option value="1">Accessibilità</option>
-                <option value="2">Funzione delgi edifici</option>
-                <option value="3">Edifici da riqulificare</option>
-                <option value="4">Fattori dinamizzanti</option>
-                <option value="5">Città alta per tutti</option>
-              </select>
-          </div>
 
-          <div id="panelTipologiaSegnalazione"></div>
-          
-        </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-            <button type="button" class="btn btn-primary" id="buttonProposta">Invia proposta</button>
-          </div>
-      </div>
-  </div>     
+        <div class="modal-content">
+            <form role="form" id ="formSegnalazione" method="POST" action="javascript:alert( 'success!' );">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
-</main>
+                <div class="modal-body">
+                        <div id="panelTipologiaSegnalazione"></div>
+                        <input type="hidden" id="coordinateSegnalazioneLat" name="coordinateSegnalazioneLat" value="">
+                        <input type="hidden" id="coordinateSegnalazioneLng" name="coordinateSegnalazioneLng" value="">
+                        <input type="hidden" id="tipologiaSegnalazioneHidden" name="tipologiaSegnalazioneHidden" value="">
+                        <input type="hidden" id="userId" name="userId" value="<?php echo $_SESSION['login_user_id']; ?>">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-primary" id="buttonPropost">Invia proposta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSceltaTipologiaSegnalazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    <label>Scegli la tipologia della tua proposta </label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia1" value="1">
+                        <label class="form-check-label" for="exampleRadios1">
+                            <i class='fas fa-bicycle'></i> Accessibilità
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia2" value="2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <i class='fas fa-building'></i> Funzione degli edifici
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia3" value="3">
+                        <label class="form-check-label" for="exampleRadios3">
+                            <i class='far fa-building'></i> Edifici da riqualificare
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia4" value="4">
+                        <label class="form-check-label" for="exampleRadios4">
+                            <i class='fas fa-sync'></i> Fattori dinamizzanti
+                        </label>
+                    </div>
+                    <!--<div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia5" value="5">
+                        <label class="form-check-label" for="exampleRadios5">
+                            <i class='fa fa-users'></i> Città alta per tutti
+                        </label>
+                    </div>-->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                <button type="button" class="btn btn-primary" id="buttonConfermaTipologiaSegnalazione">Conferma</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- modal controllo segnalazione -->
+<div class="modal fade" id="modalSegnalazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Aggiungi una segnalazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Sposta il marker azzura sul luogo dove vuoi fare una segnalazione e clicca il pulsante conferma posizione
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalNewSegnalazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Aggiungi nuova segnalazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Aggiunta nuova segnalazione
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal survey -->
+<div class="modal fade" id="modalSurveyStep1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Step 1 di 4</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Step 1 di 4 completato. Vai allo step 2
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSurveyStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Step 2 di 4</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Step 2 di 4 completato. Vai allo step 3
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalSurveyStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Step 3 di 4</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Step 3 di 4 completato. Vai allo step 4
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSurveyStep4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Step 4 di 4</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Step 4 di 4 completato!<br>
+                Grazie per la collaborazione.
+                Ora completa la mappa!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="buttonCloseModalStep4" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalVotazioneSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Votazione inserita
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdateVotazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Votazione aggiornata
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalVotazioneFallita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Errore nella votazione
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    </main>
 
 	<!-- Scripts -->
 	<?php require_once('inc/footerscripts.inc'); ?>

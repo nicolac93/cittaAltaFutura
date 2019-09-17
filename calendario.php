@@ -35,7 +35,7 @@ include('session.php');
 				</div>
 				<hr class="primary">
 				  <div class="col-lg-12 text-center" id="calendario">
-					  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23FFFFFF&src=studenti.unibg.it_q038g6v3p2pvo8j00gbhaab348%40group.calendar.google.com&color=%23AB8B00" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+					  <iframe src="https://calendar.google.com/calendar/embed?src=e8bh5usiul2eu2r75e41qmbtos%40group.calendar.google.com&ctz=Europe%2FRome" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 				  </div>
 			</div>
 		</main>
