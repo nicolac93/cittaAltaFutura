@@ -1,27 +1,27 @@
 <div class="form-group">
     <label for="exampleFormControlInput1">Nome dell'edificio e/o indirizzo:</label>
-    <input type="text" class="form-control" id="inputNameBuilding" placeholder="Nome del luogo e/o indirizzo:">
+    <input type="text" class="form-control" id="inputNameBuilding" name="inputNameBuilding" placeholder="Nome del luogo e/o indirizzo:">
 </div>
 
 <div class="form-group">
     <label for="exampleFormControlSelect2">Inserisci la tua proposta di riqualificazione di un edificio scegliendo una di queste modalità:</label>
-    <select multiple class="form-control" id="selectProposta">
-    <option>Residenziale</option>
-    <option>Commerciale</option>
-    <option>Culturale</option>
-    <option>Sociale e servizi ai cittadini</option>
-    <option>Servizi rivolti a studenti e professori</option>
-    <option>Servizi rivolti ai turisti</option>
-    <option>Promozione del paesaggio di pietra</option>
-    <option>Promozione del paesaggio vegetale</option>
+    <select multiple class="form-control" id="selectProposta" name="selectProposta">
+    <option value="Residenziale">Residenziale</option>
+    <option value="Commerciale">Commerciale</option>
+    <option value="Culturale">Culturale</option>
+    <option value="Sociale e servizi ai cittadini">Sociale e servizi ai cittadini</option>
+    <option value="Servizi rivolti a studenti e professori">Servizi rivolti a studenti e professori</option>
+    <option value="Servizi rivolti ai turisti">Servizi rivolti ai turisti</option>
+    <option value="Promozione del paesaggio di pietra">Promozione del paesaggio di pietra</option>
+    <option value="Promozione del paesaggio vegetale">Promozione del paesaggio vegetale</option>
     </select>
 </div>
 
 <div class="form-group">
     <label for="textAreaMotivazione">Illustra la tua proposta</label>
-    <textarea class="form-control" id="textAreaMotivazione" rows="3"></textarea>
+    <textarea class="form-control" id="textAreaMotivazione" name="textAreaMotivazione" rows="3"></textarea>
 </div>
 <div class="form-group">
     <label for="exampleFormControlFile1">Carica la tua fotografia</label>
-    <input type="file" class="form-control-file" id="inputImgFileName">
+    <input type="file" class="form-control-file" id="inputImgFileName" name="inputImgFileName">
 </div>

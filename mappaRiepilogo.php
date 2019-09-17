@@ -34,28 +34,31 @@ include('session.php');
             <div class="col-12 text-center mt-5">
                 <h1 class="section-heading mt-0 mb-3">Mappa delle segnalazioni</h1>
             </div>
-            <div class="col-12 text-center">
-                <hr class="primary">
+        </div>
+        <div class="row">
+            <hr class="primary">
 
-                <!-- Map segnalazioni -->
-                <div id="map-riepilogo">
-                    <div id='mapRiepilogo'></div>
-                </div>
-                <!-- End of Map segnalazioni -->
+            <!-- Map segnalazioni -->
+            <div id='mapRiepilogo'></div>
+            <!-- End of Map segnalazioni -->
 
-                <div class="titoloevidenziato my-5"><h3>Esprimi anche tu la tua opinione, per noi è importante!</h3>
-                    <button type="button" class="btn btn-secondary btn-lg" >
-                        <?php
-                        if($_SESSION['login_user_name'] == ""){
-                            echo '<a href="login.php">Partecipa e aiutaci a migliorare la nostra Citt&agrave; Alta</a>';
-                        }else{
-                            echo '<a href="partecipa.php">Partecipa e aiutaci a migliorare la nostra Citt&agrave; Alta</a>';
-                        }
-                        ?>
-                    </button>
-                </div>
+        </div>
+
+        <div class="col-12 text-center">
+
+            <div class="titoloevidenziato my-5"><h3>Esprimi anche tu la tua opinione, per noi è importante!</h3>
+                <button type="button" class="btn btn-secondary btn-lg" >
+                    <?php
+                    if($_SESSION['login_user_name'] == ""){
+                        echo '<a href="login.php">Partecipa e aiutaci a migliorare la nostra Citt&agrave; Alta</a>';
+                    }else{
+                        echo '<a href="partecipa.php">Partecipa e aiutaci a migliorare la nostra Citt&agrave; Alta</a>';
+                    }
+                    ?>
+                </button>
             </div>
         </div>
+
 
 
 

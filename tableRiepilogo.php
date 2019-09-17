@@ -40,16 +40,13 @@ include('session.php');
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">Immagine</th>
-                                <th scope="col">Titolo</th>
+                                <th scope="col">Nome Luogo</th>
                                 <th scope="col">Tipologia</th>
                                 <th scope="col">Proposta</th>
                                 <th scope="col">Motivazione</th>
-                                <th scope="col">Destinatari</th>
-                                <th scope="col">Periodo</th>
-                                <th scope="col">Stato di conservazione</th>
                                 <!--<th scope="col">Autore</th>-->
                                 <th scope="col">Numero voti</th>
-                                <th scope="col">Vota!</th>
+                                <th scope="col">Vota</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -68,17 +65,71 @@ include('session.php');
                             if(mysqli_num_rows($result)>0){
                                 while($row = mysqli_fetch_assoc($result)){ ?>
                                     <tr>
-                                        <td ><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></td>
-                                        <td><a href=<?php echo 'segnalazione.php?id='.$row['idSegnalazione']?>><?php echo $row['titolo']?></a></td>
-                                        <td><?php echo $row['tipologia']?></td>
+                                        <td ><img width="150px" height="100px" src=uploads/<?php echo $row['immagine']?> alt=""></td>
+                                        <td><?php echo $row['nome_luogo']?></td>
+
+                                        <?php
+                                            if($row['tipologia'] == 1){
+                                                echo "<td><i class='fa fa-bicycle fa-2x'></i></td>";
+                                            }else if($row['tipologia'] == 2){
+                                                echo "<i class='fa fa-building fa-2x'></i></td>";
+                                            }else if($row['tipologia'] == 3){
+                                                echo "<td><i class='fa fa-house-damage fa-2x'></i></td>";
+                                            }else if($row['tipologia'] == 4){
+                                                echo "<td><i class='fas fa-sync fa-2x'></i></td>";
+                                            }else if($row['tipologia'] == 5){
+                                                echo "<td><i class='fa fa-users fa-2x'></i></td>";
+                                            }
+                                        ?>
+
                                         <td><?php echo $row['proposta']?></td>
-                                        <td><?php echo $row['motivazione']?></td>
-                                        <td><?php echo $row['destinatari']?></td>
-                                        <td><?php echo $row['periodo']?></td>
-                                        <td><?php echo $row['conservazione']?></td>
+                                        <td><?php echo stripslashes(html_entity_decode($row['motivazione'])); ?></td>
                                         <!--<td><?php //echo $row['username']?></td>-->
-                                        <td>??</td>
-                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Vota!</button></td>
+
+                                        <?php
+                                            //Conto il numero di voti
+                                            $sql = "SELECT count(id_segnalazione) as num_voti FROM valutazioni_segnalazioni WHERE id_segnalazione=".$row["idSegnalazione"];
+
+                                            if (mysqli_query($conn, $sql)) {
+                                                echo "";
+                                            } else {
+                                                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                            }
+                                            $num_voti = mysqli_query($conn, $sql);
+                                            $data=mysqli_fetch_assoc($num_voti);
+                                            echo "<td>".$data['num_voti']."</td>";
+
+                                        ?>
+
+
+                                        <?php
+                                            if($_SESSION['login_user_name'] == ""){
+                                                echo '<td width="200px"><button style=\'font-size:15px\' onclick="tableLike('.$row["idSegnalazione"].')" disabled><i class=\'fas fa-thumbs-up\'></i> Like</button> <button style=\'font-size:15px\' onclick="tableUnlike('.$row["idSegnalazione"].')" disabled><i class=\'fas fa-thumbs-down\'></i> Unlike</button></td>';
+                                            }else{
+
+                                                //Devo controllare che sia già stato votato
+                                                $sql="SELECT * FROM valutazioni_segnalazioni WHERE id_segnalazione=".$row["idSegnalazione"]." and id_utente=".$_SESSION['login_user_id'];
+                                                if (mysqli_query($conn, $sql)) {
+                                                    echo "";
+                                                } else {
+                                                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                                }
+                                                $voti = mysqli_query($conn, $sql);
+                                                $num_rows = mysqli_num_rows($voti);
+                                                if($num_rows>0){
+                                                    $data=mysqli_fetch_assoc($voti);
+                                                    if($data["opinione"]==1){
+                                                        echo '<td width="200px"><button id="buttonTableLike_'.$row["idSegnalazione"].'" style=\'font-size:15px; background-color:#4D94C9;\' onclick="tableLike('.$row["idSegnalazione"].')"><i class=\'fas fa-thumbs-up\'></i> Like</button> <button id="buttonTableUnlike_'.$row["idSegnalazione"].'" style=\'font-size:15px\' onclick="tableUnlike('.$row["idSegnalazione"].')"><i class=\'fas fa-thumbs-down\'></i> Unlike</button></td>';
+                                                    }else{
+                                                        echo '<td width="200px"><button id="buttonTableLike_'.$row["idSegnalazione"].'" style=\'font-size:15px;\' onclick="tableLike('.$row["idSegnalazione"].')"><i class=\'fas fa-thumbs-up\'></i> Like</button> <button id="buttonTableUnlike_'.$row["idSegnalazione"].'" style=\'font-size:15px; background-color:#4D94C9;\' onclick="tableUnlike('.$row["idSegnalazione"].')"><i class=\'fas fa-thumbs-down\'></i> Unlike</button></td>';
+                                                    }
+                                                }else{
+                                                    echo '<td width="200px"><button id="buttonTableLike_'.$row["idSegnalazione"].'" style=\'font-size:15px\' onclick="tableLike('.$row["idSegnalazione"].')"><i class=\'fas fa-thumbs-up\'></i> Like</button> <button id="buttonTableUnlike_'.$row["idSegnalazione"].'" style=\'font-size:15px\' onclick="tableUnlike('.$row["idSegnalazione"].')"><i class=\'fas fa-thumbs-down\'></i> Unlike</button></td>';
+                                                }
+
+
+                                            }
+                                        ?>
                                     </tr>
 
 
@@ -110,7 +161,62 @@ include('session.php');
             </div>
         </div>
 
+<div class="modal fade" id="modalVotazioneSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Votazione inserita
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="modalUpdateVotazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Votazione aggiornata
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalVotazioneFallita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Errore nella votazione
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     </main>
 </div>
@@ -118,5 +224,7 @@ include('session.php');
 <?php require_once('inc/footer.inc'); ?>
 <!-- Scripts -->
 <?php require_once('inc/footerscripts.inc'); ?>
+
+<script src="js/riepilogo.js"></script>
 </body>
 </html>

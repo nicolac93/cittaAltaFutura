@@ -1,11 +1,11 @@
 <?php
-    include("./config.php");
+    //include("config.php");
+    include("session.php");
 
-    $userid = 2;
 
     $query = "SELECT *
               FROM valutazioni_segnalazioni
-              WHERE id_segnalazione = ". $_POST['id'] ." and id_utente = ". $userid;
+              WHERE id_segnalazione = ". $_POST['id'] ." and id_utente = ". $_SESSION['login_user_id'];
 
     $result = $conn->query($query);
 
@@ -21,10 +21,10 @@
 
         $query = "UPDATE valutazioni_segnalazioni
                     SET opinione = ".$_POST['opinione']."
-                    WHERE id_segnalazione = ". $_POST['id'] ." and id_utente = ". $userid;
+                    WHERE id_segnalazione = ". $_POST['id'] ." and id_utente = ". $_SESSION['login_user_id'];
 
         if (mysqli_query($conn, $query)) {
-            echo "";
+            echo "Update Votazione";
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($conn);
         }
@@ -34,10 +34,10 @@
         //Inserisco la segnalazione
 
         $query = "INSERT INTO valutazioni_segnalazioni (id_utente, id_segnalazione, opinione)
-                  VALUES( ".$userid.", ".$_POST['id'].", ".$_POST['opinione'].")";
+                  VALUES( ".$_SESSION['login_user_id'].", ".$_POST['id'].", ".$_POST['opinione'].")";
 
         if (mysqli_query($conn, $query)) {
-            echo "";
+            echo "Votazione Inserita";
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($conn);
         }

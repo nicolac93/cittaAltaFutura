@@ -74,12 +74,32 @@ function addPopup(msg){
         // create the popup
 
         var strpopup = "<div class=\"card h-100\">" +
-            //"<a href=\"#\"><img class='card-img-top' src='img/"+ obj[i].immagine +"'></a>" +
+            "<a href=\"#\"><img width='150px' height='100px' class='card-img-top' src='uploads/"+ obj[i].immagine +"'></a>" +
             "<div class=\"card-body\"><h5 class=\"card-title\">" + obj[i].nome + "</h5>" +
             "<p class=\"card-text\"><strong>Proposta: </strong>"+ obj[i].proposta +"</p>" +
-            "<p class=\"card-text\"><strong>Motivazione: </strong>" + obj[i].motivazione + "</p>" + 
-            "<p class=\"card-text\"><button style='font-size:12px' onclick=\"like('" + obj[i].id + "')\"><i class='fas fa-thumbs-up'></i> Like</button> " +
-            " <button style='font-size:12px' onclick=\"unlike('" + obj[i].id + "')\"><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+            "<p class=\"card-text\"><strong>Motivazione: </strong>" + obj[i].motivazione + "</p>";
+
+        if(obj[i].userId==0){
+            strpopup = strpopup +
+                "<p class=\"card-text\"><button id=\"buttonLike_" + obj[i].id + "\" style='font-size:12px' onclick=\"like('" + obj[i].id + "')\" disabled><i class='fas fa-thumbs-up'></i> Like</button> " +
+                " <button id=\"buttonUnlike_" + obj[i].id + "\" style='font-size:12px' onclick=\"unlike('" + obj[i].id + "')\" disabled><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+        }else{
+            if(obj[i].opinione == -1){
+                strpopup = strpopup +
+                    "<p class=\"card-text\"><button id=\"buttonLike_" + obj[i].id + "\" style='font-size:12px' onclick=\"like('" + obj[i].id + "')\"><i class='fas fa-thumbs-up'></i> Like</button> " +
+                    " <button id=\"buttonUnlike_" + obj[i].id + "\" style='font-size:12px' onclick=\"unlike('" + obj[i].id + "')\"><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+            }else if(obj[i].opinione == 1){
+                strpopup = strpopup +
+                    "<p class=\"card-text\"><button id=\"buttonLike_" + obj[i].id + "\" style='font-size:12px; background-color:#4D94C9;' onclick=\"like('" + obj[i].id + "')\"><i class='fas fa-thumbs-up'></i> Like</button> " +
+                    " <button id=\"buttonUnlike_" + obj[i].id + "\" style='font-size:12px' onclick=\"unlike('" + obj[i].id + "')\"><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+            }else if(obj[i].opinione == 0){
+                strpopup = strpopup +
+                    "<p class=\"card-text\"><button id=\"buttonLike_" + obj[i].id + "\" style='font-size:12px' onclick=\"like('" + obj[i].id + "')\"><i class='fas fa-thumbs-up'></i> Like</button> " +
+                    " <button id=\"buttonUnlike_" + obj[i].id + "\" style='font-size:12px; background-color:#4D94C9;' onclick=\"unlike('" + obj[i].id + "')\"><i class='fas fa-thumbs-down'></i> Unlike</button></p></div></div>";
+            }
+        }
+
+
 
         var popup = new mapboxgl.Popup({ offset: 25 })
         .setHTML(strpopup);
@@ -89,16 +109,16 @@ function addPopup(msg){
         el.id = 'marker';
         el.className = 'marker';
 
-        if(obj[i].categoria == 1){
+        if(obj[i].tipologia == 1){
             el.style.backgroundImage = "url('img/cycle.png')";
-        }else if(obj[i].categoria == 2){
+        }else if(obj[i].tipologia == 2){
             el.style.backgroundImage = "url('img/buildingBlack.png')";
-        }else if(obj[i].categoria == 3){
+        }else if(obj[i].tipologia == 3){
             el.style.backgroundImage = "url('img/buildingWhite.PNG')";
-        }else if(obj[i].categoria == 4){
-            el.style.backgroundImage = "url('img/sync-solid.svg')";
-        }else if(obj[i].categoria == 5){
-            el.style.backgroundImage = "url('img/sync-solid.svg')";
+        }else if(obj[i].tipologia == 4){
+            el.style.backgroundImage = "url('img/sync-solid.png')";
+        }else if(obj[i].tipologia == 5){
+            el.style.backgroundImage = "url('img/sync-solid.png')";
         }
         
         // create the marker
@@ -108,36 +128,6 @@ function addPopup(msg){
         .addTo(map);
     }
 
-}
-
-function like(id) {
-    $.ajax({
-        type: "POST",
-        url: "like.php",
-        data: "id=" + id +
-            "&opinione=" + 1,
-        success: function(msg){
-            alert(msg);
-        },
-        error: function(){
-            alert("Votazione fallita");
-        }
-    });
-}
-
-function unlike(id){
-    $.ajax({
-        type: "POST",
-        url: "like.php",
-        data: "id=" + id +
-            "&opinione=" + 0,
-        success: function(msg){
-            alert(msg);
-        },
-        error: function(){
-            alert("Votazione fallita");
-        }
-    });
 }
 
 function loadEdifici(){
@@ -169,29 +159,6 @@ function loadEdifici(){
 	});
 	
 }
-
-map.on('load', function() {
-    //loadEdifici();
-});
-
-/*
-var marker = new mapboxgl.Marker({
-    draggable: true
-})
-.setLngLat([9.662884, 45.704280])
-.addTo(map);
-     
-
-function onDragEnd() {
-    var lngLat = marker.getLngLat();
-    coordinates.style.display = 'block';
-    coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
-    $("#exampleModal").load("modalNewProposta/modalAccessibilita.html");
-    $('#exampleModal').modal();
-}
-     
-marker.on('dragend', onDragEnd);
-*/
 
 $('#buttonAccessibilita').on('click', function(event) {
 	$('#tematica .btn').not(this).removeClass('active');
@@ -495,6 +462,12 @@ function confermaPosizioneSegnalazione(){
     if(tipologia == 5){
         $("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
     }
+
+    $("#tipologiaSegnalazioneHidden").val(tipologia);
+
+    var lngLat = pointSegnalazione.getLngLat();
+    $("#coordinateSegnalazioneLat").val(lngLat.lat);
+    $("#coordinateSegnalazioneLng").val(lngLat.lng);
 }
 function addMarker(e){
 
@@ -546,11 +519,13 @@ $("#buttonProposta").on("click", function(){
     }
 
     var lngLat = pointSegnalazione.getLngLat();
+    $("#coordinateSegnalazioneLat").val(lngLat.lat);
+    $("#coordinateSegnalazioneLng").val(lngLat.lng);
 
     var userID = 2;
-    var immagine = document.getElementById("inputImgFileName");
+    //var immagine = document.getElementById("inputImgFileName");
     //alert(immagine.files[0].webkitRelativePath);
-
+/*
     $.ajax({
         type: "POST",
         url: "./addSurvey/addSegnalazione.php",
@@ -571,7 +546,7 @@ $("#buttonProposta").on("click", function(){
 
         },
     });
-
+*/
     pointSegnalazione.remove();
     $('#addSegnalazione').css("display", 'block');
     $('#confermaPosizioneSegnalazione').css("display", 'none');

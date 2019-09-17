@@ -114,9 +114,17 @@ include("session.php");
         </div>
 
         <div id="addSegnalazione">
-            <button type="button" class="btn btn-primary" id="buttonAddSegnalazione" onclick="addSegnalazione()">
-                Aggiungi una segnalazione
-            </button>
+            <?php
+                if($_SESSION['login_user_id']==0){
+                    echo "<button type=\"button\" class=\"btn btn-primary\" id=\"buttonAddSegnalazione\" onclick=\"addSegnalazione()\" disabled>";
+                    echo "    Accedi per effetture una segnalazione";
+                    echo "</button>";
+                }else{
+                    echo "<button type=\"button\" class=\"btn btn-primary\" id=\"buttonAddSegnalazione\" onclick=\"addSegnalazione()\">";
+                    echo "    Aggiungi una segnalazione";
+                    echo "</button>";
+                }
+            ?>
         </div>
           <div id="confermaPosizioneSegnalazione">
               <button type="button" class="btn btn-primary" id="buttonConfermaPosizioneSegnalazione" onclick="confermaPosizioneSegnalazione()">
@@ -186,7 +194,7 @@ include("session.php");
             if(mysqli_num_rows($result)>0){
               while($row = mysqli_fetch_assoc($result)){ ?>
                 <tr>
-                  <td ><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></td>
+                  <td ><img width='150px' height='100px' class="card-img-top" src=uploads/<?php echo $row['immagine']?> alt=""></td>
                   <td><a href=<?php echo 'segnalazione.php?id='.$row['idSegnalazione']?>><?php echo $row['titolo']?></a></td>
                   <td><?php echo $row['tipologia']?></td>
                   <td><?php echo $row['proposta']?></td>
@@ -226,7 +234,7 @@ include("session.php");
       
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src=img/<?php echo $row['immagine']?> alt=""></a>
+            <a href="#"><img class="card-img-top" src=uploads/<?php echo $row['immagine']?> alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
               <a href=<?php echo 'segnalazione.php?id='.$row['idSegnalazione']?>><?php echo $row['titolo']?></a>
@@ -282,7 +290,7 @@ include("session.php");
                         <a class=\"nav-item nav-link active\" id=\"nav-accessiblita-tab\" data-toggle=\"tab\" href=\"#nav-accessiblita\" role=\"tab\" aria-controls=\"nav-accessiblita\" aria-selected=\"true\"><i class='fas fa-bicycle'></i> Accessibilità</a>
                         <a class=\"nav-item nav-link\" id=\"nav-funzioniCostruito-tab\" data-toggle=\"tab\" href=\"#nav-funzioniCostruito\" role=\"tab\" aria-controls=\"nav-funzioniCostruito\" aria-selected=\"false\"><i class='fas fa-building'></i> Funzioni degli edifici</a>
                         <a class=\"nav-item nav-link\" id=\"nav-spaziInutilizzati-tab\" data-toggle=\"tab\" href=\"#nav-spaziInutilizzati\" role=\"tab\" aria-controls=\"nav-spaziInutilizzati\" aria-selected=\"false\"><i class='far fa-building'></i> Edifici da riqualificare</a>
-                        <a class=\"nav-item nav-link\" id=\"nav-fattoriDinamizzanti-tab\" data-toggle=\"tab\" href=\"#nav-fattoriDinamizzanti\" role=\"tab\" aria-controls=\"nav-fattoriDinamizzanti\" aria-selected=\"false\"><i class='fas fa-sync'></i> Fattori dinamizzandi</a>
+                        <a class=\"nav-item nav-link\" id=\"nav-fattoriDinamizzanti-tab\" data-toggle=\"tab\" href=\"#nav-fattoriDinamizzanti\" role=\"tab\" aria-controls=\"nav-fattoriDinamizzanti\" aria-selected=\"false\"><i class='fas fa-sync'></i> Fattori dinamizzanti</a>
                       </div>
                       </nav>
                       <div class=\"tab-content\" id=\"nav-tabContent\">
@@ -315,22 +323,27 @@ include("session.php");
     <div class="modal-dialog modal-lg" role="document">
 
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+            <form role="form" id ="formSegnalazione" method="POST" action="javascript:alert( 'success!' );">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Descrivi la tua proposta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
-            <div class="modal-body">
-            <div id="panelTipologiaSegnalazione"></div>
-            <input type="hidden" id="coordinateSegnalazione" name="coordinateSegnalazione" value="">
-            </div>
+                <div class="modal-body">
+                        <div id="panelTipologiaSegnalazione"></div>
+                        <input type="hidden" id="coordinateSegnalazioneLat" name="coordinateSegnalazioneLat" value="">
+                        <input type="hidden" id="coordinateSegnalazioneLng" name="coordinateSegnalazioneLng" value="">
+                        <input type="hidden" id="tipologiaSegnalazioneHidden" name="tipologiaSegnalazioneHidden" value="">
+                        <input type="hidden" id="userId" name="userId" value="<?php echo $_SESSION['login_user_id']; ?>">
+                </div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-                <button type="button" class="btn btn-primary" id="buttonProposta">Invia proposta</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-primary" id="buttonPropost">Invia proposta</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -359,13 +372,13 @@ include("session.php");
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia2" value="2">
                         <label class="form-check-label" for="exampleRadios2">
-                            <i class='fas fa-building'></i> Funzione delgi edifici
+                            <i class='fas fa-building'></i> Funzione degli edifici
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia3" value="3">
                         <label class="form-check-label" for="exampleRadios3">
-                            <i class='far fa-building'></i> Edifici da riqulificare
+                            <i class='far fa-building'></i> Edifici da riqualificare
                         </label>
                     </div>
                     <div class="form-check">
@@ -374,12 +387,12 @@ include("session.php");
                             <i class='fas fa-sync'></i> Fattori dinamizzanti
                         </label>
                     </div>
-                    <div class="form-check">
+                    <!--<div class="form-check">
                         <input class="form-check-input" type="radio" name="radioTipologia" id="radioTipologia5" value="5">
                         <label class="form-check-label" for="exampleRadios5">
                             <i class='fa fa-users'></i> Città alta per tutti
                         </label>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
@@ -503,7 +516,65 @@ include("session.php");
             </div>
             <div class="modal-body">
                 Step 4 di 4 completato!<br>
-                Grazie per la collaborazione
+                Grazie per la collaborazione.
+                Ora completa la mappa!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="buttonCloseModalStep4" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalVotazioneSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Votazione inserita
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdateVotazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Votazione aggiornata
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalVotazioneFallita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Vatazione</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Errore nella votazione
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -514,7 +585,8 @@ include("session.php");
 
 
 
-</main>
+
+    </main>
 
 	<!-- Scripts -->
 	<?php require_once('inc/footerscripts.inc'); ?>

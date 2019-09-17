@@ -98,6 +98,12 @@ button {
 	white-space: normal;
 }
 
+button:disabled{
+    background-color: #1B4A6D;
+    color: white;
+    opacity: .5;
+}
+
 button.navbar-toggler  {background-color:transparent; }
 
 .btn:hover, .btn-primary:hover, button:hover {

@@ -252,7 +252,7 @@ function submitFunzioniCostruito(){
 
 
     var domanda5 = null;
-    var domanda51 = null;
+    var domanda51 = "";
     var domanda51_dettagli = null;
 
     if(document.getElementById("domanda5_1_2").checked){
@@ -260,11 +260,11 @@ function submitFunzioniCostruito(){
         domanda51_dettagli = document.getElementById("domanda51_dettagli_2").value;
 
         if(document.getElementById("domanda51_1_2").checked)
-            domanda51 = 1;
-        else if(document.getElementById("domanda51_2_2").checked)
-            domanda51 = 2;
-        else if(document.getElementById("domanda51_3_2").checked)
-            domanda51 = 3;
+            domanda51 = domanda51 + 1;
+        if(document.getElementById("domanda51_2_2").checked)
+            domanda51 = domanda51 + 2;
+        if(document.getElementById("domanda51_3_2").checked)
+            domanda51 = domanda51 + 3;
 
     }
     else if(document.getElementById("domanda5_2_2").checked){
@@ -272,7 +272,7 @@ function submitFunzioniCostruito(){
     }
 
     var domanda6 = null;
-    var domanda61 = null;
+    var domanda61 = "";
     var domanda61_dettagli =  null;
     var domanda62 = null;
     var domanda62_dettagli = null;
@@ -282,15 +282,15 @@ function submitFunzioniCostruito(){
         domanda61_dettagli = document.getElementById("domanda61_dettagli_2").value;
 
         if(document.getElementById("domanda61_1_2").checked)
-            domanda61 = 1;
-        else if(document.getElementById("domanda61_2_2").checked)
-            domanda61 = 2;
-        else if(document.getElementById("domanda61_3_2").checked)
-            domanda61 = 3;
-        else if(document.getElementById("domanda61_4_2").checked)
-            domanda61 = 4;
-        else if(document.getElementById("domanda61_5_2").checked)
-            domanda61 = 5;
+            domanda61 = domanda61 + 1;
+        if(document.getElementById("domanda61_2_2").checked)
+            domanda61 = domanda61 + 2;
+        if(document.getElementById("domanda61_3_2").checked)
+            domanda61 = domanda61 + 3;
+        if(document.getElementById("domanda61_4_2").checked)
+            domanda61 = domanda61 + 4;
+        if(document.getElementById("domanda61_5_2").checked)
+            domanda61 = domanda61 + 5;
 
     }
     else if(document.getElementById("domanda6_2_2").checked){
@@ -323,39 +323,39 @@ function submitFunzioniCostruito(){
     domanda7_dettagli = document.getElementById("domanda7_dettagli_2").value;
 
 
-    var domanda8 = null;
+    var domanda8 = "";
     var domanda8_dettagli = null;
 
     if(document.getElementById("domanda8_1_2").checked)
-        domanda8 = 1;
-    else if(document.getElementById("domanda8_2_2").checked)
-        domanda8 = 2;
-    else if(document.getElementById("domanda8_3_2").checked)
-        domanda8 = 3;
-    else if(document.getElementById("domanda8_4_2").checked)
-        domanda8 = 4;
-    else if(document.getElementById("domanda8_5_2").checked) {
-        domanda8 = 5;
+        domanda8 = domanda8 + 1;
+    if(document.getElementById("domanda8_2_2").checked)
+        domanda8 = domanda8 +  2;
+    if(document.getElementById("domanda8_3_2").checked)
+        domanda8 = domanda8 +  3;
+    if(document.getElementById("domanda8_4_2").checked)
+        domanda8 = domanda8 +  4;
+    if(document.getElementById("domanda8_5_2").checked) {
+        domanda8 = domanda8 +  5;
         domanda8_dettagli = document.getElementById("domanda8_5dettagli_2").value;
     }
 
-    var domanda9 = null;
+    var domanda9 = "";
     var domanda9_dettagli = null;
 
     if(document.getElementById("domanda9_1_2").checked)
-        domanda9 = 1;
-    else if(document.getElementById("domanda9_2_2").checked)
-        domanda9 = 2;
-    else if(document.getElementById("domanda9_3_2").checked)
-        domanda9 = 3;
-    else if(document.getElementById("domanda9_4_2").checked)
-        domanda9 = 4;
-    else if(document.getElementById("domanda9_5_2").checked) {
-        domanda9 = 5;
-    }else if(document.getElementById("domanda9_6_2").checked)
-        domanda9 = 6;
-    else if(document.getElementById("domanda9_7_2").checked) {
-        domanda9 = 7;
+        domanda9 = domanda9 +  1;
+    if(document.getElementById("domanda9_2_2").checked)
+        domanda9 = domanda9 +  2;
+    if(document.getElementById("domanda9_3_2").checked)
+        domanda9 = domanda9 +  3;
+    if(document.getElementById("domanda9_4_2").checked)
+        domanda9 = domanda9 +  4;
+    if(document.getElementById("domanda9_5_2").checked) {
+        domanda9 = domanda9 +  5;
+    }if(document.getElementById("domanda9_6_2").checked)
+        domanda9 = domanda9 +  6;
+    if(document.getElementById("domanda9_7_2").checked) {
+        domanda9 = domanda9 +  7;
     }
 
     domanda9_dettagli = document.getElementById("domanda9_dettagli_2").value;
@@ -495,47 +495,46 @@ function submitFattoriDinamizzanti(){
     domanda3_dettagli = document.getElementById("domanda3_dettagli_4").value;
 
 
-    var domanda4 = null;
+    var domanda4 = "";
     var domanda4_dettagli = null;
 
     if(document.getElementById("domanda4_1_4").checked){
-        domanda4 = 1;
+        domanda4 = domanda4 + 1;
     }
-    else if(document.getElementById("domanda4_2_4").checked){
-        domanda4 = 2;
+    if(document.getElementById("domanda4_2_4").checked){
+        domanda4 = domanda4 + 2;
     }
-    else if(document.getElementById("domanda4_3_4").checked){
-        domanda4 = 3;
+    if(document.getElementById("domanda4_3_4").checked){
+        domanda4 = domanda4 + 3;
     }
-    else if(document.getElementById("domanda4_4_4").checked){
-        domanda4 = 4;
+    if(document.getElementById("domanda4_4_4").checked){
+        domanda4 = domanda4 + 4;
         domanda4_dettagli = document.getElementById("domanda4_4_dettagli_4").value;
     }
 
 
-    var domanda5 = null;
+    var domanda5 ="";
     var domanda5_dettagli = null;
 
+
     if(document.getElementById("domanda5_1_4").checked){
-        domanda5 = 1;
-        domanda5_dettagli = document.getElementById("domanda5_1_dettagli_4").value;
+        domanda5 = domanda5 + 1;
     }
-    else if(document.getElementById("domanda5_2_4").checked){
-        domanda5 = 2;
-        domanda5_dettagli = document.getElementById("domanda5_2_dettagli_4").value;
+    if(document.getElementById("domanda5_2_4").checked){
+        domanda5 = domanda5 + 2;
     }
-    else if(document.getElementById("domanda5_3_4").checked){
-        domanda5 = 3;
-        domanda5_dettagli = document.getElementById("domanda5_3_dettagli_4").value;
+    if(document.getElementById("domanda5_3_4").checked){
+        domanda5 = domanda5 + 3;
     }
-    else if(document.getElementById("domanda5_4_4").checked){
-        domanda5 = 4;
-        domanda5_dettagli = document.getElementById("domanda5_4_dettagli_4").value;
+    if(document.getElementById("domanda5_4_4").checked){
+        domanda5 = domanda5 + 4;
     }
-    else if(document.getElementById("domanda5_5_4").checked){
-        domanda5 = 5;
-        domanda5_dettagli = document.getElementById("domanda5_5_dettagli_4").value;
+    if(document.getElementById("domanda5_5_4").checked){
+        domanda5 = domanda5 + 5;
+
     }
+
+    domanda5_dettagli = document.getElementById("domanda5_5_dettagli_4").value;
 
     var userID = 2;
     $.ajax({
@@ -676,3 +675,130 @@ $('#selectTipologiaSegnalazione').on('change',function() {
         $("#panelTipologiaSegnalazione").load("modalNewProposta/modalCittaAltaPerTutti.html");
     }
   });
+
+function like(id) {
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 1,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonLike_"+id).css('background-color', '#4D94C9');
+            $("#buttonUnlike_"+id).css('background-color', '#1B4A6D');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+function tableLike(id) {
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 1,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonTableLike_"+id).css('background-color', '#4D94C9');
+            $("#buttonTableUnlike_"+id).css('background-color', '#1B4A6D');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+function unlike(id){
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 0,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonUnlike_"+id).css('background-color', '#4D94C9');
+            $("#buttonLike_"+id).css('background-color', '#1B4A6D');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+function tableUnlike(id){
+    $.ajax({
+        type: "POST",
+        url: "like.php",
+        data: "id=" + id +
+            "&opinione=" + 0,
+        success: function(msg){
+            if(msg == "Votazione Inserita"){
+                $("#modalVotazioneSuccess").modal();
+            }
+            if(msg == "Update Votazione"){
+                $("#modalUpdateVotazione").modal();
+            }
+            $("#buttonTableLike_"+id).css('background-color', '#1B4A6D');
+            $("#buttonTableUnlike_"+id).css('background-color', '#4D94C9');
+        },
+        error: function(){
+            $("#modalVotazioneFallita").modal();
+        }
+    });
+}
+
+$(document).ready(function (e) {
+    $("#formSegnalazione").on('submit',(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "addSegnalazione.php",
+            type: "POST",
+            data:  new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(data)
+            {
+                $("#modalNewSegnalazione").modal();
+                $('#exampleModal').modal("hide");
+                cittaAltaFutura();
+                pointSegnalazione.remove();
+                $('#addSegnalazione').css("display", 'block');
+                $('#confermaPosizioneSegnalazione').css("display", 'none');
+            },
+            error: function(e)
+            {
+                alert(e);
+            }
+        });
+
+
+
+
+    }));
+});
+
+$("#buttonCloseModalStep4").click(function () {
+    cittaAltaFutura();
+    $('#map-riepilogo').css("display", 'block');
+    $('#videoFattoriDinamizzanti').css("display", 'none');
+    $('#addSegnalazione').css("display", 'block');
+    $('#buttonCittaAltaFutura').addClass('active').siblings().removeClass('active');
+});

@@ -8,12 +8,12 @@
                     ".$_POST['DOMANDA_2'].", '".$_POST['DOMANDA_2_DETTAGLI']."',
                     ".$_POST['DOMANDA_3'].", '".$_POST['DOMANDA_3_DETTAGLI']."', 
                     ".$_POST['DOMANDA_4'].", ".$_POST['DOMANDA_41'].", '".$_POST['DOMANDA_41_DETTAGLI']."', '".$_POST['DOMANDA_42_DETTAGLI']."', 
-                    ".$_POST['DOMANDA_5'].", ".$_POST['DOMANDA_51'].", '".$_POST['DOMANDA_51_DETTAGLI']."', 
-                    ".$_POST['DOMANDA_6'].", ".$_POST['DOMANDA_61'].", '".$_POST['DOMANDA_61_DETTAGLI']."',
+                    ".$_POST['DOMANDA_5'].", '".$_POST['DOMANDA_51']."', '".$_POST['DOMANDA_51_DETTAGLI']."', 
+                    ".$_POST['DOMANDA_6'].", '".$_POST['DOMANDA_61']."', '".$_POST['DOMANDA_61_DETTAGLI']."',
                     ".$_POST['DOMANDA_62'].", '".$_POST['DOMANDA_62_DETTAGLI']."',  
                     ".$_POST['DOMANDA_7'].", '".$_POST['DOMANDA_7_DETTAGLI']."',
-                    ".$_POST['DOMANDA_8'].", '".$_POST['DOMANDA_8_DETTAGLI']."',
-                    ".$_POST['DOMANDA_9'].", '".$_POST['DOMANDA_9_DETTAGLI']."')";
+                    '".$_POST['DOMANDA_8']."', '".$_POST['DOMANDA_8_DETTAGLI']."',
+                    '".$_POST['DOMANDA_9']."', '".$_POST['DOMANDA_9_DETTAGLI']."')";
 
 
     if (mysqli_query($conn, $query)) {
