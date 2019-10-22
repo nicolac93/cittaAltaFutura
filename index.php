@@ -122,12 +122,6 @@ include('session.php');
     <div class="modal-dialog" role="document"  style="max-width:1100px;">
         <div class="modal-content">
             <div class="modal-header">
-				<div class="row pb-1">
-                                        <div class="col-lg-12 text-center">
-                                                <h3 class="titoloevidenziato">Progettare significa far partecipare gli abitanti e considerare il passato e il presente di Città Alta </h3>
-                                                <h4>Inizia con questo filmato per capire l’evoluzione di Città Alta nell’ultimo secolo e il suo attuale dinamismo.</h4>
-                                        </div>
-                                </div>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Chiudi">
                     <span aria-hidden="true">&times;</span>
                 </button>				
