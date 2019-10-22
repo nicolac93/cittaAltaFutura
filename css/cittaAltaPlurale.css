@@ -589,3 +589,8 @@ padding: 0 15px;
 @media (max-width: 576px) {
     h1.section-heading{font-size: 40px;}
 }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
